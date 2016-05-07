@@ -25,7 +25,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-xs-6 col-md-4" style="margin: 0 auto; margin-top: 10%; float: none;">
+                <div class="col-xs-10 col-sm-6 col-md-4" style="margin: 0 auto; margin-top: 10%; float: none;">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title" style="display: flex; justify-content: center;">
@@ -34,21 +34,23 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-xs-10" style="margin: 0 auto; float: none; text-align: center;">
-                                    <div class="input-group">
+                                <div class="col-xs-12" style="margin: 0 auto; float: none; text-align: center;">
+                                    <div class="col-md-10 input-group" style="margin:0 auto; float:none;">
                                         <span class="input-group-addon" id="basic-addon1">
-                                            <img src="../fonts/ic_email_black_18dp_1x.png" /></span>
-                                        <asp:TextBox CssClass="form-control" runat="server" placeholder="E-mail" TextMode="Email" aria-describedby="basic-addon1"></asp:TextBox>
+                                            <img src="../fonts/ic_email_black_18dp_1x.png" />
+                                        </span>
+                                        <asp:TextBox class="form-control" runat="server" placeholder="E-mail" TextMode="Email" aria-describedby="basic-addon1" style="width:100%;"></asp:TextBox>
                                     </div>
                                     <br />
-                                    <div class="input-group">
+                                    <div class="col-md-10 input-group" style="margin:0 auto; float:none;">
                                         <span class="input-group-addon" id="basic-addon1">
-                                            <img src="../fonts/ic_lock_black_18dp_1x.png" /></span>
-                                        <asp:TextBox CssClass="form-control" runat="server" placeholder="Senha" TextMode="Password"></asp:TextBox>
+                                            <img src="../fonts/ic_lock_black_18dp_1x.png" />
+                                        </span>
+                                        <asp:TextBox class="form-control" runat="server" placeholder="Senha" TextMode="Password"></asp:TextBox>
                                     </div>
                                     <br />
                                     <asp:Button ID="btnEntrar" Text="Entrar" CssClass="btn btn-default" runat="server"/>
-                                    <br />
+                                    <br /><br />
                                     <asp:LinkButton ID="lkbEsquecerSenha" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
                                 </div>
                             </div>
