@@ -5,31 +5,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
 </head>
 <body>
+
     <form id="form1" runat="server">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
-               <h4 align="right">Adapt Hotel</h4>
+                <h4 align="right">Adapt Hotel</h4>
             </div>
         </nav>
 
-        <div class="container" style="margin-top:10%">
-            <div class="rows">
-                <div class="col-xs-6 col-md-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-md-4" style="margin: 0 auto; margin-top: 10%; float: none;">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">
-                                <center><img src="/logo" alt="logo"/></center>
-                            </h3>
+                            <div class="panel-title" style="display: flex; justify-content: center;">
+                                <img src="/logo" alt="logo" />
+                            </div>
                         </div>
                         <div class="panel-body">
-                                <center><input type="email" ID="txtLogin" class="form-control"  placeholder="Login" style="width:250px;" runat="server"></input></center>
-                                <br>
-                                <center><input type="password" ID="txtSenha" class="form-control" placeholder="Senha" style="width:250px;" runat="server"></input></center>
-                                <br>
-                                <center><input type="button" ID="enviar" class="btn btn-default" Style="width: 250px;" runat="server" value="login"/><br /></center>                      
-                        </div>                
+                            <div class="row">
+                                <div class="col-xs-10" style="margin: 0 auto; float: none; text-align: center;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">
+                                            <img src="../fonts/ic_email_black_18dp_1x.png" /></span>
+                                        <asp:TextBox CssClass="form-control" runat="server" placeholder="E-mail" TextMode="Email" aria-describedby="basic-addon1"></asp:TextBox>
+                                    </div>
+                                    <br />
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">
+                                            <img src="../fonts/ic_lock_black_18dp_1x.png" /></span>
+                                        <asp:TextBox CssClass="form-control" runat="server" placeholder="Senha" TextMode="Password"></asp:TextBox>
+                                    </div>
+                                    <br />
+                                    <asp:Button ID="btnEntrar" Text="Entrar" CssClass="btn btn-default" runat="server"/>
+                                    <br />
+                                    <asp:LinkButton ID="lkbEsquecerSenha" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
