@@ -29,3 +29,39 @@ textarea {
         padding: 0;
     }
 }
+
+@font-face {
+    font-family: gearsOfPeace;
+    src: url(../fonts/GearsOfPeace.ttf);
+}
+
+.form-control {
+    -webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+.btn-default:hover, .btn-default, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+    border-color: #FF9100;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+::-webkit-input-placeholder {
+   color: orange;
+}
+
+:-moz-placeholder {
+   color: orange;
+}
+
+::-moz-placeholder {
+   color: orange;  
+}
+
+:-ms-input-placeholder {  
+   color: orange;  
+}
+
+

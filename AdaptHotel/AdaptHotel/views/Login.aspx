@@ -17,45 +17,26 @@
 <body>
 
     <form id="form1" runat="server">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #2196F3; color: #FFF;">
             <div class="container">
-                <h4 align="right">Adapt Hotel</h4>
+                <h4 style="font-size: 3rem; font-family: gearsOfPeace; text-align:right;">Adapt Hotel</h4>
             </div>
         </nav>
 
         <div class="container">
             <div class="row">
-                <div class="col-xs-10 col-sm-6 col-md-4" style="margin: 0 auto; margin-top: 10%; float: none;">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title" style="display: flex; justify-content: center;">
-                                <img src="/logo" alt="logo" />
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-xs-12" style="margin: 0 auto; float: none; text-align: center;">
-                                    <div class="col-md-10 input-group" style="margin:0 auto; float:none;">
-                                        <span class="input-group-addon" id="basic-addon1">
-                                            <img src="../fonts/ic_email_black_18dp_1x.png" />
-                                        </span>
-                                        <asp:TextBox class="form-control" runat="server" placeholder="E-mail" TextMode="Email" aria-describedby="basic-addon1" style="width:100%;"></asp:TextBox>
-                                    </div>
-                                    <br />
-                                    <div class="col-md-10 input-group" style="margin:0 auto; float:none;">
-                                        <span class="input-group-addon" id="basic-addon1">
-                                            <img src="../fonts/ic_lock_black_18dp_1x.png" />
-                                        </span>
-                                        <asp:TextBox class="form-control" runat="server" placeholder="Senha" TextMode="Password"></asp:TextBox>
-                                    </div>
-                                    <br />
-                                    <asp:Button ID="btnEntrar" Text="Entrar" CssClass="btn btn-default" runat="server"/>
-                                    <br /><br />
-                                    <asp:LinkButton ID="lkbEsquecerSenha" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-xs-10 col-sm-8 col-md-4" style="margin:0 auto; float:none; text-align:center;">
+                    <div id="logo" style="width:100%; height:33vh;">
+                        <img src="../fonts/Aston-Horiz-Color-Large.png" style="width:inherit; height:inherit;"/>
                     </div>
+                    <asp:TextBox class="form-control" runat="server" placeholder="E-mail" Style="border:#FFF 1px solid; margin:0 auto; float:none; padding-left: 10%; background-image: url(../fonts/ic_email_black_18dp_1x.png); background-repeat: no-repeat; background-position: 4%;" TextMode="Email"></asp:TextBox>
+                    <br />
+                    <asp:TextBox class="form-control" runat="server" placeholder="Senha" Style="border:#FFF 1px solid; margin:0 auto; float:none; padding-left: 10%; background-image: url(../fonts/ic_lock_black_18dp_1x.png); background-repeat: no-repeat; background-position: 4%;" TextMode="Password"></asp:TextBox>
+                    <br />
+                    <asp:Button ID="btnEntrar" Text="Entrar" CssClass="btn btn-default" runat="server" Style="background-color:#FF9100; color:#FFF; width: 100%; margin:0 auto; float:none;" />
+                    <br />
+                    <br />
+                    <asp:LinkButton ID="lkbEsquecerSenha" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
                 </div>
             </div>
         </div>

@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\custom.css" />
+    <Content Include="fonts\Aston-Horiz-Color-Large.png" />
     <Content Include="fonts\ic_account_circle_black_18dp_1x.png" />
     <Content Include="fonts\ic_email_black_18dp_1x.png" />
     <Content Include="fonts\ic_lock_black_18dp_1x.png" />
@@ -148,6 +149,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\GearsOfPeace.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
