@@ -203,6 +203,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\avaliacoes.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="views\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
