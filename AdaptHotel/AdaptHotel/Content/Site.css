@@ -48,20 +48,15 @@ textarea {
     border-radius: 0;
 }
 
-::-webkit-input-placeholder {
-   color: orange;
+.form-control:focus {
+    border:solid 1px #FF9100 !important;
+ }
+
+.btn-default:hover{
+    background-color:rgba(255,145,0,0.8) !important;
 }
 
-:-moz-placeholder {
-   color: orange;
+.link:hover{
+    color:rgba(255,145,0,0.8) !important;
+    text-decoration:underline !important;
 }
-
-::-moz-placeholder {
-   color: orange;  
-}
-
-:-ms-input-placeholder {  
-   color: orange;  
-}
-
-

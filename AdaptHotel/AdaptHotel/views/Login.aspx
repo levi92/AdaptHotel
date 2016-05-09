@@ -36,7 +36,7 @@
                     <asp:Button ID="btnEntrar" Text="Entrar" CssClass="btn btn-default" runat="server" Style="background-color:#FF9100; color:#FFF; width: 100%; margin:0 auto; float:none;" />
                     <br />
                     <br />
-                    <asp:LinkButton ID="lkbEsquecerSenha" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
+                    <asp:LinkButton ID="lkbEsquecerSenha" CssClass="link" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
                 </div>
             </div>
         </div>
