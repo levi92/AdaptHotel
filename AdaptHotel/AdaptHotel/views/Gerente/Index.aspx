@@ -8,46 +8,16 @@
         <div class="main_container">
 
             <!-- top navigation -->
-            <div class="col-md-12 top_nav">
-
-                <div class="nav_menu">
-                    <nav class="" role="navigation">
-                        <div class="nav toggle">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #2196F3; color: #FFF;">
+                 <div class="nav toggle">
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../../images/user.png" alt="">
-                                  
-                                    
-                                    Logo
-                                    <span class=" fa fa-angle-down"></span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">         
-                                    <li>
-                                        <a href="meu_perfil">
-                                            <span><? echo lang_menu_meuperfil; ?></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="configuracoes">
-                                            <span><? echo lang_menu_configuracoes; ?></span>
-                                        </a>
-                                    </li>
-                                    <li><a href="ajuda"><? echo lang_menu_ajuda; ?></a></li>
-
-                                    <li><a href="../logout.php"><i class="fa fa-sign-out pull-right"></i> Sair</a>
-                                    </li>
-                                </ul>
-                            </li>
+                            <li class=""><span class=" fa fa-angle-down"></span> </li>
 
                         </ul>
-                    </nav>
-                </div>
-
-            </div>
+            </nav>
             <!-- /top navigation -->
 
 
