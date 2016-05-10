@@ -132,6 +132,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +188,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="views\Funcionario\Dashboard_Funcionario.aspx" />
     <Content Include="views\Gerente\Index.aspx" />
     <Content Include="views\Login.aspx" />
     <Content Include="Web.config" />
@@ -203,8 +205,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\avaliacoes.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Teste\Pessoa.cs" />
     <Compile Include="views\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -251,6 +253,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Funcionario\Dashboard_Funcionario.aspx.cs">
+      <DependentUpon>Dashboard_Funcionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Funcionario\Dashboard_Funcionario.aspx.designer.cs">
+      <DependentUpon>Dashboard_Funcionario.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Gerente\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
