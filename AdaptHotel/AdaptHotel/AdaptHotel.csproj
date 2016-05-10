@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\custom.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\Aston-Horiz-Color-Large.png" />
     <Content Include="fonts\ic_account_circle_black_18dp_1x.png" />
     <Content Include="fonts\ic_email_black_18dp_1x.png" />

@@ -5,13 +5,11 @@ body .container .left_col {
     padding: 0 !important;
     position: absolute;
     height: 100%;
-    margin-top: 56px;
     border-right: 1px solid #D9DEE4;
 }
 
 body.nav-sm .container.body .right_col {
     padding: 10px 20px;
-    margin-left: 70px;
     z-index: 2;
 }
 .right_col{/*min-height: 1000px;*/}
@@ -492,8 +490,6 @@ body.nav-md .container.body .col-md-3.left_col {
 body .container.body .right_col {
     background: #F7F7F7;
         float: right;
-        margin-top: 58px;
-
 }
 
 .scroll-view {
@@ -1011,7 +1007,7 @@ a:focus {
 }
 
 .navbar-static-top {
-    position: fixed;
+    position: static;
     top: 0;
     width: 100%;
 }
@@ -1029,6 +1025,11 @@ a:focus {
     position: relative;
     display: block;
     border-bottom: 1px solid #D9DEE4;
+}
+
+.dropdown .fa {
+        font-size: 20px;
+    color: white;
 }
 
 .nav.side-menu> li > a {
