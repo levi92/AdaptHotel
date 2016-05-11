@@ -24,6 +24,11 @@ namespace AdaptHotel.views.Funcionario
             Pessoa p8 = new Pessoa("Janaina", "Guaratingueta", "SP");
             Pessoa p9 = new Pessoa("Janaina", "Guaratingueta", "SP");
             Pessoa p10 = new Pessoa("Janaina", "Guaratingueta", "SP");
+            Pessoa p11 = new Pessoa("Gabi", "Pinda", "SP");
+            Pessoa p12 = new Pessoa("Janaina", "Guaratingueta", "SP");
+            Pessoa p13 = new Pessoa("Janaina", "Guaratingueta", "SP");
+            Pessoa p14 = new Pessoa("Janaina", "Guaratingueta", "SP");
+            Pessoa p15 = new Pessoa("Janaina", "Guaratingueta", "SP");
 
             lista_pessoas.Add(p1);
             lista_pessoas.Add(p2);
@@ -35,6 +40,12 @@ namespace AdaptHotel.views.Funcionario
             lista_pessoas.Add(p8);
             lista_pessoas.Add(p9);
             lista_pessoas.Add(p10);
+            lista_pessoas.Add(p11);
+            lista_pessoas.Add(p12);
+            lista_pessoas.Add(p13);
+            lista_pessoas.Add(p14);
+            lista_pessoas.Add(p15);
+
         }
     }
 }
