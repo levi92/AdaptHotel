@@ -142,6 +142,10 @@
     <Content Include="fonts\ic_account_circle_black_18dp_1x.png" />
     <Content Include="fonts\ic_email_black_18dp_1x.png" />
     <Content Include="fonts\ic_lock_black_18dp_1x.png" />
+    <Content Include="fonts\ic_person_black_36dp_1x.png" />
+    <Content Include="fonts\ic_person_black_48dp_1x.png" />
+    <Content Include="fonts\ic_person_black_48dp_2x.png" />
+    <Content Include="fonts\ic_person_white_36dp_1x.png" />
     <Content Include="views\About.aspx" />
     <Content Include="views\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />

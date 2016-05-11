@@ -47,9 +47,9 @@
                 <!-- top navigation -->
                 <nav class="navbar navbar-static-top" role="navigation" style="background-color: #2196F3; color: #FFF;">
                     <div class="nav toggle">
-                        <a id="menu_toggle"><i class="fa fa-bars" style="color:white"></i></a>
+                        <a id="menu_toggle"><i class="fa fa-bars" style="color:white"></i></a>    
                     </div>
-
+                    <img src="~/fonts/Aston-Horiz-Color-Large.png" runat="server"/>
                   <ul class="nav navbar-nav navbar-right">
                         
                       
@@ -84,7 +84,7 @@
                       </li>
 
                          
-                        <li><h4 style="font-size: 3rem; font-family: gearsOfPeace; text-align:left;">Adapt Hotel</h4></li>
+                        <li><h4 style="font-size: 3rem; font-family: gearsOfPeace; text-align:left;">AdaptHotel</h4></li>
                     </ul>
                 </nav>
                 <!-- /top navigation -->
