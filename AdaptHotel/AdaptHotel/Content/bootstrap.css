@@ -929,9 +929,6 @@ pre code {
 }
 
 @media (min-width: 768px) {
-  .container {
-    //max-width: 750px;
-  }
   .col-sm-1,
   .col-sm-2,
   .col-sm-3,
@@ -3277,6 +3274,7 @@ input[type="button"].btn-block {
   line-height: 1.428571429;
   color: #333333;
   white-space: nowrap;
+  margin: 0;
 }
 
 .dropdown-menu > li > a:hover,
@@ -3846,7 +3844,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #eeeeee;
+  background-color: #FF9100;
   border-color: #428bca;
 }
 

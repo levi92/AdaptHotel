@@ -134,6 +134,7 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="views\Recepcionista\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\custom.css" />
@@ -193,7 +194,6 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="views\Recepcionista\Dashboard_Recepcionista.aspx" />
     <Content Include="views\Gerente\Dashboard_Gerente.aspx" />
     <Content Include="views\Gerente\Index.aspx" />
     <Content Include="views\Login.aspx" />
@@ -259,13 +259,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="views\Recepcionista\Dashboard_Recepcionista.aspx.cs">
-      <DependentUpon>Dashboard_Recepcionista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="views\Recepcionista\Dashboard_Recepcionista.aspx.designer.cs">
-      <DependentUpon>Dashboard_Recepcionista.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Gerente\Dashboard_Gerente.aspx.cs">
       <DependentUpon>Dashboard_Gerente.aspx</DependentUpon>
