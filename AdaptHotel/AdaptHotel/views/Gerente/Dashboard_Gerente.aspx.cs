@@ -6,14 +6,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using AdaptHotel.Teste;
 
-namespace AdaptHotel.views.Funcionario
+namespace AdaptHotel.views.Gerente
 {
-    public partial class Dashboard_Funcionario : System.Web.UI.Page
+    public partial class Dashboard_Gerente : System.Web.UI.Page
     {
         public List<Pessoa> lista_pessoas = new List<Pessoa>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             Pessoa p1 = new Pessoa("nicolas", "Guaratingueta", "SP");
             Pessoa p2 = new Pessoa("levi", "Guaratingueta", "SP");
             Pessoa p3 = new Pessoa("daniel", "Lorena", "SP");
@@ -45,7 +44,6 @@ namespace AdaptHotel.views.Funcionario
             lista_pessoas.Add(p13);
             lista_pessoas.Add(p14);
             lista_pessoas.Add(p15);
-
         }
     }
 }

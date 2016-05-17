@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AdaptHotel.views.Funcionario {
+namespace AdaptHotel.views.Gerente {
     
     
-    public partial class Dashboard_Funcionario {
+    public partial class Dashboard_Gerente {
     }
 }

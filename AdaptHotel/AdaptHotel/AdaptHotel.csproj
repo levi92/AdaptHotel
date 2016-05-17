@@ -193,7 +193,8 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="views\Funcionario\Dashboard_Funcionario.aspx" />
+    <Content Include="views\Recepcionista\Dashboard_Recepcionista.aspx" />
+    <Content Include="views\Gerente\Dashboard_Gerente.aspx" />
     <Content Include="views\Gerente\Index.aspx" />
     <Content Include="views\Login.aspx" />
     <Content Include="Web.config" />
@@ -259,12 +260,19 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="views\Funcionario\Dashboard_Funcionario.aspx.cs">
-      <DependentUpon>Dashboard_Funcionario.aspx</DependentUpon>
+    <Compile Include="views\Recepcionista\Dashboard_Recepcionista.aspx.cs">
+      <DependentUpon>Dashboard_Recepcionista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="views\Funcionario\Dashboard_Funcionario.aspx.designer.cs">
-      <DependentUpon>Dashboard_Funcionario.aspx</DependentUpon>
+    <Compile Include="views\Recepcionista\Dashboard_Recepcionista.aspx.designer.cs">
+      <DependentUpon>Dashboard_Recepcionista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Gerente\Dashboard_Gerente.aspx.cs">
+      <DependentUpon>Dashboard_Gerente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Gerente\Dashboard_Gerente.aspx.designer.cs">
+      <DependentUpon>Dashboard_Gerente.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Gerente\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
