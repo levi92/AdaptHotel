@@ -132,7 +132,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +210,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\Classes\Administrador.cs" />
+    <Content Include="App_Code\Classes\Avaliacoes.cs" />
+    <Content Include="App_Code\Classes\DescontoQuarto.cs" />
+    <Content Include="App_Code\Classes\Endereco.cs" />
+    <Content Include="App_Code\Classes\Funcionario.cs" />
+    <Content Include="App_Code\Classes\Hospede.cs" />
+    <Content Include="App_Code\Classes\NumeroQuarto.cs" />
+    <Content Include="App_Code\Classes\Opcoes.cs" />
+    <Content Include="App_Code\Classes\Pessoa.cs" />
+    <Content Include="App_Code\Classes\Reserva.cs" />
+    <Content Include="App_Code\Classes\ServicosExtras.cs" />
+    <Content Include="App_Code\Classes\SubTipoQuarto.cs" />
+    <Content Include="App_Code\Classes\TipoQuarto.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Teste\Pessoa.cs" />
     <Compile Include="views\About.aspx.cs">
