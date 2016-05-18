@@ -58,8 +58,9 @@
                              <span class=" fa fa-cog"></span>
                             </a>
                         <ul class="dropdown-menu">
-                           <li><a href="../user/dados.php" class="btn btn-default btn-flat">Perfil</a></li>
-                           <li><a href="../logout.php" class="btn btn-default btn-flat">Sair</a>      
+                           <li><a href="../../user/dados.php" class="btn btn-default btn-flat">Opção</a></li>
+                           <li><a href="../logout.php" class="btn btn-default btn-flat">About</a>      
+                           <li><a href="../logout.php" class="btn btn-default btn-flat">Preferência</a>      
                         </ul>
                       </li>
 
@@ -68,8 +69,9 @@
                              <span class=" fa fa-bell"></span>
                             </a>
                         <ul class="dropdown-menu">
-                           <li><a href="../user/dados.php" class="btn btn-default btn-flat">Perfil</a></li>
-                           <li><a href="../logout.php" class="btn btn-default btn-flat">Sair</a>      
+                           <li><a href="../user/dados.php" class="btn btn-default btn-flat">Not 1</a></li>
+                           <li><a href="../logout.php" class="btn btn-default btn-flat">Not 2</a>
+                           <li><a href="../logout.php" class="btn btn-default btn-flat">Not 3</a>            
                         </ul>
                       </li>
 
@@ -78,8 +80,8 @@
                              <span class=" fa fa-user"></span>
                             </a>
                         <ul class="dropdown-menu">
-                           <li><a href="../user/dados.php" class="btn btn-default btn-flat">Perfil</a></li>
-                           <li><a href="../logout.php" class="btn btn-default btn-flat">Sair</a>      
+                           <li><a href="../user/dados.php" class="btn btn-default btn-flat">Editar Perfil</a></li>
+                           <li><a href="../logout.php" class="btn btn-default btn-flat">Logout</a>      
                         </ul>
                       </li>
 
@@ -99,11 +101,11 @@
                             <div class="menu_section">
                                 <ul class="nav side-menu">
 
-                                    <li><a href="hospede"><i class="fa fa-user"></i>Hospede</a></li>
-                                    <li><a href="reserva"><i class="fa fa-cog"></i>Reserva</a></li>
-                                    <li><a href="reserva"><i class="fa fa-cog"></i>Pagamento</a></li>
+                                    <li><a href="../../views/Gerente/Dashboard_Gerente.aspx"><i class="fa fa-user"></i>Hospede</a></li>
+                                    <li><a href="reserva"><i class="fa fa-pencil-square-o"></i>Reserva</a></li>
+                                    <li><a href="reserva"><i class="fa fa-money"></i>Pagamento</a></li>
                                     <li><a href="reserva"><i class="fa fa-users"></i>Funcionário</a></li>
-                                    <li><a href="reserva"><i class="fa fa-cog"></i>Quartos</a></li>
+                                    <li><a href="reserva"><i class="fa fa-building"></i>Quartos</a></li>
 
                                 </ul>
                             </div>

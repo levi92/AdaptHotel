@@ -262,7 +262,6 @@
     </Compile>
     <Compile Include="views\Recepcionista\Dashboard_Recepcionista.aspx.cs">
       <DependentUpon>Dashboard_Recepcionista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="views\Recepcionista\Dashboard_Recepcionista.aspx.designer.cs">
       <DependentUpon>Dashboard_Recepcionista.aspx</DependentUpon>

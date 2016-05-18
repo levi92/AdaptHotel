@@ -1,11 +1,32 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Dashboard_Recepcionista.aspx.cs" Inherits="AdaptHotel.views.Recepcionista.Dashboard_Recepcionista" %>
 
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6">
+
+            
+            <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="panel panel-default" style="width: 100%; height: 60vh;">
-                    <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size:2em; color:#FFF;">Hóspedes</a></div>
+                    <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size:2em; color:#FFF;">Últimas reservas</a></div>
+                    <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
+                        <ul>
+                            <% foreach (var item in lista_pessoas)
+                                { %>
+                            <li>Nome: <%= item.Nome %> </br>
+                                    Cidade: <%= item.Cidade %> 
+                                    / Estado: <%= item.Estado %>
+                                <hr style="border-color: #FF9100;" />
+                            </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="panel panel-default" style="width: 100%; height: 60vh;">
+                    <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size:2em; color:#FFF;">Hóspedes Recentes</a></div>
                     <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
                         <ul>
                             <% foreach (var item in lista_pessoas)
@@ -24,23 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6">
-                <div class="panel panel-default" style="width: 100%; height: 60vh;">
-                    <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size:2em; color:#FFF;">Últimas reservas</a></div>
-                    <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
-                        <ul>
-                            <% foreach (var item in lista_pessoas)
-                                { %>
-                            <li>Nome: <%= item.Nome %> </br>
-                                    Cidade: <%= item.Cidade %> 
-                                    / Estado: <%= item.Estado %>
-                                <hr style="border-color: #FF9100;" />
-                            </li>
-                            <% } %>
-                        </ul>
-                    </div>
-                </div>
-            </div>         
+
             <div class="col-xs-12 ">
                 <div class="panel panel-default" style="width: 100%; height: 60vh;">
                     <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size:2em; color:#FFF;">Quartos</a></div>
