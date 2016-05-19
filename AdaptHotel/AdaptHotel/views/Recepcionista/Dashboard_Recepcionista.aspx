@@ -10,7 +10,7 @@
                 <div class="panel panel-default" style="width: 100%; height: 60vh;">
                     <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size:2em; color:#FFF;">Últimas reservas</a></div>
                     <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
-                        <ul>
+                        <%--<ul>
                             <% foreach (var item in lista_pessoas)
                                 { %>
                             <li>Nome: <%= item.Nome %> </br>
@@ -19,7 +19,7 @@
                                 <hr style="border-color: #FF9100;" />
                             </li>
                             <% } %>
-                        </ul>
+                        </ul>--%>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="panel panel-default" style="width: 100%; height: 60vh;">
                     <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size:2em; color:#FFF;">Hóspedes Recentes</a></div>
                     <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
-                        <ul>
+                        <%--<ul>
                             <% foreach (var item in lista_pessoas)
                                 { %>
                             <li><div id="standard_icon" style="width:5rem; height:5rem; float:left; background-image:url(../../fonts/ic_person_white_36dp_1x.png); background-repeat:no-repeat; background-position:center; background-color:#FF9100; border-radius: 50%; margin-right:5%;">
@@ -41,7 +41,7 @@
                                 
                             </li>
                             <% } %>
-                        </ul>
+                        </ul>--%>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                     <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size:2em; color:#FFF;">Quartos</a></div>
                     <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
                         <div class="row">
-                            <% int i = 0;
+                            <%--<% int i = 0;
                                 foreach (var item in lista_pessoas)
                                 {
                                     i++;%>
@@ -60,7 +60,7 @@
                                     <a href="#" style="display:table-cell; vertical-align: middle; color: #000;"><%=i%></a>
                                 </div>
                             </div>
-                            <% } %>
+                            <% } %>--%>
                         </div>
                     </div>
                 </div>

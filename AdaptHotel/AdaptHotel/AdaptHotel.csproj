@@ -210,21 +210,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\Classes\Administrador.cs" />
-    <Content Include="App_Code\Classes\Avaliacoes.cs" />
-    <Content Include="App_Code\Classes\DescontoQuarto.cs" />
-    <Content Include="App_Code\Classes\Endereco.cs" />
-    <Content Include="App_Code\Classes\Funcionario.cs" />
-    <Content Include="App_Code\Classes\Hospede.cs" />
-    <Content Include="App_Code\Classes\NumeroQuarto.cs" />
-    <Content Include="App_Code\Classes\Opcoes.cs" />
-    <Content Include="App_Code\Classes\Pessoa.cs" />
-    <Content Include="App_Code\Classes\Reserva.cs" />
-    <Content Include="App_Code\Classes\ServicosExtras.cs" />
-    <Content Include="App_Code\Classes\SubTipoQuarto.cs" />
-    <Content Include="App_Code\Classes\TipoQuarto.cs" />
+    <Compile Include="App_Code\Classes\Administrador.cs" />
+    <Compile Include="App_Code\Classes\Avaliacoes.cs" />
+    <Compile Include="App_Code\Classes\DescontoQuarto.cs" />
+    <Compile Include="App_Code\Classes\Endereco.cs" />
+    <Compile Include="App_Code\Classes\Funcionario.cs" />
+    <Compile Include="App_Code\Classes\Hospede.cs" />
+    <Compile Include="App_Code\Classes\NumeroQuarto.cs" />
+    <Compile Include="App_Code\Classes\Opcoes.cs" />
+    <Compile Include="App_Code\Classes\Pessoa.cs" />
+    <Compile Include="App_Code\Classes\Reserva.cs" />
+    <Compile Include="App_Code\Classes\ServicosExtras.cs" />
+    <Compile Include="App_Code\Classes\SubTipoQuarto.cs" />
+    <Compile Include="App_Code\Classes\TipoQuarto.cs" />
+    <Compile Include="App_Code\Mapped.cs" />
+    <Compile Include="App_Code\Persistencia\Perfil.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Teste\Pessoa.cs" />
     <Compile Include="views\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
