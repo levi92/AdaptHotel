@@ -228,6 +228,7 @@
     <Compile Include="App_Code\Classes\Reserva.cs" />
     <Compile Include="App_Code\Classes\ServicosExtras.cs" />
     <Compile Include="App_Code\Classes\SubTipoQuarto.cs" />
+    <Content Include="App_Code\Classes\Teste.cs" />
     <Compile Include="App_Code\Classes\TipoQuarto.cs" />
     <Compile Include="App_Code\Mapped.cs" />
     <Compile Include="App_Code\Persistencia\Funcoes_DB.cs" />
