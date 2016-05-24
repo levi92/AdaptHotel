@@ -198,6 +198,8 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="views\Gerente\Adicionar_Hospede.aspx" />
+    <Content Include="views\Gerente\Gerenciar_Hospede.aspx" />
     <Content Include="views\Recepcionista\Dashboard_Recepcionista.aspx" />
     <Content Include="views\Gerente\Dashboard_Gerente.aspx" />
     <Content Include="views\Gerente\Index.aspx" />
@@ -283,6 +285,20 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Gerente\Adicionar_Hospede.aspx.cs">
+      <DependentUpon>Adicionar_Hospede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Gerente\Adicionar_Hospede.aspx.designer.cs">
+      <DependentUpon>Adicionar_Hospede.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Gerente\Gerenciar_Hospede.aspx.cs">
+      <DependentUpon>Gerenciar_Hospede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Gerente\Gerenciar_Hospede.aspx.designer.cs">
+      <DependentUpon>Gerenciar_Hospede.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Recepcionista\Dashboard_Recepcionista.aspx.cs">
       <DependentUpon>Dashboard_Recepcionista.aspx</DependentUpon>
