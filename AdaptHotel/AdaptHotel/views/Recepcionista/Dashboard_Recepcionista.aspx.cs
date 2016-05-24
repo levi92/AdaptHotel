@@ -59,19 +59,19 @@ namespace AdaptHotel.views.Recepcionista
 
                 if (values[8].ToString() == "disponivel")
                 {
-                    cor = "green";
+                    cor = "#4CAF50";
                 }
                 else if (values[8].ToString() == "ocupado")
                 {
-                    cor = "red";
+                    cor = "#F44336";
                 }
                 else if (values[8].ToString() == "manutencao")
                 {
-                    cor = "yellow";
+                    cor = "#FFC107";
                 }
                 else if (values[8].ToString() == "desabilitado")
                 {
-                    cor = "gray";
+                    cor = "#9E9E9E";
                 }
 
                 NumeroQuarto numeroQuarto = new NumeroQuarto(Convert.ToInt32(values[6]), values[7].ToString(),
