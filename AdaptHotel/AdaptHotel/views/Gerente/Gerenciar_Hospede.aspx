@@ -9,103 +9,70 @@
             <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size: 2em; color: #FFF;">Gerenciar Hospedes</a></div>
             <div class="panel-body" style="padding: 0;">
 
-                <div class="col-md-3" style="overflow-y: auto; height: 591px;">
+                <div class="col-md-4">
                     <input type="text" placeholder="BUSCAR" style="max-width: none; width: 93%; padding: 9px; border: none; border-bottom: 1px solid #ccc; margin: 23px; margin-bottom: 23px; margin-top: 10px; margin-left: 3%; float: left; font-size: 16px;">
+                    <div class="col-md-11 col-sm-11 col-xs-11" style="font-size: 14.7px;overflow-y: auto; height: 660px;">
                     <ul style="width: 94%; margin-left: 2%;">
 
                         <li>
                             <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                             </div>
-
-                            <div>nicolas
-                                <br>
-                                Guaratingueta / SP<hr style="border-color: #FF9100;">
-                            </div>
+                            <div>nicolas <br> Guaratingueta / SP<hr style="border-color: #FF9100;"> </div>
                         </li>
 
                         <li>
                             <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                             </div>
-                            <div>
-                                Leviado
-                                <br>
-                                Guaratingueta / SP
-                                <hr style="border-color: #FF9100;">
-                            </div>
+                            <div>nicolas <br> Guaratingueta / SP<hr style="border-color: #FF9100;"> </div>
                         </li>
-
                         <li>
                             <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                             </div>
-                            <div>
-                                daniel
-                                <br>
-                                Lorena / SP
-                                <hr style="border-color: #FF9100;">
-                            </div>
-
+                            <div>nicolas <br> Guaratingueta / SP<hr style="border-color: #FF9100;"> </div>
                         </li>
-
                         <li>
                             <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                             </div>
-                            <div>
-                                marry
-                                <br>
-                                Aparecida / SP
-                                <hr style="border-color: #FF9100;">
-                            </div>
-
+                            <div>nicolas <br> Guaratingueta / SP<hr style="border-color: #FF9100;"> </div>
                         </li>
-
                         <li>
                             <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                             </div>
-                            <div>
-                                thais
-                                <br>
-                                Aparecida 
-                                    / SP
-                                <hr style="border-color: #FF9100;">
-                            </div>
-
+                            <div>nicolas <br> Guaratingueta / SP<hr style="border-color: #FF9100;"> </div>
                         </li>
-
                         <li>
                             <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                             </div>
-                            <div>
-                                Gabi
-                                <br>
-                                Pinda 
-                                    / SP
-                                <hr style="border-color: #FF9100;">
-                            </div>
-
+                            <div>nicolas <br> Guaratingueta / SP<hr style="border-color: #FF9100;"> </div>
                         </li>
-
                         <li>
                             <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                             </div>
-                            <div>
-                                Janaina
-                                <br>
-                                Guaratingueta 
-                                    / SP
-                                <hr style="border-color: #FF9100;">
+                            <div>nicolas <br> Guaratingueta / SP<hr style="border-color: #FF9100;"> </div>
+                        </li>
+                        <li>
+                            <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                             </div>
-
+                            <div>nicolas <br> Guaratingueta / SP<hr style="border-color: #FF9100;"> </div>
+                        </li>
+                        <li>
+                            <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
+                            </div>
+                            <div>nicolas <br> Guaratingueta / SP<hr style="border-color: #FF9100;"> </div>
                         </li>
 
 
 
 
                     </ul>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" style="padding: 17px;font-size: 16.7px;text-align: center;border: 1px solid #ccc;">
+                    # A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+                    </div>
                 </div>
 
-                <div class="col-md-1 col-sm-1 col-xs-1" style="padding: 4%; font-size: 14.7px; padding-top: 10px; padding-bottom: 12px; height: 593px; margin-top: -1px; border: 1px solid #ccc;">
-                    # A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-                </div>
+                
 
                 <div class="col-md-8">
 
