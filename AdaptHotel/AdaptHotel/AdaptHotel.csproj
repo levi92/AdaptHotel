@@ -140,6 +140,12 @@
     <Content Include="fonts\Aston-Horiz-Color-Large.png" />
     <Content Include="fonts\ic_account_circle_black_18dp_1x.png" />
     <Content Include="fonts\ic_email_black_18dp_1x.png" />
+    <Content Include="fonts\ic_event_available_black_36dp_1x.png" />
+    <Content Include="fonts\ic_event_available_black_48dp_1x.png" />
+    <Content Include="fonts\ic_event_available_white_36dp_1x.png" />
+    <Content Include="fonts\ic_event_note_black_36dp_1x.png" />
+    <Content Include="fonts\ic_event_note_black_48dp_1x.png" />
+    <Content Include="fonts\ic_event_note_white_36dp_1x.png" />
     <Content Include="fonts\ic_lock_black_18dp_1x.png" />
     <Content Include="fonts\ic_person_black_36dp_1x.png" />
     <Content Include="fonts\ic_person_black_48dp_1x.png" />
@@ -210,7 +216,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\Classes\Administrador.cs" />
     <Compile Include="App_Code\Classes\Avaliacoes.cs" />
     <Compile Include="App_Code\Classes\DescontoQuarto.cs" />
     <Compile Include="App_Code\Classes\Endereco.cs" />
@@ -218,13 +223,18 @@
     <Compile Include="App_Code\Classes\Hospede.cs" />
     <Compile Include="App_Code\Classes\NumeroQuarto.cs" />
     <Compile Include="App_Code\Classes\Opcoes.cs" />
+    <Compile Include="App_Code\Classes\Perfil.cs" />
     <Compile Include="App_Code\Classes\Pessoa.cs" />
     <Compile Include="App_Code\Classes\Reserva.cs" />
     <Compile Include="App_Code\Classes\ServicosExtras.cs" />
     <Compile Include="App_Code\Classes\SubTipoQuarto.cs" />
     <Compile Include="App_Code\Classes\TipoQuarto.cs" />
     <Compile Include="App_Code\Mapped.cs" />
-    <Compile Include="App_Code\Persistencia\Perfil.cs" />
+    <Compile Include="App_Code\Persistencia\Funcoes_DB.cs" />
+    <Compile Include="App_Code\Persistencia\Hospede_DB.cs" />
+    <Compile Include="App_Code\Persistencia\Funcionario_DB.cs" />
+    <Compile Include="App_Code\Persistencia\NumeroQuarto_DB.cs" />
+    <Compile Include="App_Code\Persistencia\Reserva_DB.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="views\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -275,6 +285,7 @@
     </Compile>
     <Compile Include="views\Recepcionista\Dashboard_Recepcionista.aspx.cs">
       <DependentUpon>Dashboard_Recepcionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="views\Recepcionista\Dashboard_Recepcionista.aspx.designer.cs">
       <DependentUpon>Dashboard_Recepcionista.aspx</DependentUpon>

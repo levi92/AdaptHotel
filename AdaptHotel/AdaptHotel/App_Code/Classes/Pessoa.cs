@@ -11,10 +11,11 @@ public class Pessoa
     private int codPessoa;
     private Endereco end;
     private DateTime dataNascimento;
+    private string cidade;
+    private string estado;
+    private Perfil perfil;
 
-
-
-    public Pessoa(string nome, string telefone, string email, string cpf, char sexo, DateTime dataNascimento, int codPessoa, Endereco end, string senha = null)
+    public Pessoa(string nome, string telefone, string email, string cpf, char sexo, DateTime dataNascimento, int codPessoa, Perfil perfil, Endereco end, string senha = null)
 	{
         this.nome = nome;
         this.telefone = telefone;
@@ -23,8 +24,19 @@ public class Pessoa
         this.senha = senha;
         this.sexo = sexo;
         this.end = end;
+        this.Perfil = perfil;
 	}
 
+    public Pessoa(string nome, Endereco end)
+    {
+        this.nome = nome;
+        this.end = end;
+    }
+
+    public Pessoa()
+    {
+
+    }
 
     public Endereco End
     {
@@ -80,6 +92,11 @@ public class Pessoa
         set { nome = value; }
     }
 
+    public Perfil Perfil
+    {
+        get { return perfil; }
+        set { perfil = value; }
+    }
 
     public string ImprimirPessoa()
     {

@@ -6,22 +6,21 @@ using System.Web;
 
 public class TipoQuarto
 {
-    private enum tipo { solteiro, casal }; // se for só isso, essa tabela vai ficar assim mesmo!
-    private SubTipoQuarto subQuarto;
+    private string tipo;
 
-	public TipoQuarto(SubTipoQuarto subQuarto)
-	{
-        this.subQuarto = subQuarto;
-	}
-
-    public SubTipoQuarto SubQuarto
+	public TipoQuarto(string tipo)
     {
-        get { return subQuarto; }
-        set { subQuarto = value; }
+        this.Tipo = tipo;
+    }
+
+    public string Tipo
+    {
+        get { return tipo; }
+        set { tipo = value; }
     }
 
     public string ImprimiTipoQuarto()
     {
-        return "SUB TIPO DE QUARTO: " + subQuarto;
+        return "SUB TIPO DE QUARTO: " + Tipo;
     }
 }

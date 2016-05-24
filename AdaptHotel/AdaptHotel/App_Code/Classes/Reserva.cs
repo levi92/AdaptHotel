@@ -3,27 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-
 public class Reserva
 {
-    private enum statusReserva {disponivel, ocupado, manutencao};
+    private enum statusReserva {agendada, andamento, finalizada, cancelada, noshow};
     private DateTime dataReservaEntrada, dataReservaSaida, dataCheckin, dataCheckout;
     private bool pago; 
     private double valorTotal;
-    private Hospede hos;
+    private Hospede hospede;
     // fazer associação
 
 
-    public Reserva(DateTime dataReservaEntrada, DateTime dataReservaSaida, DateTime dataCheckin, DateTime dataCheckout, double valorTotal, bool pago, Hospede hos)
+    public Reserva(DateTime dataReservaEntrada, DateTime dataReservaSaida, DateTime dataCheckin, DateTime dataCheckout, double valorTotal, bool pago, Hospede hospede)
     {
-        this.dataReservaEntrada = dataReservaEntrada;
-        this.dataReservaSaida = dataReservaSaida;
+        this.dataReservaEntrada = dataReservaEntrada.Date;
+        this.dataReservaSaida = dataReservaSaida.Date;
         this.dataCheckin = dataCheckin;
         this.dataCheckout = dataCheckout;
         this.valorTotal = valorTotal;
         this.pago=pago;
-        this.Hos = hos;
-        
+        this.hospede = hospede;
+    }
+
+    public Reserva(Hospede hospede, DateTime dataReservaEntrada, DateTime dataReservaSaida)
+    {
+        this.hospede = hospede;
+        this.dataReservaEntrada = dataReservaEntrada.Date;
+        this.dataReservaSaida = dataReservaSaida.Date;
     }
 
     public bool Pago 
@@ -50,34 +55,42 @@ public class Reserva
         set { dataCheckin = value; }
     }
 
-    public DateTime DataReservaSaida
+    public string getDataReservaEntrada()
     {
-        get { return dataReservaSaida; }
-        set { dataReservaSaida = value; }
+        return dataReservaEntrada.ToString("d");
     }
 
-    public DateTime DataReservaEntrada
+    public void setDataReservaEntrada(DateTime dataReservaEntrada)
     {
-        get { return dataReservaEntrada; }
-        set { dataReservaEntrada = value; }
+        this.dataReservaEntrada = dataReservaEntrada;
     }
 
-    public Hospede Hos
+    public string getDataReservaSaida()
+    {
+        return dataReservaSaida.ToString("d");
+    }
+
+    public void setDataReservaSaida(DateTime dataReservaSaida)
+    {
+        this.dataReservaSaida = dataReservaSaida;
+    }
+
+    public Hospede Hospede
     {
         get
         {
-            return hos;
+            return hospede;
         }
 
         set
         {
-            hos = value;
+            hospede = value;
         }
     }
 
     public string ImprimirReserva()
     {
-        return Hos.ImprimirHospede()+"DATA RESERVA ENTRADA: " + DataReservaEntrada + "DATA RESERVA SAÍDA: " + DataReservaSaida + "DATA CHECK-IN: " + DataCheckin + "DATA CHECK-OUT: " + DataCheckout + "VALOR TOTAL: " + ValorTotal + " PAGO: " + Pago;
+        return Hospede.ImprimirHospede()+"DATA RESERVA ENTRADA: " + getDataReservaEntrada() + "DATA RESERVA SAÍDA: " + getDataReservaSaida() + "DATA CHECK-IN: " + DataCheckin + "DATA CHECK-OUT: " + DataCheckout + "VALOR TOTAL: " + ValorTotal + " PAGO: " + Pago;
     }
 
 }

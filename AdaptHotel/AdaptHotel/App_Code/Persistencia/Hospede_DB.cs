@@ -6,29 +6,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 
-public class Perfil
+public class Hospede_DB
 {
-    private int cod;
-    private string tipo;
-
-    public Perfil (int cod, string tipo)
-    {
-        this.Cod = cod;
-        this.Tipo = tipo;
-    }
-
-    public int Cod
-    {
-        get { return cod; }
-        set { cod = value; }
-    }
-
-    public string Tipo
-    {
-        get { return tipo; }
-        set { tipo = value;}
-    }
-
     public static DataSet SelectAll()
     {
         DataSet ds = new DataSet();
@@ -36,7 +15,8 @@ public class Perfil
         SqlCommand objCommand;
         SqlDataAdapter objDataAdapter;
         objConnection = Mapped.Connection();
-        objCommand = Mapped.Command("select * from perfis;", objConnection);
+        objCommand = Mapped.Command("select p.nome, e.cidade, e.estado from enderecos e inner join pessoas p on e.cod_endereco = p.cod_endereco " +
+        "inner join hospedes h on h.cod_pessoa = p.cod_pessoa;", objConnection);
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
         objConnection.Close();

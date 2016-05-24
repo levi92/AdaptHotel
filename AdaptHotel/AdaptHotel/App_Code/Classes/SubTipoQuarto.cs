@@ -7,37 +7,37 @@ using System.Web;
 public class SubTipoQuarto
 {
     private string subTipo, descricao;
-    private int qndteAdultos, qndteCriancas;
-    private double valor;
-    // fazer associação
+    private int qtdAdultos, qtdCriancas;
+    private decimal valor;
+    private TipoQuarto tipoQuarto;
 
-	public SubTipoQuarto(string subTipo, string descricao, int qndteAdultos, int qndteCriancas, double valor)
+	public SubTipoQuarto(string subTipo, string descricao, int qtdAdultos, int qtdCriancas, decimal valor, TipoQuarto tipoQuarto)
 	{
         this.subTipo = subTipo;
         this.descricao = descricao;
-        this.qndteAdultos = qndteAdultos;
-        this.qndteCriancas = qndteCriancas;
+        this.qtdAdultos = qtdAdultos;
+        this.qtdCriancas = qtdCriancas;
         this.valor = valor;
+        this.TipoQuarto = tipoQuarto;
 	}
 
 
-    public double Valor
+    public decimal Valor
     {
         get { return valor; }
         set { valor = value; }
     }
 
-
-    public int QndteCriancas
+    public int QtdCriancas
     {
-        get { return qndteCriancas; }
-        set { qndteCriancas = value; }
+        get { return qtdCriancas; }
+        set { qtdCriancas = value; }
     }
 
-    public int QndteAdultos
+    public int QtdAdultos
     {
-        get { return qndteAdultos; }
-        set { qndteAdultos = value; }
+        get { return qtdAdultos; }
+        set { qtdAdultos = value; }
     }
 
     public string Descricao
@@ -52,9 +52,15 @@ public class SubTipoQuarto
         set { subTipo = value; }
     }
 
+    public TipoQuarto TipoQuarto
+    {
+        get { return tipoQuarto; }
+        set { tipoQuarto = value; }
+    }
+
     public string ImprimirSubTipoQuarto()
     {
-        return "SUB TIPO DE QUARTO: " + SubTipo + "DESCRICAO: " + Descricao + "QUANTIDADE ADULTOS: " + QndteAdultos + "QUANTIDADE CRIANÇAS: " + QndteCriancas+ "VALOR: "+Valor;
+        return "SUB TIPO DE QUARTO: " + SubTipo + "DESCRICAO: " + Descricao + "QUANTIDADE ADULTOS: " + qtdAdultos + "QUANTIDADE CRIANÇAS: " + qtdCriancas+ "VALOR: "+Valor;
     }
 
 }

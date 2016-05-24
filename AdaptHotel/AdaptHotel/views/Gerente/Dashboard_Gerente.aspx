@@ -16,19 +16,22 @@
                 <div class="panel panel-default" style="width: 100%; height: 60vh;">
                     <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size: 2em; color: #FFF;">Funcionários</a></div>
                     <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
-                        <%--<ul>
-                            <% foreach (var item in lista_perfis)
+                        <ul>
+                            <% foreach (var funcionario in lista_funcionarios)
                                 { %>
-                            <li><div id="standard_icon" style="width:5rem; height:5rem; float:left; background-image:url(../../fonts/ic_person_white_36dp_1x.png); background-repeat:no-repeat; background-position:center; background-color:#FF9100; border-radius: 50%; margin-right:5%;">
-                                    
+                            <li>
+                                <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                                 </div>
-                                <div><%= item.Cod %> </br>
-                                    <%= item.Tipo %> 
-                                <hr style="border-color: #FF9100;" /></div>
-                                
+                                <div>
+                                    <%= funcionario.Nome %> </br>
+                                    <%= funcionario.End.Cidade %> 
+                                    - <%= funcionario.End.Estado %>
+                                    <hr style="border-color: #FF9100;" />
+                                </div>
+
                             </li>
                             <% } %>
-                        </ul>--%>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -36,21 +39,22 @@
                 <div class="panel panel-default" style="width: 100%; height: 60vh;">
                     <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size: 2em; color: #FFF;">Hóspedes</a></div>
                     <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
-                        <%--<ul>
-                            <% foreach (var item in lista_pessoas)
+                        <ul>
+                            <% foreach (var hospede in lista_hospedes)
                                 { %>
                             <li>
                                 <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                                 </div>
                                 <div>
-                                    <%= item.Nome %> </br>
-                                    <%= item.Cidade %> 
-                                    / <%= item.Estado %>
+                                    <%= hospede.Nome %> </br>
+                                    <%= hospede.End.Cidade %> 
+                                    - <%= hospede.End.Estado %>
                                     <hr style="border-color: #FF9100;" />
                                 </div>
+
                             </li>
                             <% } %>
-                        </ul>--%>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -58,16 +62,22 @@
                 <div class="panel panel-default" style="width: 100%; height: 60vh;">
                     <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size: 2em; color: #FFF;">Últimas reservas</a></div>
                     <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
-                        <%--<ul>
-                            <% foreach (var item in lista_pessoas)
+                        <ul>
+                            <% foreach (var reserva in lista_reservas)
                                 { %>
-                            <li>Nome: <%= item.Nome %> </br>
-                                    Cidade: <%= item.Cidade %> 
-                                    / Estado: <%= item.Estado %>
-                                <hr style="border-color: #FF9100;" />
+                            <li>
+                                <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_event_available_black_48dp_1x.png); background-repeat: no-repeat; background-position: center; border-radius: 50%; margin-right: 5%;">
+                                </div>
+                                <div>
+                                    <%= reserva.Hospede.Nome %> </br>
+                                    <%= reserva.getDataReservaEntrada() %> 
+                                    - <%= reserva.getDataReservaSaida() %>
+                                    <hr style="border-color: #FF9100;" />
+                                </div>
+
                             </li>
                             <% } %>
-                        </ul>--%>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -76,16 +86,14 @@
                     <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size: 2em; color: #FFF;">Quartos</a></div>
                     <div class="panel-body" style="min-height: 84%; max-height: 84%; overflow-y: scroll;">
                         <div class="row">
-                            <%--<% int i = 0;
-                                foreach (var item in lista_pessoas)
-                                {
-                                    i++;%>
+                            <% foreach (var numeroQuarto in lista_numeroQuartos)
+                                { %>
                             <div class="col-xs-3 col-sm-2 col-md-1" style="">
-                                <div style="background-color: antiquewhite; width: 90%; height: 10vh; display: table; text-align: center;">
-                                    <a href="#" style="display:table-cell; vertical-align: middle; color: #000;"><%=i%></a>
+                                <div id="" style="background-color:<%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
+                                    <a href="#" style="display:table-cell; vertical-align: middle; color: #000;"><%= numeroQuarto.NumeroQuartoo%></a>
                                 </div>
                             </div>
-                            <% } %>--%>
+                            <% } %>
                         </div>
                     </div>
                 </div>

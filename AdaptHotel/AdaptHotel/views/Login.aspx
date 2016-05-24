@@ -29,11 +29,12 @@
                     <div id="logo" style="width:100%; height:33vh;">
                         <img src="../fonts/Aston-Horiz-Color-Large.png" style="width:inherit; height:inherit;"/>
                     </div>
-                    <asp:TextBox class="form-control" runat="server" placeholder="E-mail" Style="border:#FFF 1px solid; margin:0 auto; float:none; padding-left: 10%; background-image: url(../fonts/ic_email_black_18dp_1x.png); background-repeat: no-repeat; background-position: 4%;" TextMode="Email"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" class="form-control" runat="server" placeholder="E-mail" Style="border:#FFF 1px solid; margin:0 auto; float:none; padding-left: 10%; background-image: url(../fonts/ic_email_black_18dp_1x.png); background-repeat: no-repeat; background-position: 4%;" TextMode="Email"></asp:TextBox>
                     <br />
-                    <asp:TextBox class="form-control" runat="server" placeholder="Senha" Style="border:#FFF 1px solid; margin:0 auto; float:none; padding-left: 10%; background-image: url(../fonts/ic_lock_black_18dp_1x.png); background-repeat: no-repeat; background-position: 4%;" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtSenha" class="form-control" runat="server" placeholder="Senha" Style="border:#FFF 1px solid; margin:0 auto; float:none; padding-left: 10%; background-image: url(../fonts/ic_lock_black_18dp_1x.png); background-repeat: no-repeat; background-position: 4%;" TextMode="Password"></asp:TextBox>
                     <br />
-                    <asp:Button ID="btnEntrar" Text="Entrar" CssClass="btn btn-default" runat="server" Style="background-color:#FF9100; color:#FFF; width: 100%; margin:0 auto; float:none;" />
+                    <asp:Label ID="lblMsg" runat="server" Visible="false" ForeColor="Red"></asp:Label>
+                    <asp:Button ID="btnEntrar" Text="Entrar" CssClass="btn btn-default" runat="server" Style="background-color:#FF9100; color:#FFF; width: 100%; margin:0 auto; float:none;" OnClick="btnEntrar_Click"/>
                     <br />
                     <br />
                     <asp:LinkButton ID="lkbEsquecerSenha" CssClass="link" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>

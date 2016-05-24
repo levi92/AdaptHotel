@@ -6,54 +6,53 @@ using System.Web;
 
 public class NumeroQuarto
 {
+    private int codNumeroQuarto;
     private string numeroQuartoo;
-    private bool disponivel;
-    private SubTipoQuarto subTipoQuartoN;
+    public enum _status_quarto { disponivel, ocupado, manutencao, desabilitado };
+    private _status_quarto status_quarto;
+    private SubTipoQuarto subTipoQuarto;
+    private string cor;
 
-    
-
-    
-    public NumeroQuarto(string numeroQuartoo, bool disponivel, SubTipoQuarto subTipoQuartoN)
+    public NumeroQuarto(int codNumeroQuarto, string numeroQuartoo, string status_quarto, SubTipoQuarto subTipoQuarto, string cor)
     {
+        this.CodNumeroQuarto = codNumeroQuarto;
         this.numeroQuartoo = numeroQuartoo;
-        this.disponivel = disponivel;
-        this.subTipoQuartoN = subTipoQuartoN;
+        this.status_quarto = (_status_quarto)Enum.Parse(typeof(_status_quarto), status_quarto);
+        this.subTipoQuarto = subTipoQuarto;
+        this.cor = cor;
     }
 
-    public SubTipoQuarto SubTipoQuartoN
+    public SubTipoQuarto SubTipoQuarto
     {
-        get { return subTipoQuartoN; }
-        set { subTipoQuartoN = value; }
+        get { return subTipoQuarto; }
+        set { subTipoQuarto = value; }
     }
 
     public string NumeroQuartoo
     {
-        get
-        {
-            return numeroQuartoo;
-        }
-
-        set
-        {
-            numeroQuartoo = value;
-        }
+        get { return numeroQuartoo; }
+        set { numeroQuartoo = value; }
     }
 
-    public bool Disponivel
+    public string Cor
     {
-        get
-        {
-            return disponivel;
-        }
+        get { return cor; }
+        set { cor = value; }
+    }
 
-        set
-        {
-            disponivel = value;
-        }
-    }
-    public string ImprimirNumeroQuarto()
+    public int CodNumeroQuarto
     {
-        return "NUMERO DO QUARTO: " + NumeroQuartoo + "DISPONIBILIDADE: " + Disponivel + "SUB TIPO DE QUARTO: " + subTipoQuartoN;
+        get { return codNumeroQuarto; }
+        set { codNumeroQuarto = value; }
     }
-    
+
+    public string getStatusQuarto()
+    {
+        return status_quarto.ToString();
+    }
+
+    public void setTipo(string status_quarto)
+    {
+        this.status_quarto = (_status_quarto)Enum.Parse(typeof(_status_quarto), status_quarto);
+    }    
 }
