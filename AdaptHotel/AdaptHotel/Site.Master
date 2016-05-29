@@ -64,7 +64,7 @@
                         </ul>
                       </li>
                          
-                        <li><h4 style="font-size: 3rem; font-family: gearsOfPeace; text-align:left;">AdaptHotel</h4></li>
+                        <li class="dropdown user user-menu"><img src="../../images/logo.png" class="logo" /></li>
                     </ul>
                 </nav>
                 <!-- /top navigation -->
