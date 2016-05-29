@@ -1,12 +1,13 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body .container .left_col {
-    background-color: #EDEDED;
+    background-color: #FFF;
     padding: 0 !important;
     height: 100%;
     border-right: 1px solid #D9DEE4;
     position: fixed;
-    margin-top: 52px;
+    box-shadow: -2px 3px 17px -3px rgba(0,0,0,0.20);
+    z-index: 669;
 }
 
 body.nav-sm .container.body .right_col {
