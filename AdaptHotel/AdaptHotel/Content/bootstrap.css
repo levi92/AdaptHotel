@@ -3235,8 +3235,8 @@ input[type="button"].btn-block {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 94%;
+  right: 12px;
   z-index: 1000;
   display: none;
   float: left;
@@ -5446,9 +5446,9 @@ a.list-group-item:focus {
 }
 
 .panel-default > .panel-heading {
-  color: #333333;
-  background-color: #f5f5f5;
-  border-color: #dddddd;
+  color: #fff;
+  background-color: #1976D2;
+  border-color: #1976D2;
 }
 
 .panel-default > .panel-heading + .panel-collapse .panel-body {

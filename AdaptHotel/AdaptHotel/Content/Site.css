@@ -44,7 +44,7 @@ textarea {
 }
 
 .btn {
-    border-radius: 0;
+    border-radius: 3px;
 }
 
 .form-control:focus {

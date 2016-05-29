@@ -6,7 +6,7 @@
 
 
         <div class="panel panel-default" style="width: 100%;">
-            <div class="panel-heading" style="background-color: #2196F3; color: #FFF"><a href="#" style="font-size: 2em; color: #FFF;">Gerenciar Hospedes</a></div>
+            <div class="panel-heading"><a href="#" style="font-size: 2em; color: #FFF;">Gerenciar Hospedes</a></div>
             <div class="panel-body" style="padding: 0;">
 
                 <div class="col-md-4">
@@ -116,18 +116,12 @@
                     </div>
 
 
-                    <div class="col-md-12">
-
-                        <li class="dropdown user user-menu" style="width: 50px;float: right;font-size: 0px;">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                             <span class=" fa fa-bars" style="color: #428BCA;font-size: 30px;float: right;"></span>
-                            </a>
-                        <ul class="dropdown-menu" style="margin-left: -115px;margin-top: 9px;">
-                           <li><a href="#" class="btn btn-default btn-flat" data-toggle="modal" data-target="#myModal">Editar</a></li>
-                           <li><a href="#" class="btn btn-default btn-flat" data-toggle="modal" data-target="#myModal1">Adicionar</a>            
-                        </ul>
-                      </li>
-
+                    <div class="col-md-12" style="text-align:right">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span class=" fa fa-bars" style="font-size: 30px;"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#" data-toggle="modal" data-target="#myModal">Editar</a></li>
+                           <li><a href="#" data-toggle="modal" data-target="#myModal1">Adicionar</a>       
+                        </ul>  
                     </div>
 
                 </div>
