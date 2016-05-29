@@ -92,7 +92,7 @@
             </ul>
 
         </div>
-        <div class="col-md-1 col-sm-1 col-xs-1" style="font-size: 16.7px; text-align: center; border: 1px solid #DDD; border-right: 0;">
+        <div class="col-md-1 col-sm-1 col-xs-1" style="font-size: 16.7px; text-align: center; border: 1px solid #DDD; border-right: 0;border-bottom:0">
             <p>#</p>
             <p>A</p>
             <p>B</p>

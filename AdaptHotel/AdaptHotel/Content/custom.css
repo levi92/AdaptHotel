@@ -1033,7 +1033,6 @@ a:focus {
 .nav.side-menu> li {
     position: relative;
     display: block;
-    border-bottom: 1px solid #D9DEE4;
 }
 
 .dropdown .fa {
@@ -1046,7 +1045,7 @@ a:focus {
 }
 
 .nav.side-menu> li > a:hover {
-    color: #F2F5F7 !important;
+    background-color: #F2F5F7 !important;
 }
 
 .nav.side-menu>li>a:hover,

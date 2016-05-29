@@ -77,7 +77,7 @@
                         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                             <div class="menu_section">
-                                <ul class="nav side-menu">
+                                <ul class="nav side-menu" style="margin-top: 7px;">
 
                                     <li><a href="../../views/Gerente/Dashboard_Gerente.aspx"><i class="fa fa-user"></i>Hospede</a></li>
                                     <li><a href="reserva"><i class="fa fa-pencil-square-o"></i>Reserva</a></li>
