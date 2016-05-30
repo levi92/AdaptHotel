@@ -8,7 +8,7 @@
 
 
     <div class="col-md-4" style="border-right: 1px solid #DDD;padding-right: 0;padding-bottom: 0;background-color: white;box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.20);">
-        <input type="text" placeholder="BUSCAR" style="max-width: none; width: 93%; padding: 9px; border: none; border-bottom: 1px solid #ccc; margin: 23px; margin-bottom: 23px; margin-top: 10px; margin-left: 3%; float: left; font-size: 16px;">
+        <input type="text" placeholder="BUSCAR" class="buscar">
         <div class="col-md-11 col-sm-11 col-xs-11" style="font-size: 14.7px;overflow-y: auto;height: 777px;">
             <ul style="width: 94%; margin-left: 2%;">
 

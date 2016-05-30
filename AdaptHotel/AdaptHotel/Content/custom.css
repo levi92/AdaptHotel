@@ -2291,6 +2291,24 @@ span.right {
     background: #40A0FF;
 }
 
+.sshadow {
+    border-right: 1px solid #DDD;padding: 0;
+    background-color: white;box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.20);
+    margin: 10px;
+}
+.buscar {
+    max-width: none; width: 93%; padding: 9px; border: none; border-bottom: 1px solid #ccc; margin: 23px; margin-bottom: 23px; margin-top: 10px; margin-left: 3%; float: left; font-size: 16px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 174px;
+}
+
+.card-block{
+    padding: 10px;
+}
+
 .tile_count {
     margin-bottom: 20px;
     margin-top: 20px;
