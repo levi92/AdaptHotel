@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace AdaptHotel.views.Gerente
 {
-    public partial class Adicionar_Hospede : System.Web.UI.Page
+    public partial class Gerenciar_Funcionario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

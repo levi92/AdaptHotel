@@ -1,6 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Gerenciar_Hospede.aspx.cs" Inherits="AdaptHotel.views.Gerente.Gerenciar_Hospede" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Gerenciar_Funcionario.aspx.cs" Inherits="AdaptHotel.views.Gerente.Gerenciar_Funcionario" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+
+
 
 
 
@@ -12,7 +15,7 @@
                 <li>
                     <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                     </div>
-                    <div>Abner Santos
+                    <div>Amanda Pereira
                         <br>
                         Guaratingueta / SP<hr style="border-color: #FF9100;">
                     </div>
@@ -21,7 +24,7 @@
                 <li>
                     <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                     </div>
-                    <div>Alex Silveira
+                    <div>Arthur Benedito
                         <br>
                         Guaratingueta / SP<hr style="border-color: #FF9100;">
                     </div>
@@ -29,7 +32,7 @@
                 <li>
                     <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                     </div>
-                    <div>Bruna Leticia
+                    <div>Bruno da Silva
                         <br>
                         Aparecida / SP<hr style="border-color: #FF9100;">
                     </div>
@@ -37,7 +40,7 @@
                 <li>
                     <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                     </div>
-                    <div>Carol Shilles
+                    <div>Camila Siqueira
                         <br>
                         Guaratingueta / SP<hr style="border-color: #FF9100;">
                     </div>
@@ -45,7 +48,7 @@
                 <li>
                     <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                     </div>
-                    <div>Damiani Henrique
+                    <div>Daniel Mattos
                         <br>
                         Lorena / SP<hr style="border-color: #FF9100;">
                     </div>
@@ -53,7 +56,7 @@
                 <li>
                     <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                     </div>
-                    <div>Gabriel Mattos
+                    <div>Gabrielle Ferreira
                         <br>
                         Guaratingueta / SP<hr style="border-color: #FF9100;">
                     </div>
@@ -69,7 +72,7 @@
                 <li>
                     <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                     </div>
-                    <div>Janaina Barbosa
+                    <div>Janice Gorre
                         <br>
                         Guaratingueta / SP<hr style="border-color: #FF9100;">
                     </div>
@@ -77,7 +80,7 @@
                 <li>
                     <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
                     </div>
-                    <div>Larissa Ferrari
+                    <div>Loraine Silva
                         <br>
                         Cruzeiro / SP<hr style="border-color: #FF9100;">
                     </div>
@@ -131,29 +134,29 @@
                 <div class="col-md-6">
 
                     <label>Nome:</label>
-                    Carol Shilles Abulquerque
+                    Arthur Benedito Royol Pereira 
                     <br />
 
                     <label>Sexo:</label>
-                    Feminino
+                    Masculino
                     <br />
 
                     <label>Telefone:</label>
-                    (11) 985642345 
+                    (11) 976543091 
                     <br />
                 </div>
 
                 <div class="col-md-6">
                     <label>Data de Nascimento:</label>
-                    30/02/1982
+                    25/09/1976
                     <br />
 
                     <label>CPF:</label>
-                    641.273.594-18
+                    543.678.897-98
                     <br />
 
                     <label>E-mail:</label>
-                    carol_shilles@gmail.com.br
+                    arthur@royal.com.br
                     <br />
 
                 </div>
@@ -166,15 +169,15 @@
                 <div class="col-md-6">
 
                     <label>Endereço:</label>
-                    R. Satirnado
+                    R. Primavera, 271
                     <br />
 
                     <label>Bairro:</label>
-                    Vila das Loruncias
+                    Vila das Comélias
                     <br />
 
                     <label>CEP:</label>
-                    12.765 - 120
+                    12.505 - 230
                     <br />
 
                 </div>
@@ -182,44 +185,43 @@
                  <div class="col-md-6">
 
                     <label>Cidade:</label>
-                    São José dos Campos
+                    Birigui
                     <br />
 
                     <label>UF:</label>
                     SP<br />
 
                     <label>Nº:</label>
-                    52<br />
+                    28<br />
 
                 </div>
             </div>
         </div>
 
         <div class="panel panel-default" style="width: 100%;">
-            <div class="panel-heading"><a href="#" style="font-size: 2em; color: #FFF;">Dados do Hospede</a></div>
+            <div class="panel-heading"><a href="#" style="font-size: 2em; color: #FFF;">Dados Profissionais</a></div>
             <div class="panel-body" style="padding: 0;">
                 <div class="col-md-6">
 
-                    <label>Placa do Carro:</label>
-                    BQN-1859
+                    <label>Cargo:</label>
+                    Recepcionista
                     <br />
+
+                    <label>Data de Admissão:</label>
+                    20/05/2012
+                    <br />
+
                 </div>
 
                  <div class="col-md-6">
 
-                    <label>Cidade de Origem:</label>
-                    São Paulo
+                    <label>Salário:</label>
+                    R$ 2.800,00
                     <br />
-                </div>
-            </div>
-        </div>
 
-        <div class="panel panel-default" style="width: 100%;">
-            <div class="panel-heading"><a href="#" style="font-size: 2em; color: #FFF;">Ultimas Reservas</a></div>
-            <div class="panel-body" style="padding: 0;">
-            <div class="col-md-12">
+                    <label>Nº da Conta:</label>
+                    12.55502-X<br />
 
-                    
                 </div>
             </div>
         </div>
@@ -248,7 +250,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Alterar Hospede</h4>
+                    <h4 class="modal-title" id="myModalLabel">Alterar Funcionário</h4>
                 </div>
                 <div class="modal-body" style="padding: 0px;">
 
@@ -313,18 +315,26 @@
 
 
                         <div class="col-md-12">
-                            <h3>Dados do Hospede</h3>
+                            <h3>Dados Profissionais</h3>
                         </div>
 
-                       
                         <div class="col-md-6">
-                            <label>Placa do Carro</label>
-                            <input type="text" class="form-control" value="BQN-1859 " />
+                            <label>Cargo</label>
+                            <select class="form-control">
+                                <option value="Recepcionista">Recepcionista</option>
+                            </select>
                         </div>
-                      
                         <div class="col-md-6">
-                            <label>Cidade de Origem</label>
-                            <input type="text" class="form-control" value="São Paulo" />
+                            <label>Salário</label>
+                            <input type="text" class="form-control" value="R$ 2.800,00 " />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Data de Admissão</label>
+                            <input type="text" class="form-control" value="20/05/2012 " />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Nº da Conta</label>
+                            <input type="text" class="form-control" value="12.55502-X" />
                         </div>
                     </div>
 
@@ -344,7 +354,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel1">Adicionar Hospede</h4>
+                    <h4 class="modal-title" id="myModalLabel1">Adicionar Funcionário</h4>
                 </div>
                 <div class="modal-body" style="padding: 0px;">
 
@@ -408,16 +418,25 @@
                         </div>
 
                          <div class="col-md-12">
-                            <h3>Dados do Hospede</h3>
+                            <h3>Dados Profissionais</h3>
                         </div>
 
-                         <div class="col-md-6">
-                            <label>Placa do Carro</label>
+                        <div class="col-md-6">
+                            <label>Cargo</label>
+                            <select class="form-control">
+                                <option value="Recepcionista">Recepcionista</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Salário</label>
                             <input type="text" class="form-control" value="" />
                         </div>
-                      
                         <div class="col-md-6">
-                            <label>Cidade de Origem</label>
+                            <label>Data de Admissão</label>
+                            <input type="text" class="form-control" value="" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Nº da Conta</label>
                             <input type="text" class="form-control" value="" />
                         </div>
                     </div>
@@ -434,4 +453,3 @@
 
 
 </asp:Content>
-
