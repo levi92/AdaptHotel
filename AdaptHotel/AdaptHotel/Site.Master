@@ -52,17 +52,6 @@
                     </div>                   
                   <ul class="nav navbar-nav navbar-right">
                         
-                      
-                      <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                             <span class=" fa fa-cog"></span>
-                            </a>
-                        <ul class="dropdown-menu">
-                           <li><a href="../../user/dados.php" class="btn btn-default btn-flat">Opção</a></li>
-                           <li><a href="../logout.php" class="btn btn-default btn-flat">About</a>      
-                           <li><a href="../logout.php" class="btn btn-default btn-flat">Preferência</a>      
-                        </ul>
-                      </li>
                          
                         <li class="dropdown user user-menu"><img src="../../images/logo.png" class="logo" /></li>
                     </ul>
@@ -73,23 +62,48 @@
                 <div class="col-md-2 col-sm-0 col-xs-0 left_col">
                     <div class="col-md-2 left_col">
 
+                        <div class="profile">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div>
+
                         <!-- sidebar menu -->
                         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                             <div class="menu_section">
-                                <ul class="nav side-menu" style="margin-top: 7px;">
+                                <ul class="nav side-menu" style="margin-top: 70px;">
 
-                                    <li><a href="../../views/Gerente/Dashboard_Gerente.aspx"><i class="fa fa-user"></i>Hospede</a></li>
-                                    <li><a href="reserva"><i class="fa fa-pencil-square-o"></i>Reserva</a></li>
-                                    <li><a href="reserva"><i class="fa fa-money"></i>Pagamento</a></li>
-                                    <li><a href="reserva"><i class="fa fa-users"></i>Funcionário</a></li>
-                                    <li><a href="reserva"><i class="fa fa-building"></i>Quartos</a></li>
+                                    <li><a href="../../views/Gerente/Dashboard_Gerente.aspx"><i class="fa fa-home"></i>Dashboard</a></li>
+                                    <li><a href="../../views/Gerente/Gerenciar_Reservas.aspx"><i class="fa fa-edit"></i>Reservas</a></li>
+                                    <li><a href="../../views/Gerente/Gerenciar_Quartos.aspx"><i class="fa fa-building-o"></i>Quartos</a></li>
+                                    <li><a href="../../views/Gerente/Gerenciar_Hospede.aspx"><i class="fa fa-user"></i>Hóspedes</a></li>
+                                    <li><a href="../../views/Gerente/Gerenciar_Funcionario.aspx"><i class="fa fa-users"></i>Funcionarios</a></li>
+                                    <li><a href="../../views/Gerente/Estatisticas.aspx"><i class="fa fa-bar-chart-o"></i>Estatisticas</a></li>
 
                                 </ul>
                             </div>
                         </div>
                         <!-- /sidebar menu -->
 
+                        <div class="col-md-2 col-sm-0 col-xs-0 sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
 
 
                     </div>

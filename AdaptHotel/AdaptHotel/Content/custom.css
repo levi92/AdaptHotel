@@ -513,7 +513,7 @@ body.nav-md .container.body .right_col {
 .nav_title {
     width: 230px;
     float: left;
-    background: #2A3F54;
+    background: #1976D2;
     border-radius: 0;
     height: 57px;
 }
@@ -1112,10 +1112,10 @@ li.current-page {
     color: #ff0000;
     text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5b6479), color-stop(100%, #4c5566)), #686e78;
-    background: -webkit-linear-gradient(#334556, #2C4257), #2A3F54;
-    background: -moz-linear-gradient(#334556, #2C4257), #2A3F54;
-    background: -o-linear-gradient(#334556, #2C4257), #2A3F54;
-    background: linear-gradient(#334556, #2C4257), #2A3F54;
+    background: -webkit-linear-gradient(#334556, #2C4257), #1976D2;
+    background: -moz-linear-gradient(#334556, #2C4257), #1976D2;
+    background: -o-linear-gradient(#334556, #2C4257), #1976D2;
+    background: linear-gradient(#334556, #2C4257), #1976D2;
     -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
     -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
     box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
@@ -2271,11 +2271,10 @@ span.right {
     bottom: 0px;
     clear: both;
     display: block;
-    padding: 5px 0 0 0;
+    padding: 0px;
     position: fixed;
-    width: 230px;
     z-index: 1000;
-    background: #2A3F54;
+    background: #1976D2;
 }
 
 .sidebar-footer a {
@@ -2285,11 +2284,11 @@ span.right {
     font-size: 17px;
     display: block;
     float: left;
-    background: #172D44;
+    background: #1976D2;
 }
 
 .sidebar-footer a:hover {
-    background: #425567;
+    background: #40A0FF;
 }
 
 .tile_count {
@@ -6124,7 +6123,7 @@ a.hiddenanchor{
 /********* /login ***************/
 /********** sign in ***************************/
 .login_box{ padding:20px; margin: auto;}
-a{ text-decoration: blink !important;    color: #73879C; }
+a{ text-decoration: blink !important;    color: #fff; }
 a:hover{ text-decoration: blink; }
 .left { float:left; }
 .alignleft { float: left; margin-right: 15px; }
