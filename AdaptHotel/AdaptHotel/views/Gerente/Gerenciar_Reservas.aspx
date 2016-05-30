@@ -18,6 +18,19 @@
             </select>
         </div>
     </div>
+
+    <div class="col-md-12">
+         <div class="row">
+            <div class="col s12" style="width: 100%;">
+              <ul class="tabs">    
+                <li class="tab col s3" style="border-bottom: 1px solid #1976D2;font-weight: bold;"><a href="#test1">Em Andamento</a></li>
+                <li class="tab col s3"><a class="active" href="#test2">Cancelado</a></li>
+                <li class="tab col s3"><a href="#test3">No How</a></li>
+                <li class="tab col s3"><a href="#test4">Reservado</a></li>
+              </ul>
+            </div> 
+         </div>
+    </div>
             
      <div class="col-md-12">
         <div class="col-md-3">

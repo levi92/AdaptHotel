@@ -19,6 +19,19 @@
         </div>
     </div>
 
+    <div class="col-md-12">
+         <div class="row">
+            <div class="col s12" style="width: 100%;">
+              <ul class="tabs">        
+                <li class="tab col s3" style="border-bottom: 1px solid #1976D2;font-weight: bold;"><a href="#test1">Disponível</a></li>
+                <li class="tab col s3"><a class="active" href="#test2">Ocupado</a></li>
+                <li class="tab col s3"><a href="#test3">Manutenção</a></li>
+                <li class="tab col s3"><a href="#test4">Desativado</a></li>
+              </ul>
+            </div> 
+         </div>
+    </div>
+
 
     <div class="col-md-12">
         <div class="col-md-3">
