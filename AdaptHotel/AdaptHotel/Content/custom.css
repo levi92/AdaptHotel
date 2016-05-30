@@ -2315,6 +2315,13 @@ span.right {
     right: auto;
 }
 
+.row .col.s4 {
+    width: 20%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
 .tabs .tab {
     -webkit-box-flex: 1;
     flex-grow: 1;
