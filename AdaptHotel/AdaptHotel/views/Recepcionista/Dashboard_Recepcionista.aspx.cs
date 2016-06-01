@@ -21,7 +21,7 @@ namespace AdaptHotel.views.Recepcionista
 
         public void CarregarDashboard()
         {
-            DataSet dataset_hospede = Hospede_DB.SelectAll();
+            DataSet dataset_hospede = Hospede_DB.Select10Ultimos();
             foreach (DataRow row in dataset_hospede.Tables[0].Rows)
             {
                 var values = row.ItemArray;
@@ -34,7 +34,7 @@ namespace AdaptHotel.views.Recepcionista
                 lista_hospedes.Add(hospede);
             }
 
-            DataSet dataset_reserva = Reserva_DB.SelectAll();
+            DataSet dataset_reserva = Reserva_DB.Select10Ultimos();
             foreach (DataRow row in dataset_reserva.Tables[0].Rows)
             {
                 var values = row.ItemArray;

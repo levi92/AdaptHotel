@@ -10,7 +10,6 @@ public class Reserva
     private bool pago; 
     private double valorTotal;
     private Hospede hospede;
-    // fazer associação
 
 
     public Reserva(DateTime dataReservaEntrada, DateTime dataReservaSaida, DateTime dataCheckin, DateTime dataCheckout, double valorTotal, bool pago, Hospede hospede)

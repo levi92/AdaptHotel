@@ -1,10 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master"CodeBehind="Gerenciar_Reservas.aspx.cs" Inherits="AdaptHotel.views.Gerente.Gerenciar_Reservas" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-
-
-
     <div class="col-md-12">
         <div class="col-md-6">
             <input type="text" placeholder="BUSCAR" class="buscar" style="margin-left: 0">
@@ -18,23 +14,19 @@
             </select>
         </div>
     </div>
-
     <div class="col-md-12">
          <div class="row">
             <div class="col s12" style="width: 100%;">
               <ul class="tabs">   
-                   
-                <li class="tab col s4" style="border-bottom: 1px solid #1976D2;font-weight: bold;"><a href="#test1">Em Andamento</a></li>
+                <li class="tab col s4" style="border-bottom: 1px solid #1976D2;font-weight: bold;"><a href="#test4">Agendada</a></li>
+                <li class="tab col s4" ><a href="#test1">Em Andamento</a></li>
                 <li class="tab col s4"><a href="#test4">Finalizada</a></li>
                 <li class="tab col s4"><a class="active" href="#test2">Cancelado</a></li>
-                <li class="tab col s4"><a href="#test3">No How</a></li>
-                <li class="tab col s4"><a href="#test4">Agendada</a></li>
-                
+                <li class="tab col s4"><a href="#test3">No Show</a></li>        
               </ul>
             </div> 
          </div>
-    </div>
-            
+    </div>           
      <div class="col-md-12">
         <div class="col-md-3">
             <div class="sshadow card">
@@ -46,7 +38,6 @@
                 </div>
             </div>
         </div>
-
          <div class="col-md-3">
             <div class="sshadow card">
                 <img class="card-img-top" src="../../images/quarto-1.jpg" alt="Reserva">
@@ -58,8 +49,4 @@
             </div>
         </div>
      </div>
-        
-  
-
-
 </asp:Content>
