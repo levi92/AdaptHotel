@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 public class Reserva_DB
 {
-    public static DataSet SelectAll()
+    public static DataSet Select10Ultimos()
     {
         DataSet ds = new DataSet();
         SqlConnection objConnection;

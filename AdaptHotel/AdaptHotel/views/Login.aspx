@@ -15,14 +15,12 @@
 
 </head>
 <body>
-
     <form id="form1" runat="server">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #2196F3; color: #FFF;">
             <div class="container">
                 <h4 style="font-size: 3rem; font-family: gearsOfPeace; text-align:right;">Adapt Hotel</h4>
             </div>
         </nav>
-
         <div class="container">
             <div class="row">
                 <div class="col-xs-10 col-sm-8 col-md-4" style="margin:0 auto; float:none; text-align:center;">

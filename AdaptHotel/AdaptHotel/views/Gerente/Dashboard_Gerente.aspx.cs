@@ -22,7 +22,7 @@ namespace AdaptHotel.views.Gerente
 
         public void CarregarDashboard()
         {
-            DataSet dataset_funcionario = Funcionario_DB.SelectAll();
+            DataSet dataset_funcionario = Funcionario_DB.Select10Ultimos();
             foreach (DataRow row in dataset_funcionario.Tables[0].Rows)
             {
                 var values = row.ItemArray;
@@ -35,7 +35,7 @@ namespace AdaptHotel.views.Gerente
                 lista_funcionarios.Add(funcionario);
             }
 
-            DataSet dataset_hospede = Hospede_DB.SelectAll();
+            DataSet dataset_hospede = Hospede_DB.Select10Ultimos();
             foreach (DataRow row in dataset_hospede.Tables[0].Rows)
             {
                 var values = row.ItemArray;
@@ -48,7 +48,7 @@ namespace AdaptHotel.views.Gerente
                 lista_hospedes.Add(hospede);
             }
 
-            DataSet dataset_reserva = Reserva_DB.SelectAll();
+            DataSet dataset_reserva = Reserva_DB.Select10Ultimos();
             foreach (DataRow row in dataset_reserva.Tables[0].Rows)
             {
                 var values = row.ItemArray;
@@ -73,19 +73,19 @@ namespace AdaptHotel.views.Gerente
 
                 if (values[8].ToString() == "disponivel")
                 {
-                    cor = "#4CAF50";
+                    cor = "#4CAF50"; // verde
                 }
                 else if (values[8].ToString() == "ocupado")
                 {
-                    cor = "#F44336";
+                    cor = "#F44336"; // vermelho
                 }
                 else if (values[8].ToString() == "manutencao")
                 {
-                    cor = "#FFC107";
+                    cor = "#FFC107"; // amarelo
                 }
                 else if (values[8].ToString() == "desabilitado")
                 {
-                    cor = "#9E9E9E";
+                    cor = "#9E9E9E"; // cinza
                 }
 
                 NumeroQuarto numeroQuarto = new NumeroQuarto(Convert.ToInt32(values[6]), values[7].ToString(),
