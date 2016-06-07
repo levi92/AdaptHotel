@@ -7,14 +7,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
 
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="Content/materialize.css" media="screen,projection" />
+
 
 </head>
 <body>
@@ -40,91 +37,46 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="container body">
 
 
-            <div class="main_container">
+        <!-- top navigation -->
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="right brand-logo">Logo</a>
+             
 
-                <!-- top navigation -->
-                <nav class="navbar navbar-static-top" role="navigation">
-                    <div class="nav toggle">
-                        <a id="menu_toggle"><i class="fa fa-bars" style="color:white"></i></a>    
-                    </div>                   
-                  <ul class="nav navbar-nav navbar-right">
-                        
-                         
-                        <li class="dropdown user user-menu"><img src="../../images/logo.png" class="logo" /></li>
-                    </ul>
-                </nav>
-                <!-- /top navigation -->
-
-
-                <div class="col-md-2 col-sm-0 col-xs-0 left_col">
-                    <div class="col-md-2 left_col">
-
-                      
-
-                        <!-- sidebar menu -->
-                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
-                            <div class="menu_section">
-                                <ul class="nav side-menu" style="margin-top: 70px;">
-
-                                    <li><a href="../../views/Gerente/Dashboard_Gerente.aspx"><i class="fa fa-home"></i>Dashboard</a></li>
-                                    <li><a href="../../views/Gerente/Gerenciar_Reservas.aspx"><i class="fa fa-edit"></i>Reservas</a></li>
-                                    <li><a href="../../views/Gerente/Gerenciar_Quartos.aspx"><i class="fa fa-building-o"></i>Quartos</a></li>
-                                    <li><a href="../../views/Gerente/Gerenciar_Hospede.aspx"><i class="fa fa-user"></i>Hóspedes</a></li>
-                                    <li><a href="../../views/Gerente/Gerenciar_Funcionario.aspx"><i class="fa fa-users"></i>Funcionarios</a></li>
-                                    <li><a href="../../views/Gerente/Estatisticas.aspx"><i class="fa fa-bar-chart-o"></i>Estatisticas</a></li>
-
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- /sidebar menu -->
-
-                        <div class="col-md-2 col-sm-0 col-xs-0 sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="../../views/Gerente/Dashboard_Gerente.aspx">Dashboard</a></li>
+                    <li><a href="../../views/Gerente/Gerenciar_Reservas.aspx">Reservas</a></li>
+                    <li><a href="../../views/Gerente/Gerenciar_Quartos.aspx">Quartos</a></li>
+                    <li><a href="../../views/Gerente/Gerenciar_Hospede.aspx">Hóspedes</a></li>
+                    <li><a href="../../views/Gerente/Gerenciar_Funcionario.aspx">Funcionarios</a></li>
+                    <li><a href="../../views/Gerente/Estatisticas.aspx">Estatisticas</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
+        </nav>
+        <!-- /top navigation -->
 
 
-                    </div>
-                </div>
-
-
-
-
-
-                <!-- page content -->
-                <div class="col-md-10 col-sm-12 col-xs-12 right_col" role="main">
-                    <div class="">
-
-
-                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-
-
-                </div>
-                <!-- /page content -->
-
+        <!-- page content -->
+        <div class="row">
+            <div class="col s12" role="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
-
         </div>
+        <!-- /page content -->
 
-
+        <script>
+            $(document).ready(function () { $(".button-collapse").sideNav(); })
+        </script>
 
 
     </form>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../js/materialize.min.js"></script>
+
 </body>
 </html>
