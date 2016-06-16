@@ -5,40 +5,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
-
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
+    <link href="../Content/materialize.min.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #2196F3; color: #FFF;">
-            <div class="container">
-                <h4 style="font-size: 3rem; font-family: gearsOfPeace; text-align:right;">Adapt Hotel</h4>
-            </div>
-        </nav>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="right brand-logo" style="font-family: gearsOfPeace;">AdaptHotel</a>
+        </div>
+    </nav>
+    <form id="form1" class="col s12" runat="server">
         <div class="container">
             <div class="row">
-                <div class="col-xs-10 col-sm-8 col-md-4" style="margin:0 auto; float:none; text-align:center;">
-                    <div id="logo" style="width:100%; height:33vh;">
-                        <img src="../fonts/Aston-Horiz-Color-Large.png" style="width:inherit; height:inherit;"/>
+                <div class="col s10 m8 l4" style="margin: 0 auto; float: none;">
+                    <div id="logo" class="col s12 top-spacing-form" style="width: 100%; height: 33vh;">
+                        <img src="../fonts/Aston-Horiz-Color-Large.png" style="width: inherit; height: inherit;" />
                     </div>
-                    <asp:TextBox ID="txtEmail" class="form-control" runat="server" placeholder="E-mail" Style="border:#FFF 1px solid; margin:0 auto; float:none; padding-left: 10%; background-image: url(../fonts/ic_email_black_18dp_1x.png); background-repeat: no-repeat; background-position: 4%;" TextMode="Email"></asp:TextBox>
-                    <br />
-                    <asp:TextBox ID="txtSenha" class="form-control" runat="server" placeholder="Senha" Style="border:#FFF 1px solid; margin:0 auto; float:none; padding-left: 10%; background-image: url(../fonts/ic_lock_black_18dp_1x.png); background-repeat: no-repeat; background-position: 4%;" TextMode="Password"></asp:TextBox>
-                    <br />
-                    <asp:Label ID="lblMsg" runat="server" Visible="false" ForeColor="Red"></asp:Label>
-                    <asp:Button ID="btnEntrar" Text="Entrar" CssClass="btn btn-default" runat="server" Style="background-color:#FF9100; color:#FFF; width: 100%; margin:0 auto; float:none;" OnClick="btnEntrar_Click"/>
-                    <br />
-                    <br />
-                    <asp:LinkButton ID="lkbEsquecerSenha" CssClass="link" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
+                    <div class="top-spacing-form input-field col s12">         
+                        <i class="material-icons prefix">email</i>            
+                        <input id="txtEmail1" type="email" class="validate" runat="server" />
+                        <label for="txtEmail1">Email</label>
+                    </div>
+                    <div class="input-field col s12">    
+                        <i class="material-icons prefix">lock</i>                   
+                        <input id="txtSenha1" type="password" class="validate" runat="server" />
+                        <label for="txtSenha1">Senha</label>
+                    </div>
+                    <div class="col s12 center-align top-spacing-form">
+                        <asp:Label ID="lblMsg" runat="server" Visible="false" ForeColor="Red"></asp:Label>
+                    </div>
+                    <div class="col s12">
+                        <button id="btnEntrar" style="width:100%;" class="btn orange waves-effect waves-light" runat="server" onserverclick="btnEntrar_Click" >Entrar</button>
+                    </div>
+                    <div class="col s12 center-align top-spacing-form">
+                        <asp:LinkButton ID="lkbEsquecerSenha" CssClass="link" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
+                    </div>
                 </div>
             </div>
         </div>
     </form>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../js/materialize.min.js"></script>
 </body>
 </html>

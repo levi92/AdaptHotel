@@ -16,8 +16,8 @@ namespace AdaptHotel.views
 
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
-            string senha = txtSenha.Text;
+            string email = txtEmail1.Value.ToString();
+            string senha = txtSenha1.Value.ToString();
 
             if (String.IsNullOrEmpty(email) || String.IsNullOrEmpty(senha))
             {
