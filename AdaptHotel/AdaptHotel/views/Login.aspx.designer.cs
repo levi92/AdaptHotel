@@ -22,22 +22,22 @@ namespace AdaptHotel.views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtEmail control.
+        /// txtEmail1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail1;
         
         /// <summary>
-        /// txtSenha control.
+        /// txtSenha1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSenha;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtSenha1;
         
         /// <summary>
         /// lblMsg control.
@@ -55,7 +55,7 @@ namespace AdaptHotel.views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEntrar;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnEntrar;
         
         /// <summary>
         /// lkbEsquecerSenha control.

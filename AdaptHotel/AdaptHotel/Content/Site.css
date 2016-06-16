@@ -11,11 +11,11 @@ body {
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
 
 
 /* Responsive: Portrait tablets and up */
@@ -35,11 +35,11 @@ textarea {
 }
 
 .form-control {
-    -webkit-box-shadow:none;
-    box-shadow:none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
-.btn-default:hover, .btn-default, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+/*.btn-default:hover, .btn-default, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
     border-color: #FF9100;
 }
 
@@ -53,21 +53,61 @@ textarea {
 
 .btn-default:hover{
     background-color:rgba(255,145,0,0.8) !important;
+}*/
+
+.link:hover {
+    color: rgba(255,145,0,0.8) !important;
+    text-decoration: underline !important;
 }
 
-.link:hover{
-    color:rgba(255,145,0,0.8) !important;
-    text-decoration:underline !important;
-}
-
-.div_ratio{
-    display:block;
-    float:left;
-    width:33%;
-    height:auto;
-    position:relative;
+.div_ratio {
+    display: block;
+    float: left;
+    width: 33%;
+    height: auto;
+    position: relative;
     overflow: hidden;
-    padding:34.37% 0 0 0;
+    padding: 34.37% 0 0 0;
 }
 
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.top-spacing-form {
+    margin-top: 5%;
+}
+
+.top-spacing-div {
+    margin-top: 20%;
+}
+
+/* label color */
+.input-field label {
+    color: #000;
+}
+/* label focus color */
+.input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
+    color: orange;
+}
+/* label underline focus color */
+.input-field input[type=email]:focus, .input-field input[type=password]:focus {
+    border-bottom: 1px solid orange;
+    box-shadow: 0 1px 0 0 orange;
+}
+/* valid color */
+.input-field input[type=email].valid, .input-field input[type=password].valid {
+    color: black;
+    border-bottom: 1px solid green;
+    box-shadow: 0 1px 0 0 green;
+}
+/* invalid color */
+.input-field input[type=email].invalid, .input-field input[type=password].invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+    color: #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+     color: orange;
+}
