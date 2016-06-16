@@ -38,11 +38,14 @@
                     <img class="activator" src="../../images/quarto-1.jpg">
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Nicolas Santos<i class="material-icons right">more_vert</i></span>
+                    <span class="card-title activator grey-text text-darken-4">Nicolas Santos<i class="material-icons right">...</i></span>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">Fechar</i></span>
+                    <p>Reserva : 052235</p>
+                    <p>Cliente : Nicolas Santos</p>
+                    <p>Quarto  : Deluxe Imperial Plus</p>
+                    <p>Status  : Em Andamento</p>
                 </div>
             </div>
         </div>
@@ -53,11 +56,14 @@
                     <img class="activator" src="../../images/quarto-2.jpg">
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Levi Monteiro<i class="material-icons right">more_vert</i></span>
+                    <span class="card-title activator grey-text text-darken-4">Levi Monteiro<i class="material-icons right">...</i></span>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">Fechar</i></span>
+                    <p>Reserva : 068224</p>
+                    <p>Cliente : Levi Monteiro</p>
+                    <p>Quarto  : Quarto Simples</p>
+                    <p>Status  : Em Andamento</p>
                 </div>
             </div>
         </div>
