@@ -39,7 +39,7 @@
 
 
         <!-- top navigation -->
-        <nav class="light-blue lighten-1" role="navigation">
+        <nav class="blue darken-4 z-depth-0" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="#" class="right brand-logo">Logo</a>
 
@@ -59,17 +59,10 @@
 
 
         <!-- page content -->
-        <div class="section  row">
-            <div class="container">
-
-                <div class="col s0 m2 l2" role="menu">
-                
-                </div>
-
-                <div class="col s12 m10 l10" role="main">
-                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
+        <div class="section row no-padding">
+            <div class="col s12 central no-padding" role="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
         <!-- /page content -->
