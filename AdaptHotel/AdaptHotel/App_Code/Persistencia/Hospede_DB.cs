@@ -8,6 +8,21 @@ using System.Data.SqlClient;
 
 public class Hospede_DB
 {
+    public static void Insert()
+    {
+        SqlConnection objConnection;
+        SqlCommand objCommand;
+        SqlDataAdapter objDataAdapter;
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command("Insert into avaliacoes (placaCarro, cidadeOrigem, codPessoas) values (@placaCarro, @cidadeOrigem, @codPessoas)", objConnection);
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objConnection.Close();
+        objCommand.Dispose();
+        objConnection.Dispose();
+
+    }
+
+
     public static DataSet Select10Ultimos()
     {
         DataSet ds = new DataSet();

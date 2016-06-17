@@ -8,6 +8,20 @@ using System.Data.SqlClient;
 
 public class NumeroQuarto_DB
 {
+
+    public static void Insert()
+    {
+        SqlConnection objConnection;
+        SqlCommand objCommand;
+        SqlDataAdapter objDataAdapter;
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command("Insert into numero_quartos (numeroQuarto, statusQuarto, codSubTipoQuartos) values (@numeroQuarto, @statusQuarto, @codSubTipoQuartos)", objConnection);
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objConnection.Close();
+        objCommand.Dispose();
+        objConnection.Dispose();
+        
+    }
     public static DataSet SelectAll()
     {
         DataSet ds = new DataSet();
