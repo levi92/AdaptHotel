@@ -4,9 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 
-/// <summary>
-/// Summary description for fotoSubTipoQuarto_DB
-/// </summary>
 public class fotoSubTipoQuarto_DB
 {
     public static void Insert()
