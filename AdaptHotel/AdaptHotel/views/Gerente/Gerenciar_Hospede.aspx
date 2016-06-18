@@ -17,96 +17,13 @@
     <div class="col s12">
         <div class="col s12 m6" style="overflow-y: auto; height: 669px;">
             <ul class="collection">
-                <a class="collection-item avatar">
+                 <% foreach (var hospede in lista_hospedes) { %>
+                <a class="collection-item avatar waves-effect waves" style="min-height: 60px;">
                     <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title">Abner Santos</span>
-                    <p>
-                        Guaratinguetá
-                        <br>
-                        São Paulo
-                    </p>
+                    <span class="title"><%= hospede.Nome %> </span>
+                    <p><%= hospede.End.Cidade %> - <%= hospede.End.Estado %></p>
                 </a>
-
-                <a class="collection-item avatar">
-                    <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title">Abner Santos</span>
-                    <p>
-                        Guaratinguetá
-                        <br>
-                        São Paulo
-                    </p>
-                </a>
-
-                <a class="collection-item avatar">
-                    <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title">Abner Santos</span>
-                    <p>
-                        Guaratinguetá
-                        <br>
-                        São Paulo
-                    </p>
-                </a>
-
-                <a class="collection-item avatar">
-                    <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title">Abner Santos</span>
-                    <p>
-                        Guaratinguetá
-                        <br>
-                        São Paulo
-                    </p>
-                </a>
-
-                <a class="collection-item avatar">
-                    <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title">Abner Santos</span>
-                    <p>
-                        Guaratinguetá
-                        <br>
-                        São Paulo
-                    </p>
-                </a>
-
-                <a class="collection-item avatar">
-                    <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title">Abner Santos</span>
-                    <p>
-                        Guaratinguetá
-                        <br>
-                        São Paulo
-                    </p>
-                </a>
-
-                <a class="collection-item avatar">
-                    <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title">Abner Santos</span>
-                    <p>
-                        Guaratinguetá
-                        <br>
-                        São Paulo
-                    </p>
-                </a>
-
-                <a class="collection-item avatar">
-                    <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title">Abner Santos</span>
-                    <p>
-                        Guaratinguetá
-                        <br>
-                        São Paulo
-                    </p>
-                </a>
-
-                <a class="collection-item avatar">
-                    <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title">Abner Santos</span>
-                    <p>
-                        Guaratinguetá
-                        <br>
-                        São Paulo
-                    </p>
-                </a>
-
+                <% } %>
 
             </ul>
         </div>
