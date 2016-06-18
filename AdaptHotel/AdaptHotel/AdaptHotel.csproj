@@ -211,6 +211,7 @@
     <Compile Include="App_Code\Classes\Avaliacoes.cs" />
     <Compile Include="App_Code\Classes\DescontoQuarto.cs" />
     <Compile Include="App_Code\Classes\Endereco.cs" />
+    <Compile Include="App_Code\Classes\FotoSubTipoQuarto.cs" />
     <Compile Include="App_Code\Classes\Funcionario.cs" />
     <Compile Include="App_Code\Classes\Hospede.cs" />
     <Compile Include="App_Code\Classes\NumeroQuarto.cs" />
@@ -229,6 +230,7 @@
     <Compile Include="App_Code\Persistencia\Hospede_DB.cs" />
     <Compile Include="App_Code\Persistencia\Funcionario_DB.cs" />
     <Compile Include="App_Code\Persistencia\NumeroQuarto_DB.cs" />
+    <Compile Include="App_Code\Persistencia\Pessoa_DB.cs" />
     <Compile Include="App_Code\Persistencia\ReservaQuartos_DB.cs" />
     <Compile Include="App_Code\Persistencia\Reserva_DB.cs" />
     <Compile Include="App_Code\Persistencia\ServicosExtras_DB.cs" />

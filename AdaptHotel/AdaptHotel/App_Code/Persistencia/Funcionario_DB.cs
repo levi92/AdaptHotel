@@ -8,6 +8,31 @@ using System.Data.SqlClient;
 
 public class Funcionario_DB
 {
+    public static int Insert(Funcionario funcionario)
+    {
+        int retorno = 0;
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            SqlCommand objCommand = Mapped.Command("Insert into pessoas (cargo, salario, data_admissao, numero_cnt) values (@cargo, @salario, @data_admissao, @numero_cnt);", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@cargo", funcionario.Cargo));
+            objCommand.Parameters.Add(Mapped.Parameter("@salario", funcionario.Salario));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_admissao", funcionario.DataAdmissao));
+            objCommand.Parameters.Add(Mapped.Parameter("@numero_cnt", funcionario.NumeroCnt));
+
+            int cod_tipo_quarto = Convert.ToInt32(objCommand.ExecuteScalar());
+
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception e)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
     public static DataSet Select10Ultimos()
     {
         DataSet ds = new DataSet();

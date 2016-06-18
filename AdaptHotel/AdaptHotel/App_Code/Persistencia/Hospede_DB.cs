@@ -8,17 +8,26 @@ using System.Data.SqlClient;
 
 public class Hospede_DB
 {
-    public static void Insert()
+    public static int Insert(Hospede hospede)
     {
-        SqlConnection objConnection;
-        SqlCommand objCommand;
-        SqlDataAdapter objDataAdapter;
-        objConnection = Mapped.Connection();
-        objCommand = Mapped.Command("Insert into avaliacoes (placaCarro, cidadeOrigem, codPessoas) values (@placaCarro, @cidadeOrigem, @codPessoas)", objConnection);
-        objDataAdapter = Mapped.Adapter(objCommand);
-        objConnection.Close();
-        objCommand.Dispose();
-        objConnection.Dispose();
+        int retorno = 0;
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            SqlCommand objCommand = Mapped.Command("Insert into avaliacoes (placa_carro, cidade_origem, codPessoas) values (@placa_carro, @cidade_origem, @codPessoas);", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@placa_carro", hospede.PlacaCarro));
+            objCommand.Parameters.Add(Mapped.Parameter("@cidade_origem", hospede.CidadeOrigem));
+
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+        return retorno;
+        
 
     }
 

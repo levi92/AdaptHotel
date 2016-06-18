@@ -5,9 +5,6 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-/// <summary>
-/// Summary description for tipoQuarto
-/// </summary>
 public class tipoQuarto_DB
 {
     public static int Insert(TipoQuarto tipo_quartos)

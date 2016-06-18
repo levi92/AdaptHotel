@@ -8,17 +8,31 @@ using System.Data.SqlClient;
 
 public class Reserva_DB
 {
-    public static void Insert()
+    public static int Insert(Reserva reserva)
     {
-        SqlConnection objConnection;
-        SqlCommand objCommand;
-        SqlDataAdapter objDataAdapter;
-        objConnection = Mapped.Connection();
-        objCommand = Mapped.Command("Insert into avaliacoes (dataReservaEntrada, dataReservaSaida, dataChekIn, dataChekOut, statusReserva, pago, valorTotal, codHospedes) values @dataReservaEntrada, @dataReservaSaida, @dataChekIn, @dataChekOut, @statusReserva, @pago, @valorTotal, @codHospedes", objConnection);
-        objDataAdapter = Mapped.Adapter(objCommand);
-        objConnection.Close();
-        objCommand.Dispose();
-        objConnection.Dispose();
+        int retorno = 0;
+
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            SqlCommand objCommand = Mapped.Command("Insert into avaliacoes (data_reserva_entrada, data_reserva_saida, data_chek_in, data_chek_out, status_reserva, pago, valor_total, codHospedes) values (@data_reserva_entrada, @data_reserva_saida, @data_chek_in, @data_chek_out, @status_reserva, @pago, @valor_total, @codHospedes);", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@data_reserva_entrada", reserva.getDataReservaEntrada()));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_reserva_saida", reserva.getDataReservaSaida()));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_chek_in", reserva.DataCheckin));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_chek_out", reserva.DataCheckout));
+            //objCommand.Parameters.Add(Mapped.Parameter("@status_reserva", reserva.));
+            objCommand.Parameters.Add(Mapped.Parameter("@pago", reserva.Pago));
+            objCommand.Parameters.Add(Mapped.Parameter("@valor_total", reserva.ValorTotal));
+
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+        return retorno;
 
     }
 

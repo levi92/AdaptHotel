@@ -4,22 +4,32 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 
-/// <summary>
-/// Summary description for avaliacoes_DB
-/// </summary>
-public class avaliacoes_DB
+public class Avaliacoes_DB
 {
-    public static void Insert()
+    public static int Insert(Avaliacoes avaliacoes)
     {
-        SqlConnection objConnection;
-        SqlCommand objCommand;
-        SqlDataAdapter objDataAdapter;
-        objConnection = Mapped.Connection();
-        objCommand = Mapped.Command("Insert into avaliacoes (comentario, resposta, nota, dataHoraComentario, dataHoraResposta, codReserva) values @comentario, @resposta, @nota, @dataHoraComentario, @dataHoraResposta, @codReserva", objConnection);
-        objDataAdapter = Mapped.Adapter(objCommand);
-        objConnection.Close();
-        objCommand.Dispose();
-        objConnection.Dispose();
+        int retorno = 0;
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            SqlCommand objCommand = Mapped.Command("Insert into avaliacoes (comentario, resposta, nota, data_hora_comentario, data_hora_resposta, codReserva) values (@comentario, @resposta, @nota, @data_hora_comentario, @data_hora_resposta, @codReserva);", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@comentario", avaliacoes.Comentario));
+            objCommand.Parameters.Add(Mapped.Parameter("@resposta", avaliacoes.Resposta));
+            objCommand.Parameters.Add(Mapped.Parameter("@nota", avaliacoes.Nota));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_hora_comentario", avaliacoes.DataHoraComentario));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_hora_resposta", avaliacoes.DataHoraResposta));
+            retorno = Convert.ToInt32(objCommand.ExecuteScalar());
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+
+        }
+        catch (Exception)
+        {
+            retorno = -2;   
+        }
+        return retorno;
+
 
     }
 }
