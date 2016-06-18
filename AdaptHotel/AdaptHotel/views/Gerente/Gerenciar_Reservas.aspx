@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="card-action" style="text-align: center;">
-                        <a href="#"><i class="material-icons">input</i></a>
+                        <a onclick="Materialize.toast('Check-out realizado com sucesso !', 4000)"><i class="material-icons">input</i></a>
                     </div>
 
                     <div class="card-reveal">
@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="card-action" style="text-align: center;">
-                        <a href="#"><i class="material-icons">input</i></a>
+                        <a onclick="Materialize.toast('Check-out realizado com sucesso !', 4000)"><i class="material-icons">input</i></a>
                     </div>
 
                     <div class="card-reveal">
@@ -140,7 +140,7 @@
                     </div>
 
                     <div class="card-action" style="text-align: center;">
-                        <a href="#"><i class="material-icons">done</i></a>
+                        <a onclick="Materialize.toast('Check-in realizado com sucesso !', 4000)"><i class="material-icons">done</i></a>
                     </div>
 
                     <div class="card-reveal">
@@ -163,7 +163,7 @@
                     </div>
 
                     <div class="card-action" style="text-align: center;">
-                        <a href="#"><i class="material-icons">done</i></a>
+                        <a onclick="Materialize.toast('Check-in realizado com sucesso !', 4000)"><i class="material-icons">done</i></a>
                     </div>
 
                     <div class="card-reveal">
