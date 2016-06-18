@@ -20,43 +20,45 @@
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Hóspedes</a></div>
                     </div>
-                    <div class="card-content" style="max-height: 87%; overflow-y: scroll;">
-                        <ul>
+                    <div class="card-content" style="padding:1px; max-height: 87%; overflow-y: scroll;">
+                        <ul class="collection">
                             <% foreach (var hospede in lista_hospedes)
                                 { %>
-                            <li class="col s12">
-                                <img src="../../images/quarto-1.jpg" alt="" class="col s3 circle" style="width:15%; height: 50px;">
-                                <div class="col s9">
-                                    <%= hospede.Nome %> </br>
-                                    <%= hospede.End.Cidade %> 
-                                    - <%= hospede.End.Estado %>
+                            <a class="hoverable" href="../Gerente/Gerenciar_Hospede.aspx?id=<%= hospede.Nome%>">
+                            <li class="col s12 valign-wrapper collection-item avatar waves-effect waves">
+                                <div style="padding-top:5%;">
+                                    <img src="../../images/quarto-1.jpg" alt="" class="circle">
+                                    <span class="title"><%= hospede.Nome %></span>
+                                    <p>
+                                        <%= hospede.End.Cidade %> 
+                                        - <%= hospede.End.Estado %>
+                                    </p>
                                 </div>
-                                <hr class="col s12" style="border-color: #FF9100;" />
                             </li>
+                            </a>
                             <% } %>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col s12 col m6 col l6">
-                <div class="card" style="width: 100%; height: 60vh;">
+                <div class="card" style="width:100%; height: 60vh;">
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Reservas</a></div>
                     </div>
-                    <div class="card-content" style="max-height: 87%; overflow-y: scroll;">
-                        <ul>
+                    <div class="card-content" style="padding:1px; max-height: 87%; overflow-y: scroll;">
+                        <ul class="collection">
                             <% foreach (var reserva in lista_reservas)
                                 { %>
-                            <li class="col s12 valign-wrapper">
-                                <i class="material-icons md-48" style="float: left; color: #FF9100; margin-right: 3%;">event_available</i>
-                                <div>
-                                    <%= reserva.Hospede.Nome %> </br>
-                                    <%= reserva.getDataReservaEntrada() %> 
-                                    - <%= reserva.getDataReservaSaida() %>
+                            <li class="col s12 valign-wrapper collection-item avatar waves-effect waves" onclick="teste('<%= reserva.Hospede.Nome%>')">
+                                <div style="padding-top:5%;">
+                                    <img src="../../images/quarto-1.jpg" alt="" class="circle">
+                                    <span class="title"> <%= reserva.Hospede.Nome %> </span>
+                                    <p>   <%= reserva.getDataReservaEntrada() %> 
+                                        - <%= reserva.getDataReservaSaida() %>
+                                    </p>
                                 </div>
-
                             </li>
-                            <hr class="col s12" style="border-color: #FF9100;" />
                             <% } %>
                         </ul>
                     </div>
@@ -107,4 +109,9 @@
             </div>
         </div>
     </div>
+    <script>
+        function teste(id) {
+            
+        }
+    </script>
 </asp:Content>
