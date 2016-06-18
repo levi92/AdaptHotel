@@ -17,6 +17,8 @@ namespace AdaptHotel.views.Gerente
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            TipoQuarto tipo_quarto = new TipoQuarto("teste");
+            tipoQuarto_DB.Insert(tipo_quarto);
             CarregarDashboard();
         }
 

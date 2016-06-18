@@ -7,16 +7,16 @@ using System.Web;
 public class NumeroQuarto
 {
     private int codNumeroQuarto;
-    private string numeroQuartoo;
+    private string numero_quarto;
     public enum _status_quarto { disponivel, ocupado, manutencao, desabilitado };
     private _status_quarto status_quarto;
     private SubTipoQuarto subTipoQuarto;
     private string cor;
 
-    public NumeroQuarto(int codNumeroQuarto, string numeroQuartoo, string status_quarto, SubTipoQuarto subTipoQuarto, string cor)
+    public NumeroQuarto(int codNumeroQuarto, string numero_quarto, string status_quarto, SubTipoQuarto subTipoQuarto, string cor)
     {
         this.CodNumeroQuarto = codNumeroQuarto;
-        this.numeroQuartoo = numeroQuartoo;
+        this.numero_quarto = numero_quarto;
         this.status_quarto = (_status_quarto)Enum.Parse(typeof(_status_quarto), status_quarto);
         this.subTipoQuarto = subTipoQuarto;
         this.cor = cor;
@@ -28,10 +28,10 @@ public class NumeroQuarto
         set { subTipoQuarto = value; }
     }
 
-    public string NumeroQuartoo
+    public string Numero_Quarto
     {
-        get { return numeroQuartoo; }
-        set { numeroQuartoo = value; }
+        get { return numero_quarto; }
+        set { numero_quarto = value; }
     }
 
     public string Cor

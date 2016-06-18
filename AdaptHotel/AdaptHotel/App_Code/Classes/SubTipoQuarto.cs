@@ -6,6 +6,7 @@ using System.Web;
 
 public class SubTipoQuarto
 {
+    private int cod_subtipo_quarto;
     private string subTipo, descricao;
     private int qtdAdultos, qtdCriancas;
     private decimal valor;
@@ -56,6 +57,12 @@ public class SubTipoQuarto
     {
         get { return tipoQuarto; }
         set { tipoQuarto = value; }
+    }
+
+    public int Cod_subtipo_quarto
+    {
+        get { return cod_subtipo_quarto; }
+        set { cod_subtipo_quarto = value; }
     }
 
     public string ImprimirSubTipoQuarto()

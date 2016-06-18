@@ -10,18 +10,18 @@ using System.Data.SqlClient;
 /// </summary>
 public class reservaQuartos_DB
 {
-    public static void Insert()
-    {
-        SqlConnection objConnection;
-        SqlCommand objCommand;
-        SqlDataAdapter objDataAdapter;
-        objConnection = Mapped.Connection();
-       // objCommand = Mapped.Command("Insert into avaliacoes (codReservaQuartos, codReserva, codNumeroQuarto) values @codReservaQuartos, @codReserva, @codNumeroQuarto");
-        objDataAdapter = Mapped.Adapter(objCommand);
-        objConnection.Close();
-        objCommand.Dispose();
-        objConnection.Dispose();
+    //public static void Insert()
+    //{
+    //    SqlConnection objConnection;
+    //    SqlCommand objCommand;
+    //    SqlDataAdapter objDataAdapter;
+    //    objConnection = Mapped.Connection();
+    //   // objCommand = Mapped.Command("Insert into avaliacoes (codReservaQuartos, codReserva, codNumeroQuarto) values @codReservaQuartos, @codReserva, @codNumeroQuarto");
+    //    objDataAdapter = Mapped.Adapter(objCommand);
+    //    objConnection.Close();
+    //    objCommand.Dispose();
+    //    objConnection.Dispose();
 
-    }
+    //}
 
 }

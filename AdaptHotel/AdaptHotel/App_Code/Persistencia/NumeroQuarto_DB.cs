@@ -9,19 +9,32 @@ using System.Data.SqlClient;
 public class NumeroQuarto_DB
 {
 
-    public static void Insert()
+    public static int Insert(NumeroQuarto numero_quarto)
     {
-        SqlConnection objConnection;
-        SqlCommand objCommand;
-        SqlDataAdapter objDataAdapter;
-        objConnection = Mapped.Connection();
-        objCommand = Mapped.Command("Insert into numero_quartos (numeroQuarto, statusQuarto, codSubTipoQuartos) values (@numeroQuarto, @statusQuarto, @codSubTipoQuartos)", objConnection);
-        objDataAdapter = Mapped.Adapter(objCommand);
-        objConnection.Close();
-        objCommand.Dispose();
-        objConnection.Dispose();
-        
+        int retorno = 0;
+
+        try
+        {
+            //numero_quarto.SubTipoQuarto.Cod_subtipo_quarto = subTipoQuartos_DB.Insert(numero_quarto.SubTipoQuarto);
+            SqlConnection objConnection = Mapped.Connection();
+            SqlCommand objCommand = Mapped.Command("Insert into numero_quartos (numero_quarto, status_quarto, cod_subtipo_quartos) values (@numero_quarto, @status_quarto, @cod_subtipo_quartos);", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@numero_quarto", numero_quarto.Numero_Quarto));
+            objCommand.Parameters.Add(Mapped.Parameter("@status_quarto", numero_quarto.getStatusQuarto()));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_subtipo_quartos", numero_quarto.SubTipoQuarto.Cod_subtipo_quarto));
+            objCommand.ExecuteNonQuery();
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+
+        return retorno;
+
     }
+
     public static DataSet SelectAll()
     {
         DataSet ds = new DataSet();
