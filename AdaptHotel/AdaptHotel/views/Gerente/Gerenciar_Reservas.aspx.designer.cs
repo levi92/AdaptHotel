@@ -10,6 +10,6 @@
 namespace AdaptHotel.views.Gerente {
     
     
-    public partial class Gerenciar_Quartos {
+    public partial class Gerenciar_Reservas {
     }
 }
