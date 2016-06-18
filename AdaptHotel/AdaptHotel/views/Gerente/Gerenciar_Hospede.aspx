@@ -132,7 +132,7 @@
 
             <div class="col s12">
                 <label>Nome</label>
-                <input type="text" value="Arthur Benedito Royol Pereira " />
+                <input type="text"/>
             </div>
 
             <div class="col s6">
@@ -150,10 +150,10 @@
 
             <div class="col s6">
                 <label>E-mail</label>
-                <input type="text" value="arthur@royal.com.br" />
+                <input type="text" />
 
                 <label>CPF</label>
-                <input type="text" value="543.678.897-98 " />
+                <input type="text" />
             </div>
 
 
@@ -164,18 +164,18 @@
 
             <div class="col s6">
                 <label>Rua</label>
-                <input type="text" value="R. Primavera, 271" />
+                <input type="text" />
 
                 <label>Bairro</label>
-                <input type="text" value="Vila das Comélias" />
+                <input type="text" />
             </div>
 
             <div class="col s6">
                 <label>Cidade</label>
-                <input type="text" value="Birigui " />
+                <input type="text"/>
 
                 <label>CEP</label>
-                <input type="text" value="12.505-235" />
+                <input type="text" />
             </div>
 
             <div class="col s12">
@@ -190,11 +190,11 @@
             </div>
             <div class="col s6">
                 <label>Placa do Carro</label>
-                <input type="text" value="BQN-1859 " />
+                <input type="text"/>
             </div>
             <div class="col s6">
                 <label>Cidade de Origem</label>
-                <input type="text" value="São Paulo" />
+                <input type="text" />
             </div>
 
         </div>

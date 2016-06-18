@@ -74,7 +74,7 @@
                             { %>
                         <div class="col s3 col m2 col l1" style="padding-bottom: 2%;">
                             <div id="" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
-                                <a href="#" style="display: table-cell; vertical-align: middle; color: #FFFFFF"><%= numeroQuarto.NumeroQuartoo%></a>
+                                <a href="#" style="display: table-cell; vertical-align: middle; color: #FFFFFF"><%= numeroQuarto.Numero_Quarto%></a>
                             </div>
                         </div>
                         <% } %>
@@ -82,7 +82,7 @@
                             { %>
                         <div class="col s3 col m2 col l1" style="padding-bottom: 2%;">
                             <div id="" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
-                                <a href="#" style="display: table-cell; vertical-align: middle; color: #FFFFFF"><%= Convert.ToInt32(numeroQuarto.NumeroQuartoo) + 32%></a>
+                                <a href="#" style="display: table-cell; vertical-align: middle; color: #FFFFFF"><%= Convert.ToInt32(numeroQuarto.Numero_Quarto) + 32%></a>
                             </div>
                         </div>
                         <% } %>
