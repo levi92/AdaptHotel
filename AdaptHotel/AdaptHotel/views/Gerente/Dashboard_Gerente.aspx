@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12 ">
-                <div class="card" style="width: 100%; height: 20vh;">
+                <div class="card hoverable" style="width: 100%; height: 20vh;">
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Estatísticas</a></div>
                     </div>
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col s12 col m12 col l4">
-                <div class="card" style="width: 100%; height: 60vh;">
+                <div class="card hoverable" style="width: 100%; height: 60vh;">
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Funcionários</a></div>
                     </div>
@@ -23,7 +23,7 @@
                         <ul class="collection">
                             <% foreach (var funcionario in lista_funcionarios)
                                 { %>
-                            <li class="col s12 valign-wrapper collection-item avatar waves-effect waves" onclick="teste('<%= funcionario.Nome %>')">
+                            <a class="collection-item avatar waves-effect waves" onclick="teste('<%= funcionario.Nome %>')">
                                 <div style="padding-top:5%;">
                                     <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                     <span class="title"> <%= funcionario.Nome %> </span>
@@ -31,14 +31,14 @@
                                         - <%= funcionario.End.Estado %>
                                     </p>
                                 </div>
-                            </li>
+                            </a>
                             <% } %>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col s12 col m12 col l4">
-                <div class="card" style="width: 100%; height: 60vh;">
+                <div class="card hoverable" style="width: 100%; height: 60vh;">
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Hóspedes</a></div>
                     </div>
@@ -46,8 +46,7 @@
                         <ul class="collection">
                             <% foreach (var hospede in lista_hospedes)
                                 { %>
-                            <a class="hoverable" href="../Gerente/Gerenciar_Hospede.aspx?id=<%= hospede.Nome%>">
-                            <li class="col s12 valign-wrapper collection-item avatar waves-effect waves">
+                            <a class="collection-item avatar waves-effect waves" href="../Gerente/Gerenciar_Hospede.aspx?id=<%= hospede.Nome%>">
                                 <div style="padding-top:5%;">
                                     <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                     <span class="title"><%= hospede.Nome %></span>
@@ -56,7 +55,6 @@
                                         - <%= hospede.End.Estado %>
                                     </p>
                                 </div>
-                            </li>
                             </a>
                             <% } %>
                         </ul>
@@ -64,7 +62,7 @@
                 </div>
             </div>
             <div class="col s12 col m12 col l4">
-                <div class="card" style="width: 100%; height: 60vh;">
+                <div class="card hoverable" style="width: 100%; height: 60vh;">
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Reservas</a></div>
                     </div>
@@ -72,7 +70,7 @@
                         <ul class="collection">
                             <% foreach (var reserva in lista_reservas)
                                 { %>
-                            <li class="col s12 valign-wrapper collection-item avatar waves-effect waves" onclick="teste('<%= reserva.Hospede.Nome%>')">
+                            <a class="collection-item avatar waves-effect waves" onclick="teste('<%= reserva.Hospede.Nome%>')">
                                 <div style="padding-top:5%;">
                                     <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                     <span class="title"> <%= reserva.Hospede.Nome %> </span>
@@ -80,14 +78,14 @@
                                         - <%= reserva.getDataReservaSaida() %>
                                     </p>
                                 </div>
-                            </li>
+                            </a>
                             <% } %>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col s12 ">
-                <div class="card" style="width: 100%; height: 75vh;">
+                <div class="card hoverable" style="width: 100%; height: 75vh;">
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Quartos</a></div>
                     </div>
@@ -95,7 +93,7 @@
                         <% foreach (var numeroQuarto in lista_numeroQuartos)
                             { %>
                         <div class="col s3 col m2 col l1" style="padding-bottom: 2%;">
-                            <div id="" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
+                            <div class="hoverable" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
                                 <a href="#" style="display: table-cell; vertical-align: middle; color: #FFFFFF"><%= numeroQuarto.Numero_Quarto%></a>
                             </div>
                         </div>
@@ -103,7 +101,7 @@
                         <% foreach (var numeroQuarto in lista_numeroQuartos)
                             { %>
                         <div class="col s3 col m2 col l1" style="padding-bottom: 2%;">
-                            <div id="" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
+                            <div class="hoverable" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
                                 <a href="#" style="display: table-cell; vertical-align: middle; color: #FFFFFF"><%= Convert.ToInt32(numeroQuarto.Numero_Quarto) + 32%></a>
                             </div>
                         </div>

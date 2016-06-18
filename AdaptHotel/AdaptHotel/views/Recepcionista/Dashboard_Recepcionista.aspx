@@ -4,19 +4,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col s12 ">
-                <div class="card" style="width: 100%; height: 20vh;">
-                    <div class="col s12 light-blue lighten-1">
-                        <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Estatísticas</a></div>
-                    </div>
-                    <div class="card-content" style="">
-                        <div class="row">
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="col s12 col m6 col l6">
-                <div class="card" style="width: 100%; height: 60vh;">
+                <div class="card hoverable" style="width: 100%; height: 60vh;">
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Hóspedes</a></div>
                     </div>
@@ -42,7 +31,7 @@
                 </div>
             </div>
             <div class="col s12 col m6 col l6">
-                <div class="card" style="width:100%; height: 60vh;">
+                <div class="card hoverable" style="width:100%; height: 60vh;">
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Reservas</a></div>
                     </div>
@@ -65,7 +54,7 @@
                 </div>
             </div>
             <div class="col s12 ">
-                <div class="card" style="width: 100%; height: 75vh;">
+                <div class="card hoverable" style="width: 100%; height: 75vh;">
                     <div class="col s12 light-blue lighten-1">
                         <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Quartos</a></div>
                     </div>
@@ -73,7 +62,7 @@
                         <% foreach (var numeroQuarto in lista_numeroQuartos)
                             { %>
                         <div class="col s3 col m2 col l1" style="padding-bottom: 2%;">
-                            <div id="" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
+                            <div class="hoverable" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
                                 <a href="#" style="display: table-cell; vertical-align: middle; color: #FFFFFF"><%= numeroQuarto.Numero_Quarto%></a>
                             </div>
                         </div>
@@ -81,7 +70,7 @@
                         <% foreach (var numeroQuarto in lista_numeroQuartos)
                             { %>
                         <div class="col s3 col m2 col l1" style="padding-bottom: 2%;">
-                            <div id="" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
+                            <div class="hoverable" style="border-radius: 5px; border: 2px solid #2196F3; background-color: <%= numeroQuarto.Cor%>; width: 90%; height: 10vh; display: table; text-align: center;">
                                 <a href="#" style="display: table-cell; vertical-align: middle; color: #FFFFFF"><%= Convert.ToInt32(numeroQuarto.Numero_Quarto) + 32%></a>
                             </div>
                         </div>
