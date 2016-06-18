@@ -1,9 +1,21 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Gerenciar_Hospede.aspx.cs" Inherits="AdaptHotel.views.Gerente.Gerenciar_Hospede" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="col-md-4" style="border-right: 1px solid #DDD; padding-right: 0; padding-bottom: 0; background-color: white; box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.20);">
-        <input type="text" placeholder="BUSCAR" style="max-width: none; width: 93%; padding: 9px; border: none; border-bottom: 1px solid #ccc; margin: 23px; margin-bottom: 23px; margin-top: 10px; margin-left: 3%; float: left; font-size: 16px;">
-        <div class="col-md-11 col-sm-11 col-xs-11" style="font-size: 14.7px; overflow-y: auto; height: 777px;">
+
+    <div class="row blue darken-4 z-depth-1">
+        <div class="container">
+            <div class="col s12">
+                <input type="text" style="color: white; border-color: white;" placeholder="BUSCAR">
+            </div>
+           
+
+
+
+        </div>
+    </div>
+
+    <div class="col s12">
+        <div class="col s12" style="font-size: 14.7px; overflow-y: auto; height: 777px;">
             <ul style="width: 94%; margin-left: 2%;">
                 <li>
                     <div id="standard_icon" style="width: 5rem; height: 5rem; float: left; background-image: url(../../fonts/ic_person_white_36dp_1x.png); background-repeat: no-repeat; background-position: center; background-color: #FF9100; border-radius: 50%; margin-right: 5%;">
@@ -201,7 +213,7 @@
             </ul>
         </div>
     </div>
-        <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
