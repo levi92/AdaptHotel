@@ -52,7 +52,7 @@
                     <li><a href="../../views/Gerente/Gerenciar_Funcionario.aspx">Funcionarios</a></li>
                     <li><a href="../../views/Gerente/Estatisticas.aspx">Estatisticas</a></li>
                 </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
         </nav>
         <!-- /top navigation -->

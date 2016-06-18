@@ -49,10 +49,10 @@
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Nicolas Santos<i class="material-icons right">...</i></span>
+                        <span class="card-title activator grey-text text-darken-4">Nicolas Santos<i class="material-icons right">more_vert</i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">X</i></span>
+                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
                         <p>Reserva : 052235</p>
                         <p>Cliente : Nicolas Santos</p>
                         <p>Quarto  : Deluxe Imperial Plus</p>
@@ -67,10 +67,10 @@
                         <img class="activator" src="../../images/quarto-2.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Levi Monteiro<i class="material-icons right">...</i></span>
+                        <span class="card-title activator grey-text text-darken-4">Levi Monteiro<i class="material-icons right">more_vert</i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">X</i></span>
+                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
                         <p>Reserva : 068224</p>
                         <p>Cliente : Levi Monteiro</p>
                         <p>Quarto  : Quarto Simples</p>
@@ -87,10 +87,10 @@
                         <img class="activator" src="../../images/quarto-2.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Gabrielle de Paula<i class="material-icons right">...</i></span>
+                        <span class="card-title activator grey-text text-darken-4">Gabrielle de Paula<i class="material-icons right">more_vert</i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">X</i></span>
+                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
                         <p>Reserva : 052235</p>
                         <p>Cliente : Nicolas Santos</p>
                         <p>Quarto  : Deluxe Imperial Plus</p>
@@ -105,10 +105,10 @@
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Thais Rodrigues<i class="material-icons right">...</i></span>
+                        <span class="card-title activator grey-text text-darken-4">Thais Rodrigues<i class="material-icons right">more_vert</i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">X</i></span>
+                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
                         <p>Reserva : 068224</p>
                         <p>Cliente : Levi Monteiro</p>
                         <p>Quarto  : Quarto Simples</p>

@@ -14,109 +14,112 @@
         </div>
     </div>
 
-    <div class="col s12">
-        <div class="col s12 m6" style="overflow-y: auto; height: 669px;">
-            <ul class="collection">
-                 <% foreach (var hospede in lista_hospedes) { %>
-                <a class="collection-item avatar waves-effect waves" style="min-height: 60px;">
-                    <img src="images/yuna.jpg" alt="" class="circle">
-                    <span class="title"><%= hospede.Nome %> </span>
-                    <p><%= hospede.End.Cidade %> - <%= hospede.End.Estado %></p>
-                </a>
-                <% } %>
-
-            </ul>
-        </div>
-
-        
-
-        <div class="col s12 m6">
-            <div class="card-panel hoverable">
-                <h5 class="card-title activator grey-text text-darken-4" style="margin-top: 0;">Dados Pessoais</h5>
-
-                <div class="panel-body" style="padding: 0;">
-                    <label>Nome:</label>
-                    Carol Shilles Abulquerque
-                    <br />
-                    <label>Sexo:</label>
-                    Feminino
-                    <br />
-                    <label>Telefone:</label>
-                    (11) 985642345 
-                    <br />
-                    <label>Data de Nascimento:</label>
-                    30/02/1982
-                    <br />
-                    <label>CPF:</label>
-                    641.273.594-18
-                    <br />
-                    <label>E-mail:</label>
-                    carol_shilles@gmail.com.br
-                    <br />
-                </div>
-            </div>
-
-            <div class="card-panel hoverable">
-                <h5 class="card-title activator grey-text text-darken-4" style="margin-top: 0;">Endereço</h5>
-
-                <div class="panel-body" style="padding: 0;">
-
-                    <label>Endereço:</label>
-                    R. Satirnado
-                    <br />
-                    <label>Bairro:</label>
-                    Vila das Loruncias
-                    <br />
-                    <label>CEP:</label>
-                    12.765 - 120
-                    <br />
-
-                    <label>Cidade:</label>
-                    São José dos Campos
-                    <br />
-                    <label>UF:</label>
-                    SP<br />
-                    <label>Nº:</label>
-                    52<br />
-
-                </div>
-            </div>
-
-            <div class="card-panel hoverable">
-                <h5 class="card-title grey-text text-darken-4" style="margin-top: 0;">Dados do Hóspede</h5>
-
-                <div class="panel-body" style="padding: 0;">
-                    <label>Placa do Carro:</label>
-                    BQN-1859
-                    <br />
-                    <label>Cidade de Origem:</label>
-                    São Paulo
-                    <br />
-                </div>
-            </div>
-
-            <div class="card-panel hoverable">
-                <h5 class="card-title grey-text text-darken-4" style="margin-top: 0;">Ultimas Reservas</h5>
-                <div class="panel-body" style="padding: 0;">
-                    <div class="col s12">
-                    </div>
-                </div>
-            </div>
-
-            <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 30px; right: 24px;">
-                <a class="btn-floating btn-large red">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul>
-                    <li><a class="btn-floating green modal-trigger" href="#add"><i class="material-icons">add</i></a></li>
-                    <li><a class="btn-floating blue  modal-trigger" href="#edit"><i class="material-icons">mode_edit</i></a></li>
+    <div class="container">
+        <div class="col s12">
+            <div class="col s12 m6 z-depth-1" style="overflow-y: auto; height: 669px;">
+                <ul class="collection">
+                    <% foreach (var hospede in lista_hospedes)
+                        { %>
+                    <a class="collection-item avatar waves-effect waves" style="min-height: 60px;" onclick="showDiv()">
+                        <img src="../../images/quarto-1.jpg" alt="" class="circle">
+                        <span class="title"><%= hospede.Nome %> </span>
+                        <p><%= hospede.End.Cidade %> - <%= hospede.End.Estado %></p>
+                    </a>
+                    <% } %>
                 </ul>
             </div>
 
+
+
+            <div class="col s12 m6">
+                <div id="details" style="display: none">
+                    <div class="card-panel hoverable">
+                        <h5 class="card-title activator grey-text text-darken-4" style="margin-top: 0;">Dados Pessoais</h5>
+
+                        <div class="panel-body" style="padding: 0;">
+                            <label>Nome:</label>
+                            Carol Shilles Abulquerque
+                    <br />
+                            <label>Sexo:</label>
+                            Feminino
+                    <br />
+                            <label>Telefone:</label>
+                            (11) 985642345 
+                    <br />
+                            <label>Data de Nascimento:</label>
+                            30/02/1982
+                    <br />
+                            <label>CPF:</label>
+                            641.273.594-18
+                    <br />
+                            <label>E-mail:</label>
+                            carol_shilles@gmail.com.br
+                    <br />
+                        </div>
+                    </div>
+
+                    <div class="card-panel hoverable">
+                        <h5 class="card-title activator grey-text text-darken-4" style="margin-top: 0;">Endereço</h5>
+
+                        <div class="panel-body" style="padding: 0;">
+
+                            <label>Endereço:</label>
+                            R. Satirnado
+                    <br />
+                            <label>Bairro:</label>
+                            Vila das Loruncias
+                    <br />
+                            <label>CEP:</label>
+                            12.765 - 120
+                    <br />
+
+                            <label>Cidade:</label>
+                            São José dos Campos
+                    <br />
+                            <label>UF:</label>
+                            SP<br />
+                            <label>Nº:</label>
+                            52<br />
+
+                        </div>
+                    </div>
+
+                    <div class="card-panel hoverable">
+                        <h5 class="card-title grey-text text-darken-4" style="margin-top: 0;">Dados do Hóspede</h5>
+
+                        <div class="panel-body" style="padding: 0;">
+                            <label>Placa do Carro:</label>
+                            BQN-1859
+                    <br />
+                            <label>Cidade de Origem:</label>
+                            São Paulo
+                    <br />
+                        </div>
+                    </div>
+
+                    <div class="card-panel hoverable">
+                        <h5 class="card-title grey-text text-darken-4" style="margin-top: 0;">Ultimas Reservas</h5>
+                        <div class="panel-body" style="padding: 0;">
+                            <div class="col s12">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-            
     </div>
 
+    <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 30px; right: 24px;">
+        <a class="btn-floating btn-large red">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating green modal-trigger" href="#add"><i class="material-icons">add</i></a></li>
+            <li><a class="btn-floating blue  modal-trigger" href="#edit"><i class="material-icons">mode_edit</i></a></li>
+            <li><a class="btn-floating red  modal-trigger" href="#edit"><i class="material-icons">delete</i></a></li>
+        </ul>
+    </div>
 
 
     <!-- Button trigger modal -->
@@ -132,7 +135,7 @@
 
             <div class="col s12">
                 <label>Nome</label>
-                <input type="text"/>
+                <input type="text" />
             </div>
 
             <div class="col s6">
@@ -141,7 +144,7 @@
 
                 <label>Sexo</label>
                 <br />
-                <input name="group1" type="radio" id="test10"/>
+                <input name="group1" type="radio" id="test10" />
                 <label for="test10" style="margin-top: 15px;">Feminino</label>
 
                 <input name="group1" type="radio" id="test20" />
@@ -172,7 +175,7 @@
 
             <div class="col s6">
                 <label>Cidade</label>
-                <input type="text"/>
+                <input type="text" />
 
                 <label>CEP</label>
                 <input type="text" />
@@ -190,7 +193,7 @@
             </div>
             <div class="col s6">
                 <label>Placa do Carro</label>
-                <input type="text"/>
+                <input type="text" />
             </div>
             <div class="col s6">
                 <label>Cidade de Origem</label>
@@ -225,7 +228,7 @@
 
                 <label>Sexo</label>
                 <br />
-                <input name="group1" type="radio" id="test1"/>
+                <input name="group1" type="radio" id="test1" />
                 <label for="test1" style="margin-top: 15px;">Feminino</label>
 
                 <input name="group1" type="radio" id="test2" />
@@ -288,7 +291,10 @@
     </div>
 
     <script>
-     
+        function showDiv() {
+            $("#details").slideUp("slow");
+            $("#details").slideDown("slow");
+        }
 
         $(document).ready(function () {
 

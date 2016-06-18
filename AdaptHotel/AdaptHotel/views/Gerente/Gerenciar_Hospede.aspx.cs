@@ -19,7 +19,7 @@ namespace AdaptHotel.views.Gerente
 
         public void CarregarHospedes()
         {
-            DataSet dataset_hospede = Hospede_DB.Select10Ultimos();
+            DataSet dataset_hospede = Hospede_DB.SelectAll();
             foreach (DataRow row in dataset_hospede.Tables[0].Rows)
             {
                 var values = row.ItemArray;
