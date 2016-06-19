@@ -19,8 +19,8 @@
                                     <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                     <span class="title"><%= hospede.Nome %></span>
                                     <p>
-                                        <%= hospede.End.Cidade %> 
-                                        - <%= hospede.End.Estado %>
+                                        <%= hospede.Endereco.Cidade %> 
+                                        - <%= hospede.Endereco.Estado %>
                                     </p>
                                 </div>
                             </li>

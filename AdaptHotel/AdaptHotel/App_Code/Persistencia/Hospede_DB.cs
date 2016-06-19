@@ -11,13 +11,16 @@ public class Hospede_DB
     public static int Insert(Hospede hospede)
     {
         int retorno = 0;
+
         try
         {
             SqlConnection objConnection = Mapped.Connection();
-            SqlCommand objCommand = Mapped.Command("Insert into avaliacoes (placa_carro, cidade_origem, codPessoas) values (@placa_carro, @cidade_origem, @codPessoas);", objConnection);
+            hospede.CodPessoa = Pessoa_DB.Insert(hospede, objConnection);
+            SqlCommand objCommand = Mapped.Command("Insert into hospedes (placa_carro, cidade_origem, cod_pessoa) values (@placa_carro, @cidade_origem, @cod_pessoa);", objConnection);
             objCommand.Parameters.Add(Mapped.Parameter("@placa_carro", hospede.PlacaCarro));
             objCommand.Parameters.Add(Mapped.Parameter("@cidade_origem", hospede.CidadeOrigem));
-
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_pessoa", hospede.CodPessoa));
+            objCommand.ExecuteNonQuery();
             objConnection.Close();
             objCommand.Dispose();
             objConnection.Dispose();
@@ -26,9 +29,8 @@ public class Hospede_DB
         {
             retorno = -2;
         }
-        return retorno;
-        
 
+        return retorno;
     }
 
 

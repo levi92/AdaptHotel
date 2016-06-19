@@ -123,8 +123,4 @@ public class Avaliacoes
         }
     }
 
-    public string ImprimirAvaliacoes()
-    {
-        return Hos.ImprimirHospede()+"COMENTARIO: "+Comentario+ "DATA E HORA COMENTARIO: "+ DataHoraComentario+"RESPOSTA: "+Resposta+ "DATA E HORA RESPOSTA: "+DataHoraResposta+"NOTA: "+Nota+ "HOSPEDE: "+Hos+ "SUB TIPO DE QUARTO: "+SubQ; // ver um nome melhor para subtipodequarto
-    }
 }

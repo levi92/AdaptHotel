@@ -8,14 +8,15 @@ public class Pessoa
 {
     private string nome, telefone, email, cpf, senha;
     private char sexo;
-    private int codPessoa;
-    private Endereco end;
+    private int? codPessoa;
+    private Endereco endereco;
     private DateTime dataNascimento;
     private string cidade;
     private string estado;
     private Perfil perfil;
+    private Foto foto;
 
-    public Pessoa(string nome, string telefone, string email, string cpf, char sexo, DateTime dataNascimento, int codPessoa, Perfil perfil, Endereco end, string senha = null)
+    public Pessoa(string nome, string telefone, string email, string cpf, char sexo, DateTime dataNascimento, int? codPessoa, Perfil perfil, Endereco endereco, Foto foto = null, string senha = null)
 	{
         this.nome = nome;
         this.telefone = telefone;
@@ -23,14 +24,15 @@ public class Pessoa
         this.cpf = cpf;
         this.senha = senha;
         this.sexo = sexo;
-        this.end = end;
+        this.endereco = endereco;
         this.Perfil = perfil;
+        this.foto = foto;
 	}
 
-    public Pessoa(string nome, Endereco end)
+    public Pessoa(string nome, Endereco endereco)
     {
         this.nome = nome;
-        this.end = end;
+        this.endereco = endereco;
     }
 
     public Pessoa()
@@ -38,13 +40,13 @@ public class Pessoa
 
     }
 
-    public Endereco End
+    public Endereco Endereco
     {
-        get { return end; }
-        set { end = value; }
+        get { return endereco; }
+        set { endereco = value; }
     }
 
-    public int CodPessoa
+    public int? CodPessoa
     {
       get { return codPessoa; }
       set { codPessoa = value; }
@@ -98,9 +100,9 @@ public class Pessoa
         set { perfil = value; }
     }
 
-    public string ImprimirPessoa()
+    public Foto Foto
     {
-        return "NOME: " + Nome + "SEXO: " + Sexo + "TELEFONE: " + Telefone + "DATA DE NASCIMENTO: " + DataNascimento + "CPF: " + Cpf + "EMAIL: " + Email + "SENHA: " + Senha + End.Imprimir();
+        get { return foto; }
+        set { foto = value; }
     }
-
 }

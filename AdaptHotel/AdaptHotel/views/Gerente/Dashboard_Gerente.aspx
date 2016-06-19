@@ -27,8 +27,8 @@
                                 <div style="padding-top:5%;">
                                     <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                     <span class="title"> <%= funcionario.Nome %> </span>
-                                    <p>   <%= funcionario.End.Cidade %> 
-                                        - <%= funcionario.End.Estado %>
+                                    <p>   <%= funcionario.Endereco.Cidade %> 
+                                        - <%= funcionario.Endereco.Estado %>
                                     </p>
                                 </div>
                             </a>
@@ -51,8 +51,8 @@
                                     <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                     <span class="title"><%= hospede.Nome %></span>
                                     <p>
-                                        <%= hospede.End.Cidade %> 
-                                        - <%= hospede.End.Estado %>
+                                        <%= hospede.Endereco.Cidade %> 
+                                        - <%= hospede.Endereco.Estado %>
                                     </p>
                                 </div>
                             </a>

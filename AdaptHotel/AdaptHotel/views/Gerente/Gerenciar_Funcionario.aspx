@@ -23,7 +23,7 @@
                     <a class="collection-item avatar waves-effect waves" style="min-height: 60px;" onclick="showDiv()">
                         <img src="../../images/quarto-1.jpg" alt="" class="circle">
                         <span class="title"><%= funcionario.Nome %> </span>
-                        <p><%= funcionario.End.Cidade %> - <%= funcionario.End.Estado %></p>
+                        <p><%= funcionario.Endereco.Cidade %> - <%= funcionario.Endereco.Estado %></p>
                     </a>
                     <% } %>
                 </ul>

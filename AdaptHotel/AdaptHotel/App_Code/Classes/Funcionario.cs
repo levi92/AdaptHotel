@@ -13,12 +13,13 @@ public class Funcionario : Pessoa
 
 
     public Funcionario(string nome, string telefone, string email, string cpf, char sexo, DateTime dataNascimento, int codPessoa, Perfil perfil, Endereco endereco,
-        string cargo, string numeroCnt, double salario, DateTime dataAdmissao, int codFuncionario, string senha = null) : base(nome, telefone, email, cpf, sexo, dataNascimento, codPessoa, perfil, endereco, senha)
+        string cargo, string numeroCnt, double salario, DateTime dataAdmissao, int codFuncionario, Foto foto = null, string senha = null) : base(nome, telefone, email, cpf, sexo, dataNascimento, codPessoa, perfil, endereco, foto, senha)
 	{
         this.cargo = cargo;
         this.numeroCnt = numeroCnt;
         this.salario = salario;
         this.dataAdmissao = dataAdmissao;
+
 	}
 
     public Funcionario(string nome, Endereco end): base (nome, end)
@@ -55,11 +56,5 @@ public class Funcionario : Pessoa
         get { return cargo; }
         set { cargo = value; }
     }
-
-    public string ImprimirFuncionario()
-    {
-        return base.ImprimirPessoa() + "CARGO: " + Cargo + "NUMERO CNT: " + NumeroCnt + "SALARIO: " + Salario + "DATA DE ADMISSÃO: " + DataAdmissao;
-    }
-
-
+  
 }

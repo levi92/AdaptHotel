@@ -8,16 +8,19 @@ using System.Data.SqlClient;
 /// <summary>
 /// Summary description for reservaQuartos_DB
 /// </summary>
-public class reservaQuartos_DB
+public class ReservaQuartos_DB
 {
-    //public static void Insert()
+    //public static int Insert()
     //{
+    //    int retorno = 0;
+
+
     //    SqlConnection objConnection;
     //    SqlCommand objCommand;
-    //    SqlDataAdapter objDataAdapter;
+
     //    objConnection = Mapped.Connection();
-    //   // objCommand = Mapped.Command("Insert into avaliacoes (codReservaQuartos, codReserva, codNumeroQuarto) values @codReservaQuartos, @codReserva, @codNumeroQuarto");
-    //    objDataAdapter = Mapped.Adapter(objCommand);
+    //    // objCommand = Mapped.Command("Insert into avaliacoes (codReservaQuartos, codReserva, codNumeroQuarto) values @codReservaQuartos, @codReserva, @codNumeroQuarto");
+
     //    objConnection.Close();
     //    objCommand.Dispose();
     //    objConnection.Dispose();

@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Gerenciar_Hospede.aspx.cs" Inherits="AdaptHotel.views.Gerente.Gerenciar_Hospede" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+     
     <div class="row blue darken-4 z-depth-1">
         <div class="container">
             <div class="col s12">
@@ -23,7 +23,7 @@
                     <a class="collection-item avatar waves-effect waves" style="min-height: 60px;" onclick="showDiv()">
                         <img src="../../images/quarto-1.jpg" alt="" class="circle">
                         <span class="title"><%= hospede.Nome %> </span>
-                        <p><%= hospede.End.Cidade %> - <%= hospede.End.Estado %></p>
+                        <p><%= hospede.Endereco.Cidade %> - <%= hospede.Endereco.Estado %></p>
                     </a>
                     <% } %>
                 </ul>
@@ -126,83 +126,137 @@
     <!-- Modal -->
     <div id="add" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <h4>Adicionar Dados</h4>
+
+           
+                <h4>Adicionar Dados</h4>
 
 
-            <div class="col s12">
-                <h5>Dados Pessoais</h5>
-            </div>
-
-            <div class="col s12">
-                <label>Nome</label>
-                <input type="text" />
-            </div>
-
-            <div class="col s6">
-                <label>Data de Nascimento</label>
-                <input type="date" />
-
-                <label>Sexo</label>
-                <br />
-                <input name="group1" type="radio" id="test10" />
-                <label for="test10" style="margin-top: 15px;">Feminino</label>
-
-                <input name="group1" type="radio" id="test20" />
-                <label for="test20">Masculino</label>
-            </div>
-
-            <div class="col s6">
-                <label>E-mail</label>
-                <input type="text" />
-
-                <label>CPF</label>
-                <input type="text" />
-            </div>
+                <div class="col s12">
+                    <h5>Dados Pessoais</h5>
+                </div>
 
 
 
-            <div class="col s12">
-                <h5>Endereço</h5>
-            </div>
 
-            <div class="col s6">
-                <label>Rua</label>
-                <input type="text" />
 
-                <label>Bairro</label>
-                <input type="text" />
-            </div>
+                <div class="input-field col s12 m6">
+                    <label>Nome</label>
+                    <input id="txtNome" runat="server" type="text" class="validate" />
+                </div>
 
-            <div class="col s6">
-                <label>Cidade</label>
-                <input type="text" />
+                <div class="input-field col s12 m6">
+                    <input id="txtData" runat="server" type="date" class="validate" />
 
-                <label>CEP</label>
-                <input type="text" />
-            </div>
+                </div>
 
-            <div class="col s12">
-                <label>Estado</label>
-                <select>
-                    <option value="SP">SP</option>
-                </select>
-            </div>
+                <div class="input-field col s12 m6">
+                    <label>Cpf</label>
+                    <input id="txtCpf" runat="server" type="text" class="validate" />
+                </div>
 
-            <div class="col s12">
-                <h5>Dados do Hospede</h5>
-            </div>
-            <div class="col s6">
-                <label>Placa do Carro</label>
-                <input type="text" />
-            </div>
-            <div class="col s6">
-                <label>Cidade de Origem</label>
-                <input type="text" />
-            </div>
+                <div class="input-field col s12 m6">
+                    <label>Telefone</label>
+                    <input id="txtTelefone" runat="server" type="text" class="validate" />
+                </div>
 
+                <div class="input-field col s12 m6">
+                    <label>E-mail</label>
+                    <input id="txtEmail" runat="server" type="email" class="validate" />
+                </div>
+
+                <div class="col s12 m6" >
+                    <asp:RadioButtonList runat="server" ID="rblSexo">
+                        <asp:ListItem Value="M">Masculino</asp:ListItem>
+                        <asp:ListItem Value="F">Feminino</asp:ListItem>
+                    </asp:RadioButtonList>
+                </div>
+
+                <div class="col s12">
+                    <h5>Endereço</h5>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <label>CEP</label>
+                    <input id="txtCep" runat="server" type="text" />
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <select id="ddlEstado" runat="server">
+                        <option value="" disabled selected>Selecione o estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espirito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                    <label>Estado</label>
+                </div>
+
+
+
+                <div class="input-field col s12 m6">
+                    <label>Cidade</label>
+                    <input id="txtCidade" runat="server" type="text" />
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <label>Bairro</label>
+                    <input id="txtBairro" runat="server" type="text" />
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <label>Rua</label>
+                    <input id="txtRua" runat="server" type="text" />
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <label>Numero</label>
+                    <input id="txtNumero" runat="server" type="text" />
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <label>Complemento</label>
+                    <input id="txtComplemento" runat="server" type="text" />
+                </div>
+
+                <div class="col s12">
+                    <h5>Dados do Hospede</h5>
+                </div>
+                <div class="input-field col s12 m6">
+                    <label>Placa do Carro</label>
+                    <input id="txtPlacaCarro" runat="server" type="text" />
+                </div>
+                <div class="input-field col s12 m6">
+                    <label>Cidade de Origem</label>
+                    <input id="txtCidadeOrigem" runat="server" type="text" />
+                </div>
+           
         </div>
+
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Adicionar</a>
+            <button id="btnCadastrar" class="modal-action modal-close waves-effect waves-green btn-flat" runat="server" onserverclick="btnCadastrar_ServerClick">Cadastrar</button>
         </div>
     </div>
 
@@ -302,7 +356,12 @@
             $('select').material_select();
             $('.modal-trigger').leanModal();
         });
-    </script>
 
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+
+        </script>
+     
 </asp:Content>
 

@@ -10,6 +10,22 @@ public class Perfil
     public enum _tipo { administrador, gerente, recepcionista, hospede };
     private _tipo tipo; 
 
+    public Perfil()
+    {
+
+    }
+
+    public Perfil(int cod_perfil)
+    {
+        this.cod_perfil = cod_perfil;
+    }
+
+    public Perfil (string tipo)
+    {
+        this.tipo = (_tipo)Enum.Parse(typeof(_tipo), tipo);
+    }
+
+
     public int Cod_perfil
     {
         get { return cod_perfil; }
@@ -23,6 +39,6 @@ public class Perfil
 
     public void setTipo(string tipo)
     {
-        this.tipo = (_tipo)Enum.Parse(typeof(_tipo), tipo); ;
+        this.tipo = (_tipo)Enum.Parse(typeof(_tipo), tipo);
     }
 }

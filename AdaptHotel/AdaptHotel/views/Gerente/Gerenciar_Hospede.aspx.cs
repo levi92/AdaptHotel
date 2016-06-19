@@ -32,5 +32,16 @@ namespace AdaptHotel.views.Gerente
                 lista_hospedes.Add(hospede);
             }
         }
+
+        protected void btnCadastrar_ServerClick(object sender, EventArgs e)
+        {
+            Foto foto = new Foto(null);
+            Endereco endereco = new Endereco(txtRua.Value, txtNumero.Value, txtComplemento.Value, txtBairro.Value, txtCep.Value, txtCidade.Value, ddlEstado.Value);
+            Perfil perfil = new Perfil(4);
+                    
+
+            Hospede hospede = new Hospede(txtNome.Value, txtTelefone.Value, txtEmail.Value, txtCpf.Value, Convert.ToChar(rblSexo.SelectedValue), Convert.ToDateTime(txtData.Value), perfil, endereco, txtPlacaCarro.Value, txtCidadeOrigem.Value, null, foto, null);
+            Hospede_DB.Insert(hospede);
+        }
     }
 }

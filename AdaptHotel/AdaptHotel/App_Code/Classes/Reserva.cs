@@ -86,10 +86,4 @@ public class Reserva
             hospede = value;
         }
     }
-
-    public string ImprimirReserva()
-    {
-        return Hospede.ImprimirHospede()+"DATA RESERVA ENTRADA: " + getDataReservaEntrada() + "DATA RESERVA SAÍDA: " + getDataReservaSaida() + "DATA CHECK-IN: " + DataCheckin + "DATA CHECK-OUT: " + DataCheckout + "VALOR TOTAL: " + ValorTotal + " PAGO: " + Pago;
-    }
-
 }

@@ -9,6 +9,22 @@ public class Endereco
     private string rua, numero, complemento, bairro, cep, cidade, estado;
     private int codEnd;
 
+    public Endereco()
+    {
+
+    }
+
+    public Endereco(string rua, string numero, string complemento, string bairro, string cep, string cidade, string estado)
+    {
+        this.rua = rua;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cep = cep;
+        this.cidade = cidade;
+        this.estado = estado;
+    }
+
     public int CodEnd
     {
         get { return codEnd; }
@@ -55,10 +71,5 @@ public class Endereco
     {
         get { return rua; }
         set { rua = value; }
-    }
-
-    public string Imprimir()
-    {
-        return "RUA: " + Rua + "NUMERO: " + Numero + "COMPLEMENTO: " + Complemento + "BAIRRO: " + Bairro + "CIDADE: " + Cidade + "ESTADO: " + Estado + "CEP: " + Cep;
     }
 }
