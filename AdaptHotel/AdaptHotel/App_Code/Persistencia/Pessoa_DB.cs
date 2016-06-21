@@ -9,8 +9,8 @@ public class Pessoa_DB
     public static int Insert(Pessoa pessoa, SqlConnection objConnection)
     {
         int retorno = 0;
-        //try
-        //{
+        try
+        {
             pessoa.Endereco.CodEnd = Endereco_DB.Insert(pessoa.Endereco, objConnection);
 
             if (pessoa.Foto.Endereco_foto != null)
@@ -31,11 +31,11 @@ public class Pessoa_DB
             objCommand.Parameters.Add(Mapped.Parameter("@cod_endereco", pessoa.Endereco.CodEnd));
             objCommand.Parameters.Add(Mapped.Parameter("@cod_perfil", pessoa.Perfil.Cod_perfil));
             retorno = Convert.ToInt32(objCommand.ExecuteScalar());
-        //}
-        //catch (Exception)
-        //{
-        //    retorno = -2;
-        //}
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
         return retorno;
     }
 

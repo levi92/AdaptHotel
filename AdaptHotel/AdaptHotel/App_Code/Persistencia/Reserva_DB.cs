@@ -15,15 +15,17 @@ public class Reserva_DB
         try
         {
             SqlConnection objConnection = Mapped.Connection();
-            SqlCommand objCommand = Mapped.Command("Insert into avaliacoes (data_reserva_entrada, data_reserva_saida, data_chek_in, data_chek_out, status_reserva, pago, valor_total, codHospedes) values (@data_reserva_entrada, @data_reserva_saida, @data_chek_in, @data_chek_out, @status_reserva, @pago, @valor_total, @codHospedes);", objConnection);
+            SqlCommand objCommand = Mapped.Command("Insert into reserva (data_reserva_entrada, data_reserva_saida, data_chek_in, data_chek_out, status_reserva, pago, valor_total, cod_hospedes) output Inserted.cod_reserva values (@data_reserva_entrada, @data_reserva_saida, @data_chek_in, @data_chek_out, @status_reserva, @pago, @valor_total, @cod_hospedes);", objConnection);
             objCommand.Parameters.Add(Mapped.Parameter("@data_reserva_entrada", reserva.getDataReservaEntrada()));
             objCommand.Parameters.Add(Mapped.Parameter("@data_reserva_saida", reserva.getDataReservaSaida()));
             objCommand.Parameters.Add(Mapped.Parameter("@data_chek_in", reserva.DataCheckin));
             objCommand.Parameters.Add(Mapped.Parameter("@data_chek_out", reserva.DataCheckout));
-            //objCommand.Parameters.Add(Mapped.Parameter("@status_reserva", reserva.));
+            objCommand.Parameters.Add(Mapped.Parameter("@status_reserva", reserva.getStatusReserva()));
             objCommand.Parameters.Add(Mapped.Parameter("@pago", reserva.Pago));
             objCommand.Parameters.Add(Mapped.Parameter("@valor_total", reserva.ValorTotal));
-
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_hospede", reserva.Hospede.CodHospede));
+            retorno = Convert.ToInt32(objCommand.ExecuteScalar());
+            ReservaQuarto_DB.Insert(reserva, objConnection);
             objConnection.Close();
             objCommand.Dispose();
             objConnection.Dispose();
@@ -33,7 +35,6 @@ public class Reserva_DB
             retorno = -2;
         }
         return retorno;
-
     }
 
     public static DataSet Select10Ultimos()

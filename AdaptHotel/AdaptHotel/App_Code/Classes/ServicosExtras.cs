@@ -10,14 +10,16 @@ public class ServicosExtras
     private double valor;
     private DateTime dataPedido;
     private SubTipoQuarto subTipoDeQuarto;
+    private Reserva reserva;
 
 
-	public ServicosExtras(string descricao, DateTime dataPedido, double valor, SubTipoQuarto subTipoDeQuarto)
+	public ServicosExtras(string descricao, DateTime dataPedido, double valor, SubTipoQuarto subTipoDeQuarto, Reserva reserva)
 	{
         this.descricao = descricao;
         this.valor = valor;
         this.dataPedido = dataPedido;
         this.subTipoDeQuarto = subTipoDeQuarto;
+        this.reserva = reserva;
 	}
 
     public SubTipoQuarto SubTipoDeQuarto
@@ -44,10 +46,11 @@ public class ServicosExtras
         set { valor = value; }
     }
 
-    public string ImprimirServicosExtras()
+    public Reserva Reserva
     {
-        return "DESCRICOES: " + Descricao + "VALOR: " + Valor + " DATA DO PEDIDO: " + DataPedido + "SUB TIPO DE  QUARTO: " + subTipoDeQuarto ; 
+        get { return reserva; }
+        set { reserva = value; }
     }
 
-
 }
+

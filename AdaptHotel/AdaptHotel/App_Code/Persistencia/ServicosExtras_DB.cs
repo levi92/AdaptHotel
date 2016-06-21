@@ -4,23 +4,30 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 
-/// <summary>
-/// Summary description for servicosExtras_DB
-/// </summary>
-public class servicosExtras_DB
+
+public class ServicosExtras_DB
 {
-    public static void Insert()
+    public static int Insert(ServicosExtras servicos_extras)
     {
-        SqlConnection objConnection;
-        SqlCommand objCommand;
-        SqlDataAdapter objDataAdapter;
-        objConnection = Mapped.Connection();
-        objCommand = Mapped.Command("Insert into avaliacoes (descricao, valor, dataPedido, codReserva) values @descricao, @valor, @dataPedido, @codReserva", objConnection);
-        objDataAdapter = Mapped.Adapter(objCommand);
-        objConnection.Close();
-        objCommand.Dispose();
-        objConnection.Dispose();
+        int retorno = 0;
 
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            SqlCommand objCommand = Mapped.Command("insert into servicos_extras (descricao, valor, data_pedido, cod_reserva) values (@descricao, @valor, @data_pedido, @cod_reserva);", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@descricao", servicos_extras.Descricao));
+            objCommand.Parameters.Add(Mapped.Parameter("@valor", servicos_extras.Valor));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_pedido", servicos_extras.DataPedido));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_reserva", servicos_extras.Reserva.CodReserva));
+            objCommand.ExecuteNonQuery();
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+        return retorno;
     }
-
 }

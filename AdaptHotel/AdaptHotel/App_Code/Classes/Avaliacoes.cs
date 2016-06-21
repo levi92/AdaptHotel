@@ -13,17 +13,19 @@ public class Avaliacoes
     private DateTime dataHoraResposta, dataHoraComentario;
     private Hospede hos;
     private SubTipoQuarto subQ;
+    private Reserva reserva;
 
-    public Avaliacoes(string comentario, string resposta, int codAvaliacoes, int nota, DateTime dataHoraResposta, DateTime dataHoraComentario, Hospede hos, SubTipoQuarto subQ)
+    public Avaliacoes(string comentario, string resposta, int codAvaliacoes, int nota, DateTime dataHoraResposta, DateTime dataHoraComentario, Hospede hos, SubTipoQuarto subQ, Reserva reserva)
     {
-        this.Comentario = comentario;
-        this.Resposta = resposta;
-        this.CodAvaliacoes = codAvaliacoes;
-        this.Nota = nota;
-        this.DataHoraResposta = dataHoraResposta;
-        this.DataHoraComentario = dataHoraComentario;
-        this.Hos = hos;
+        this.comentario = comentario;
+        this.resposta = resposta;
+        this.codAvaliacoes = codAvaliacoes;
+        this.nota = nota;
+        this.dataHoraResposta = dataHoraResposta;
+        this.dataHoraComentario = dataHoraComentario;
+        this.hos = hos;
         this.subQ = subQ;
+        this.reserva = reserva;
     }
 
     public SubTipoQuarto SubQ
@@ -34,93 +36,50 @@ public class Avaliacoes
 
         public string Comentario
     {
-        get
-        {
-            return comentario;
-        }
+        get { return comentario; }
 
-        set
-        {
-            comentario = value;
-        }
+        set { comentario = value; }
     }
 
     public string Resposta
     {
-        get
-        {
-            return resposta;
-        }
-
-        set
-        {
-            resposta = value;
-        }
+        get { return resposta; }
+        set { resposta = value; }
     }
 
     public int CodAvaliacoes
     {
-        get
-        {
-            return codAvaliacoes;
-        }
-
-        set
-        {
-            codAvaliacoes = value;
-        }
+        get { return codAvaliacoes; }
+        set { codAvaliacoes = value; }
     }
 
     public int Nota
     {
-        get
-        {
-            return nota;
-        }
-
-        set
-        {
-            nota = value;
-        }
+        get { return nota; }
+        set { nota = value; }
     }
 
     public DateTime DataHoraResposta
     {
-        get
-        {
-            return dataHoraResposta;
-        }
-
-        set
-        {
-            dataHoraResposta = value;
-        }
+        get { return dataHoraResposta; }
+        set { dataHoraResposta = value; }
     }
 
     public DateTime DataHoraComentario
     {
-        get
-        {
-            return dataHoraComentario;
-        }
-
-        set
-        {
-            dataHoraComentario = value;
-        }
+        get { return dataHoraComentario; }
+        set { dataHoraComentario = value; }
     }
 
     public Hospede Hos
     {
-        get
-        {
-            return hos;
-        }
-
-        set
-        {
-            hos = value;
-        }
+        get { return hos; }
+        set { hos = value; }
     }
 
+    public Reserva Reserva
+    {
+        get { return reserva; }
+        set { reserva = value; }
+    }
 }

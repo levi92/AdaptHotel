@@ -12,24 +12,22 @@ public class Avaliacoes_DB
         try
         {
             SqlConnection objConnection = Mapped.Connection();
-            SqlCommand objCommand = Mapped.Command("Insert into avaliacoes (comentario, resposta, nota, data_hora_comentario, data_hora_resposta, codReserva) values (@comentario, @resposta, @nota, @data_hora_comentario, @data_hora_resposta, @codReserva);", objConnection);
+            SqlCommand objCommand = Mapped.Command("Insert into avaliacoes (comentario, resposta, nota, data_hora_comentario, data_hora_resposta, cod_reserva) values (@comentario, @resposta, @nota, @data_hora_comentario, @data_hora_resposta, @cod_reserva);", objConnection);
             objCommand.Parameters.Add(Mapped.Parameter("@comentario", avaliacoes.Comentario));
             objCommand.Parameters.Add(Mapped.Parameter("@resposta", avaliacoes.Resposta));
             objCommand.Parameters.Add(Mapped.Parameter("@nota", avaliacoes.Nota));
             objCommand.Parameters.Add(Mapped.Parameter("@data_hora_comentario", avaliacoes.DataHoraComentario));
             objCommand.Parameters.Add(Mapped.Parameter("@data_hora_resposta", avaliacoes.DataHoraResposta));
-            retorno = Convert.ToInt32(objCommand.ExecuteScalar());
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_reserva", avaliacoes.Reserva.CodReserva));
+            objCommand.ExecuteNonQuery();
             objConnection.Close();
             objCommand.Dispose();
             objConnection.Dispose();
-
         }
         catch (Exception)
         {
             retorno = -2;   
         }
         return retorno;
-
-
     }
 }

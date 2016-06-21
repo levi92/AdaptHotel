@@ -14,11 +14,13 @@ public class Funcionario_DB
         try
         {
             SqlConnection objConnection = Mapped.Connection();
-            SqlCommand objCommand = Mapped.Command("Insert into funcionarios (cargo, salario, data_admissao, numero_cnt) values (@cargo, @salario, @data_admissao, @numero_cnt);", objConnection);
+            funcionario.CodPessoa = Pessoa_DB.Insert(funcionario, objConnection);
+            SqlCommand objCommand = Mapped.Command("Insert into funcionarios (cargo, salario, data_admissao, numero_cnt, cod_pessoa) values (@cargo, @salario, @data_admissao, @numero_cnt, @cod_pessoa);", objConnection);
             objCommand.Parameters.Add(Mapped.Parameter("@cargo", funcionario.Cargo));
             objCommand.Parameters.Add(Mapped.Parameter("@salario", funcionario.Salario));
             objCommand.Parameters.Add(Mapped.Parameter("@data_admissao", funcionario.DataAdmissao));
             objCommand.Parameters.Add(Mapped.Parameter("@numero_cnt", funcionario.NumeroCnt));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_pessoa", funcionario.CodPessoa));
             objCommand.ExecuteNonQuery();
             
             objConnection.Close();
