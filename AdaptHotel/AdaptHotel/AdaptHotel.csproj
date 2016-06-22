@@ -147,7 +147,11 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\materialize.css" />
     <Content Include="Content\materialize.min.css" />
+<<<<<<< 9860b6024b0069214b8cd43e8862eb4a743fdf92
     <Content Include="images\Hotel-Villa-Augusto.png" />
+=======
+    <Content Include="images\ajax-loader.gif" />
+>>>>>>> Validação de login atualizada e teste de feedback de carregamento
     <Content Include="images\logo.png" />
     <Content Include="images\quarto-1.jpg" />
     <Content Include="images\quarto-2.jpg" />
@@ -213,6 +217,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Classes\Administrador.cs" />
     <Compile Include="App_Code\Classes\Avaliacoes.cs" />
     <Compile Include="App_Code\Classes\DescontoQuarto.cs" />
     <Compile Include="App_Code\Classes\Endereco.cs" />
