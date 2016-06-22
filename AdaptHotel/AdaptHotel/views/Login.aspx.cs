@@ -19,6 +19,9 @@ namespace AdaptHotel.views
             string email = txtEmail1.Value.ToString();
             string senha = txtSenha1.Value.ToString();
 
+            txtEmail1.Value = "";
+            txtSenha1.Value = "";
+
             if (String.IsNullOrEmpty(email) || String.IsNullOrEmpty(senha))
             {
                 lblMsg.Visible = true;

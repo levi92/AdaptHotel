@@ -11,10 +11,15 @@ namespace AdaptHotel.views.Gerente
     public partial class Gerenciar_Hospede : System.Web.UI.Page
     {
         public List<Hospede> lista_hospedes = new List<Hospede>();
+        public static Hospede hospede_teste = new Hospede();
+        public static int codigo;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarregarHospedes();
+            if (!IsPostBack)
+            {
+                CarregarHospedes();
+            }           
         }
 
         public void CarregarHospedes()
@@ -28,9 +33,15 @@ namespace AdaptHotel.views.Gerente
                 endereco.Cidade = values[1].ToString();
                 endereco.Estado = values[2].ToString();
 
-                Hospede hospede = new Hospede(values[0].ToString(), endereco);
+                Hospede hospede = new Hospede(values[0].ToString(), endereco, Convert.ToInt32(values[3]));
                 lista_hospedes.Add(hospede);
             }
+        }
+
+        public string CarregarDetalhes(int id)
+        {
+            hospede_teste = Hospede_DB.SelectByID(id);
+            return "teste";
         }
 
         protected void btnCadastrar_ServerClick(object sender, EventArgs e)
@@ -42,6 +53,11 @@ namespace AdaptHotel.views.Gerente
 
             Hospede hospede = new Hospede(txtNome.Value, txtTelefone.Value, txtEmail.Value, txtCpf.Value, Convert.ToChar(rblSexo.SelectedValue), Convert.ToDateTime(txtData.Value), perfil, endereco, txtPlacaCarro.Value, txtCidadeOrigem.Value, null, foto, null);
             Hospede_DB.Insert(hospede);
+        }
+
+        protected void btnEditar_ServerClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
