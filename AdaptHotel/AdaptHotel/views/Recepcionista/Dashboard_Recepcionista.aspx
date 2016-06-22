@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Dashboard_Recepcionista.aspx.cs" Inherits="AdaptHotel.views.Recepcionista.Dashboard_Recepcionista" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Recepcionista.Master" CodeBehind="Dashboard_Recepcionista.aspx.cs" Inherits="AdaptHotel.views.Recepcionista.Dashboard_Recepcionista" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
