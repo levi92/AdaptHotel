@@ -13,5 +13,12 @@ namespace AdaptHotel.views.Gerente
         {
 
         }
+
+        protected void btnCadastrar_ServerClick(object sender, EventArgs e)
+        {
+
+           // Reserva reserva = new Reserva(ddlHospede.Value, Convert.ToDateTime(txtDataEntrada.Value), Convert.ToDateTime(txtDataSaída.Value));
+           
+        }
     }
 }
