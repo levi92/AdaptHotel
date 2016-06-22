@@ -71,9 +71,9 @@
             <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <div class="row">
-                        <div class="col s0 m2 l4" style="height:1px"></div>
-                        <div class="card hoverable col s12 m8 l6" style="margin: 0 auto;margin-top: 80px;padding-bottom: 20px;">
-                            <div id="logo" class="col s8 top-spacing-form" style="text-align: center;margin: 0 auto;float: none;">
+                        <div class="col s0 m2 l4" style="height: 1px"></div>
+                        <div class="card hoverable col s12 m8 l6" style="margin: 0 auto; margin-top: 80px; padding-bottom: 20px;">
+                            <div id="logo" class="col s8 top-spacing-form" style="text-align: center; margin: 0 auto; float: none;">
                                 <img src="../../images/login.jpg" style="width: inherit; height: inherit;" />
                             </div>
                             <div class="top-spacing-form input-field col s12">
@@ -89,12 +89,14 @@
                             <div class="col s12 center-align top-spacing-form">
                                 <asp:Label ID="lblMsg" runat="server" Visible="false" ForeColor="Red"></asp:Label>
                             </div>
-                            
+                            <div class="col s6" style="margin: 0 auto; float: none; text-align: center;">                           
+                                <button id="btnEntrar" style="margin: 0 auto; float: none;" class="btn orange waves-effect waves-light" runat="server" onserverclick="btnEntrar_Click"><i class="material-icons right">trending_flat</i>Entrar</button>                     
+                            </div>
                             <div class="col s12 center-align top-spacing-form">
                                 <asp:LinkButton ID="lkbEsquecerSenha" CssClass="link" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
                             </div>
                         </div>
-                        <div class="col s0 m2 l4" style="height:1px"></div>
+                        <div class="col s0 m2 l4" style="height: 1px"></div>
                     </div>
                 </ContentTemplate>
             </asp:UpdatePanel>

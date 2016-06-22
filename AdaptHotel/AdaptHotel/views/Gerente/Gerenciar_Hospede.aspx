@@ -348,7 +348,7 @@
     </div>
 
     <script>
-        function showDiv(cod_hospede) {
+        <%--function showDiv(cod_hospede) {
             var data = JSON.stringify({id: cod_hospede})
             console.log(cod_hospede, data)
             $.ajax({
@@ -366,6 +366,10 @@
                     console.log(result);
                 }
             });          
+        }--%>
+        function showDiv(cod_hospede) {
+            $("#details").slideUp("slow");
+            $("#details").slideDown("slow");
         }
 
         $(document).ready(function () {

@@ -11,8 +11,6 @@ namespace AdaptHotel.views.Gerente
     public partial class Gerenciar_Hospede : System.Web.UI.Page
     {
         public List<Hospede> lista_hospedes = new List<Hospede>();
-        public static Hospede hospede_teste = new Hospede();
-        public static int codigo;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,10 +36,9 @@ namespace AdaptHotel.views.Gerente
             }
         }
 
-        public string CarregarDetalhes(int id)
+        public void CarregarDetalhes(int id)
         {
-            hospede_teste = Hospede_DB.SelectByID(id);
-            return "teste";
+            Hospede hospede = Hospede_DB.SelectByID(id);
         }
 
         protected void btnCadastrar_ServerClick(object sender, EventArgs e)
