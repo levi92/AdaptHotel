@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="col s12">
+        <div class="col s12 m6">
             <div class="card hoverable">
                 <div class="card-content">
                     <canvas id="canvas3"></canvas>
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="col s12">
+        <div class="col s12 m6">
             <div class="card hoverable">
                 <div class="card-content">
                     <canvas id="canvas4"></canvas>
@@ -69,7 +69,7 @@
         var config1 = {
             type: 'line',
             data: {
-                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Mario", "Junho"],
+                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"],
                 datasets: [{
                     label: "Quantidade de Hóspedes",
                     data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
@@ -89,18 +89,18 @@
 
         //CHART 2
         var config2 = {
-            type: 'pie',
+            type: 'bar',
             data: {
-                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Mario", "Junho"],
+                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"],
                 datasets: [{
-                    label: "Quartos Mais Reservados",
+                    label: "Quantidade de Quartos",
                     data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
                 }]
             },
             options: {
                 responsive: true,
                 title: {
-                    display: true, text: 'Quartos Mais Reservados'
+                    display: true, text: 'Quartos Mais Reservado'
                 },
             }
         };
@@ -111,12 +111,13 @@
 
         //CHART 3
         var config3 = {
-            type: 'radar',
-            data: {
-                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Mario", "Junho"],
+            type: 'pie',
+            data: {    
+                labels: ["Disponível", "Ocupado", "Manutenção", "Desabilitado"],
                 datasets: [{
                     label: "Quartos ocupados",
-                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                    backgroundColor: ["#4CAF50", "#F44336", "#FFC107", "#9E9E9E"],
                 }]
             },
             options: {
@@ -126,19 +127,19 @@
                 },
             }
         };
-        $.each(config3.data.datasets, function (i, dataset) {
-            dataset.backgroundColor = randomColor(0.5);
-        });
+     
 
 
         //CHART 4
         var config4 = {
             type: 'line',
             data: {
-                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Mario", "Junho"],
+                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"],
                 datasets: [{
                     label: "Valores (R$)",
                     data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                    pointRadius: 1,
+                    pointHitRadius: 10,
                 }]
             },
             options: {

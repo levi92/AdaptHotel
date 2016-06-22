@@ -3,17 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col s12 ">
-                <div class="card hoverable" style="width: 100%; height: 20vh;">
-                    <div class="col s12 blue darken-4">
-                        <div class="card-title" style="width: 100%;"><a class="white-text" style="font-size: 36px;" href="#">Estatísticas</a></div>
-                    </div>
-                    <div class="card-content" style="">
-                        <div class="row">
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
             <div class="col s12 col m12 col l4">
                 <div class="card hoverable" style="width: 100%; height: 60vh;">
                     <div class="col s12 blue darken-4">
