@@ -21,8 +21,9 @@ public class Hospede : Pessoa
 
     }
 
-    public Hospede(string nome, Endereco end) : base(nome, end)
+    public Hospede(string nome, Endereco end, int cod_hospede) : base(nome, end)
     {
+        this.codHospede = cod_hospede;
     }
 
     public Hospede()

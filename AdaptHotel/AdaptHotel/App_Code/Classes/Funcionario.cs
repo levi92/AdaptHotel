@@ -8,12 +8,12 @@ public class Funcionario : Pessoa
 {
     private string cargo, numeroCnt;
     private double salario;
-    private int codFuncionario;
+    private int? codFuncionario;
     private DateTime dataAdmissao;
 
 
     public Funcionario(string nome, string telefone, string email, string cpf, char sexo, DateTime dataNascimento, Perfil perfil, Endereco endereco,
-        string cargo, string numeroCnt, double salario, DateTime dataAdmissao, int codFuncionario, int? codPessoa = null, Foto foto = null, string senha = null) : base(nome, telefone, email, cpf, sexo, dataNascimento, codPessoa, perfil, endereco, foto, senha)
+        string cargo, string numeroCnt, double salario, DateTime dataAdmissao, int? codFuncionario = null, int? codPessoa = null, Foto foto = null, string senha = null) : base(nome, telefone, email, cpf, sexo, dataNascimento, codPessoa, perfil, endereco, foto, senha)
 	{
         this.cargo = cargo;
         this.numeroCnt = numeroCnt;
@@ -27,7 +27,7 @@ public class Funcionario : Pessoa
 
     }
 
-    public int CodFuncionario
+    public int? CodFuncionario
     {
         get { return codFuncionario; }
         set { codFuncionario = value; }

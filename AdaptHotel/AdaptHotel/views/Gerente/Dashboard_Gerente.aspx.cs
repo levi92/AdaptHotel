@@ -46,7 +46,7 @@ namespace AdaptHotel.views.Gerente
                 endereco.Cidade = values[1].ToString();
                 endereco.Estado = values[2].ToString();
 
-                Hospede hospede = new Hospede(values[0].ToString(), endereco);
+                Hospede hospede = new Hospede(values[0].ToString(), endereco, Convert.ToInt32(values[3]));
                 lista_hospedes.Add(hospede);
             }
 
