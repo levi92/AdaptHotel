@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
@@ -147,19 +147,10 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\materialize.css" />
     <Content Include="Content\materialize.min.css" />
-<<<<<<< HEAD
-<<<<<<< 9860b6024b0069214b8cd43e8862eb4a743fdf92
     <Content Include="images\Hotel-Villa-Augusto.png" />
-=======
     <Content Include="images\ajax-loader.gif" />
->>>>>>> Validação de login atualizada e teste de feedback de carregamento
-=======
-<<<<<<< HEAD
     <Content Include="images\ajax-loader.gif" />
-=======
     <Content Include="images\Hotel-Villa-Augusto.png" />
->>>>>>> 9860b6024b0069214b8cd43e8862eb4a743fdf92
->>>>>>> 9548d8e1a3c06b454a1ec34b05e4d9dd84626e4b
     <Content Include="images\logo.png" />
     <Content Include="images\quarto-1.jpg" />
     <Content Include="images\quarto-2.jpg" />
