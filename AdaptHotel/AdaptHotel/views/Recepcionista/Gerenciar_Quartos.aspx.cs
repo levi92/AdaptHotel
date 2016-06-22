@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AdaptHotel.views.Gerente
+namespace AdaptHotel.views.Recepcionista
 {
-    public partial class Index : System.Web.UI.Page
+    public partial class Gerenciar_Quartos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

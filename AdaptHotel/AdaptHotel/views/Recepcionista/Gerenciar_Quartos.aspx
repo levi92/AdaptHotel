@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Gerente.Master" CodeBehind="Gerenciar_Quartos.aspx.cs" Inherits="AdaptHotel.views.Gerente.Gerenciar_Quartos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Recepcionista.Master" AutoEventWireup="true" CodeBehind="Gerenciar_Quartos.aspx.cs" Inherits="AdaptHotel.views.Recepcionista.Gerenciar_Quartos" %>
+
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -153,26 +154,27 @@
         </ul>
     </div>
 
-    <!-- Modal -->
+        <!-- Modal -->
     <div id="add" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Novo Quarto</h4>
 
-
-            <div class="col s12 m6">
+          
+            <div class="col s12">
                 <label>Nome</label>
                 <input type="text" />
             </div>
 
             <div class="col s6">
-                <label>Tipo</label>
+               <label>Tipo</label>
                 <input type="text" />
             </div>
 
             <div class="col s6">
+
                 <label>Valor</label>
                 <input type="text" />
-            </div>
+            </div>            
 
         </div>
         <div class="modal-footer">

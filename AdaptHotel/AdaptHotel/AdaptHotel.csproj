@@ -142,13 +142,21 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Gerente.Master" />
+    <Content Include="images\login.jpg" />
+    <Content Include="Recepcionista.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\materialize.css" />
     <Content Include="Content\materialize.min.css" />
+    <Content Include="images\Hotel-Villa-Augusto.png" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\Hotel-Villa-Augusto.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\quarto-1.jpg" />
     <Content Include="images\quarto-2.jpg" />
     <Content Include="images\quarto-3.jpg" />
+    <Content Include="js\Chart.min.js" />
     <Content Include="js\materialize.js" />
     <Content Include="js\materialize.min.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -187,18 +195,22 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="views\Error\Erro_404.aspx" />
+    <Content Include="views\Error\Erro_500.aspx" />
+    <Content Include="views\Gerente\Estatisticas.aspx" />
     <Content Include="views\Gerente\Gerenciar_Funcionario.aspx" />
     <Content Include="views\Gerente\Gerenciar_Hospede.aspx" />
     <Content Include="views\Gerente\Gerenciar_Quartos.aspx" />
     <Content Include="views\Gerente\Gerenciar_Reservas.aspx" />
     <Content Include="views\Recepcionista\Dashboard_Recepcionista.aspx" />
     <Content Include="views\Gerente\Dashboard_Gerente.aspx" />
-    <Content Include="views\Gerente\Index.aspx" />
     <Content Include="views\Login.aspx" />
+    <Content Include="views\Recepcionista\Gerenciar_Hospede.aspx" />
+    <Content Include="views\Recepcionista\Gerenciar_Quartos.aspx" />
+    <Content Include="views\Recepcionista\Gerenciar_Reservas.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -208,6 +220,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Classes\Administrador.cs" />
     <Compile Include="App_Code\Classes\Avaliacoes.cs" />
     <Compile Include="App_Code\Classes\DescontoQuarto.cs" />
     <Compile Include="App_Code\Classes\Endereco.cs" />
@@ -250,10 +263,24 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Gerente.Master.cs">
+      <DependentUpon>Gerente.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente.Master.designer.cs">
+      <DependentUpon>Gerente.Master</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recepcionista.Master.cs">
+      <DependentUpon>Recepcionista.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recepcionista.Master.designer.cs">
+      <DependentUpon>Recepcionista.Master</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,6 +294,27 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Error\Erro_404.aspx.cs">
+      <DependentUpon>Erro_404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Error\Erro_404.aspx.designer.cs">
+      <DependentUpon>Erro_404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Error\Erro_500.aspx.cs">
+      <DependentUpon>Erro_500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Error\Erro_500.aspx.designer.cs">
+      <DependentUpon>Erro_500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Gerente\Estatisticas.aspx.cs">
+      <DependentUpon>Estatisticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Gerente\Estatisticas.aspx.designer.cs">
+      <DependentUpon>Estatisticas.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Gerente\Gerenciar_Funcionario.aspx.cs">
       <DependentUpon>Gerenciar_Funcionario.aspx</DependentUpon>
@@ -310,19 +358,33 @@
     <Compile Include="views\Gerente\Dashboard_Gerente.aspx.designer.cs">
       <DependentUpon>Dashboard_Gerente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="views\Gerente\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="views\Gerente\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
     <Compile Include="views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="views\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Hospede.aspx.cs">
+      <DependentUpon>Gerenciar_Hospede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Hospede.aspx.designer.cs">
+      <DependentUpon>Gerenciar_Hospede.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Quartos.aspx.cs">
+      <DependentUpon>Gerenciar_Quartos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Quartos.aspx.designer.cs">
+      <DependentUpon>Gerenciar_Quartos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Reservas.aspx.cs">
+      <DependentUpon>Gerenciar_Reservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Reservas.aspx.designer.cs">
+      <DependentUpon>Gerenciar_Reservas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

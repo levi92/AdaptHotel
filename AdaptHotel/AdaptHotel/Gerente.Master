@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Gerente.master.cs" Inherits="AdaptHotel.Gerente" %>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="Content/materialize.css" media="screen,projection" />
+    <link href="Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager ID="scriptManager1" EnablePageMethods="true" runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+
+        <!-- top navigation -->
+        <nav class="blue darken-4 z-depth-0" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="right brand-logo">
+                    <img src="../../images/logo.png" style="transform: rotate(90deg);width: 38px;">
+                </a>
+
+
+                <ul id="nav-mobile" class="side-nav fixed">
+                    <li class="logo" style="text-align: center;height: 158px;"><img src="../../images/Hotel-Villa-Augusto.png" style="width: 197px;" /></li>
+
+                    <li class="bold" id="Dashboard_Gerente"><a class="waves-effect" href="../../views/Gerente/Dashboard_Gerente.aspx">Dashboard</a></li>
+                    <li class="bold" id="Gerenciar_Reservas"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Reservas.aspx">Reservas</a></li>
+                    <li class="bold" id="Gerenciar_Quartos"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Quartos.aspx">Quartos</a></li>
+                    <li class="bold" id="Gerenciar_Hospede"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Hospede">Hóspedes</a></li>
+                    <li class="bold" id="Gerenciar_Funcionario"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Funcionario.aspx">Funcionarios</a></li>
+                    <li class="bold" id="Estatisticas"><a class="waves-effect" href="../../views/Gerente/Estatisticas.aspx">Estatisticas</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+        <script>
+            $(document).ready(function () {
+                var loc = "0"+window.location.pathname;
+                loc = loc.split("/");
+                $("#"+loc[3]).addClass("active");
+            });
+        </script>
+        <style>
+        .bold>a {
+            font-weight: bold;
+        }
+        </style>
+        <!-- /top navigation -->
+
+
+        <!-- page content -->
+        <div class="section row no-padding">
+            <div class="col s12 central no-padding" role="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <!-- /page content -->
+
+        <script>
+            $(document).ready(function () { $(".button-collapse").sideNav(); })
+        </script>
+
+
+    </form>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../js/materialize.min.js"></script>
+
+</body>
+</html>

@@ -7,16 +7,8 @@ using System.Web.UI.WebControls;
 
 namespace AdaptHotel
 {
-    public partial class SiteMaster : MasterPage
+    public partial class Gerente : System.Web.UI.MasterPage
     {
-        protected void Page_Init(object sender, EventArgs e)
-        {
-            if (Session["usuario"] == null)
-            {
-                Response.Redirect("~/views/Login.aspx");
-            }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
 

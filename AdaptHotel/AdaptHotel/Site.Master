@@ -41,26 +41,25 @@
         <!-- top navigation -->
         <nav class="blue darken-4 z-depth-0" role="navigation">
             <div class="nav-wrapper container">
-                <a id="logo-container" href="#" class="right brand-logo">Logo</a>
+                <a id="logo-container" href="#" class="right brand-logo">
+                    <img src="../../images/logo.png" style="transform: rotate(90deg);width: 38px;">
+                </a>
 
 
-                <ul id="nav-mobile" class="side-nav fixed">
-                    <li><a href="../../views/Gerente/Dashboard_Gerente.aspx">Dashboard</a></li>
-                    <li><a href="../../views/Gerente/Gerenciar_Reservas.aspx">Reservas</a></li>
-                    <li><a href="../../views/Gerente/Gerenciar_Quartos.aspx">Quartos</a></li>
-                    <li><a href="../../views/Gerente/Gerenciar_Hospede.aspx">Hóspedes</a></li>
-                    <li><a href="../../views/Gerente/Gerenciar_Funcionario.aspx">Funcionarios</a></li>
-                    <li><a href="../../views/Gerente/Estatisticas.aspx">Estatisticas</a></li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
         </nav>
+
+        <style>
+        .bold>a {
+            font-weight: bold;
+        }
+        </style>
         <!-- /top navigation -->
 
 
         <!-- page content -->
         <div class="section row no-padding">
-            <div class="col s12 central no-padding" role="main">
+            <div class="col s12 no-padding" role="main">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
