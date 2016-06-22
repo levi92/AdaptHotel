@@ -34,6 +34,35 @@ public class Funcionario_DB
         return retorno;
     }
 
+    public static int Update(Funcionario funcionario)
+    {
+        int retorno = 0;
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            Pessoa_DB.Update(funcionario, objConnection);
+
+            SqlCommand objCommand = Mapped.Command("Insert into funcionarios cargo = @cargo, salario = @salario, " +
+                "data_admissao = @data_admissao, numero_cnt = @numero_cnt" +
+                "where cod_funcionario = @cod_funcionario;", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@cargo", funcionario.Cargo));
+            objCommand.Parameters.Add(Mapped.Parameter("@salario", funcionario.Salario));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_admissao", funcionario.DataAdmissao));
+            objCommand.Parameters.Add(Mapped.Parameter("@numero_cnt", funcionario.NumeroCnt));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_funcionario", funcionario.CodFuncionario));
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception e)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
     public static DataSet Select10Ultimos()
     {
         DataSet ds = new DataSet();
