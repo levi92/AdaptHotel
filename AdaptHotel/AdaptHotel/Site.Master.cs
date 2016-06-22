@@ -9,6 +9,14 @@ namespace AdaptHotel
 {
     public partial class SiteMaster : MasterPage
     {
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("~/views/Login.aspx");
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
