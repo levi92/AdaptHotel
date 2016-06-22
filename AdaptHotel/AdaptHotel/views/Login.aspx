@@ -34,11 +34,15 @@
             border-radius: 10px;
         }
     </style>
-    <nav class="light-blue lighten-1" role="navigation">
+
+    <nav class="blue darken-4 z-depth-0" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="right brand-logo" style="font-family: gearsOfPeace;">AdaptHotel</a>
+            <a id="logo-container" href="#" class="right brand-logo">
+                <img src="../../images/logo.png" style="transform: rotate(90deg); width: 38px;">
+            </a>
         </div>
     </nav>
+
     <form id="form1" class="col s12" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdateProgress ID="upgLogin" runat="server" AssociatedUpdatePanelID="UpdatePanel">
@@ -67,9 +71,10 @@
             <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <div class="row">
-                        <div class="col s10 m8 l4" style="margin: 0 auto; float: none;">
-                            <div id="logo" class="col s12 top-spacing-form" style="width: 100%; height: 33vh;">
-                                <img src="../fonts/Aston-Horiz-Color-Large.png" style="width: inherit; height: inherit;" />
+                        <div class="col s0 m2 l4" style="height:1px"></div>
+                        <div class="card hoverable col s12 m8 l6" style="margin: 0 auto;margin-top: 80px;padding-bottom: 20px;">
+                            <div id="logo" class="col s8 top-spacing-form" style="text-align: center;margin: 0 auto;float: none;">
+                                <img src="../../images/login.jpg" style="width: inherit; height: inherit;" />
                             </div>
                             <div class="top-spacing-form input-field col s12">
                                 <i class="material-icons prefix">email</i>
@@ -84,13 +89,14 @@
                             <div class="col s12 center-align top-spacing-form">
                                 <asp:Label ID="lblMsg" runat="server" Visible="false" ForeColor="Red"></asp:Label>
                             </div>
-                            <div class="col s12">
-                                <button id="btnEntrar" style="width: 100%;" class="btn orange waves-effect waves-light" runat="server" onserverclick="btnEntrar_Click">Entrar</button>
+                            <div class="col s6" style="margin:0 auto;float:none;text-align: center;">
+                                <button id="btnEntrar" style="margin: 0 auto;float: none;" class="btn orange waves-effect waves-light" runat="server" onserverclick="btnEntrar_Click"><i class="material-icons right">trending_flat</i>Entrar</button>
                             </div>
                             <div class="col s12 center-align top-spacing-form">
                                 <asp:LinkButton ID="lkbEsquecerSenha" CssClass="link" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
                             </div>
                         </div>
+                        <div class="col s0 m2 l4" style="height:1px"></div>
                     </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
