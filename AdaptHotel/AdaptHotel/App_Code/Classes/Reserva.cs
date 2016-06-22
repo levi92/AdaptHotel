@@ -14,9 +14,9 @@ public class Reserva
     private _statusReserva statusReserva;
     private List<NumeroQuarto> listaNumeroQuarto = new List<NumeroQuarto>();
 
-    public Reserva(int codReserva, DateTime dataReservaEntrada, DateTime dataReservaSaida, DateTime dataCheckin, DateTime dataCheckout, double valorTotal, bool pago, Hospede hospede, string statusReserva, List<NumeroQuarto> listaNumeroQuarto)
+    public Reserva(DateTime dataReservaEntrada, DateTime dataReservaSaida, DateTime dataCheckin, DateTime dataCheckout, double valorTotal, bool pago, Hospede hospede, string statusReserva, List<NumeroQuarto> listaNumeroQuarto)
     {
-        this.codReserva = codReserva;
+        //this.codReserva = codReserva;
         this.dataReservaEntrada = dataReservaEntrada.Date;
         this.dataReservaSaida = dataReservaSaida.Date;
         this.dataCheckin = dataCheckin;

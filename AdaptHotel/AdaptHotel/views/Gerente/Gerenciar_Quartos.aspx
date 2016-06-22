@@ -153,27 +153,26 @@
         </ul>
     </div>
 
-        <!-- Modal -->
+    <!-- Modal -->
     <div id="add" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Novo Quarto</h4>
 
-          
-            <div class="col s12">
+
+            <div class="col s12 m6">
                 <label>Nome</label>
                 <input type="text" />
             </div>
 
             <div class="col s6">
-               <label>Tipo</label>
+                <label>Tipo</label>
                 <input type="text" />
             </div>
 
             <div class="col s6">
-
                 <label>Valor</label>
                 <input type="text" />
-            </div>            
+            </div>
 
         </div>
         <div class="modal-footer">
