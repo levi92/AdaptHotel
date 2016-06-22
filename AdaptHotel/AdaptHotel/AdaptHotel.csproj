@@ -205,6 +205,9 @@
     <Content Include="views\Recepcionista\Dashboard_Recepcionista.aspx" />
     <Content Include="views\Gerente\Dashboard_Gerente.aspx" />
     <Content Include="views\Login.aspx" />
+    <Content Include="views\Recepcionista\Gerenciar_Hospede.aspx" />
+    <Content Include="views\Recepcionista\Gerenciar_Quartos.aspx" />
+    <Content Include="views\Recepcionista\Gerenciar_Reservas.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -361,6 +364,27 @@
     </Compile>
     <Compile Include="views\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Hospede.aspx.cs">
+      <DependentUpon>Gerenciar_Hospede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Hospede.aspx.designer.cs">
+      <DependentUpon>Gerenciar_Hospede.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Quartos.aspx.cs">
+      <DependentUpon>Gerenciar_Quartos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Quartos.aspx.designer.cs">
+      <DependentUpon>Gerenciar_Quartos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Reservas.aspx.cs">
+      <DependentUpon>Gerenciar_Reservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Recepcionista\Gerenciar_Reservas.aspx.designer.cs">
+      <DependentUpon>Gerenciar_Reservas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

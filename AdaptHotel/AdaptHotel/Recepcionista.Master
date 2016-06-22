@@ -48,16 +48,24 @@
 
 
                 <ul id="nav-mobile" class="side-nav fixed">
-                    <li class="logo" style="text-align: center;height: 158px;"><img src="../../images/Hotel-Villa-Augusto.png" style="width: 216px;" /></li>
+                    <li class="logo" style="text-align: center;height: 158px;"><img src="../../images/Hotel-Villa-Augusto.png" style="width: 197px;" /></li>
 
-                    <li class="bold"><a class="waves-effect" href="../../views/Gerente/Dashboard_Gerente.aspx">Dashboard</a></li>
-                    <li class="bold"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Reservas.aspx">Reservas</a></li>
-                
+                    <li class="bold" id="Dashboard_Recepcionista"><a class="waves-effect" href="../../views/Recepcionista/Dashboard_Recepcionista.aspx">Dashboard</a></li>
+                    <li class="bold" id="Gerenciar_Reservas"><a class="waves-effect" href="../../views/Recepcionista/Gerenciar_Reservas.aspx">Reservas</a></li>
+                    <li class="bold" id="Gerenciar_Quartos"><a class="waves-effect" href="../../views/Recepcionista/Gerenciar_Quartos.aspx">Quartos</a></li>
+                    <li class="bold" id="Gerenciar_Hospede"><a class="waves-effect" href="../../views/Recepcionista/Gerenciar_Hospede">Hóspedes</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
         </nav>
 
+        <script>
+            $(document).ready(function () {
+                var loc = "0"+window.location.pathname;
+                loc = loc.split("/");
+                $("#"+loc[3]).addClass("active");
+            });
+        </script>
         <style>
         .bold>a {
             font-weight: bold;

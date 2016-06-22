@@ -19,108 +19,156 @@
     </div>
 
     <div class="container">
-        <div class="col s12">
-            <canvas id="canvas"></canvas>
+        <div class="col s12 m6">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <canvas id="canvas1"></canvas>
+                </div>
+            </div>
         </div>
+
+        <div class="col s12 m6">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <canvas id="canvas2"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <canvas id="canvas3"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <canvas id="canvas4"></canvas>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script>
-        var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
         var randomScalingFactor = function () {
-            return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+            return Math.round(Math.random() * 100);
         };
         var randomColorFactor = function () {
             return Math.round(Math.random() * 255);
         };
-        var randomColor = function () {
-            return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)';
+        var randomColor = function (opacity) {
+            return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
         };
-        var horizontalBarChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [{
-                label: 'Dataset 1',
-                backgroundColor: "rgba(220,220,220,0.5)",
-                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-            }, {
-                hidden: true,
-                label: 'Dataset 2',
-                backgroundColor: "rgba(151,187,205,0.5)",
-                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-            }, {
-                label: 'Dataset 3',
-                backgroundColor: "rgba(151,187,205,0.5)",
-                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-            }]
+
+        //CHART 1
+        var config1 = {
+            type: 'line',
+            data: {
+                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Mario", "Junho"],
+                datasets: [{
+                    label: "Quantidade de Hóspedes",
+                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true, text: 'Número de Hóspedes'
+                },
+            }
         };
+        $.each(config1.data.datasets, function (i, dataset) {
+            dataset.backgroundColor = randomColor(0.5);
+        });
+
+
+        //CHART 2
+        var config2 = {
+            type: 'pie',
+            data: {
+                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Mario", "Junho"],
+                datasets: [{
+                    label: "Quartos Mais Reservados",
+                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true, text: 'Quartos Mais Reservados'
+                },
+            }
+        };
+        $.each(config2.data.datasets, function (i, dataset) {
+            dataset.backgroundColor = randomColor(0.5);
+        });
+
+
+        //CHART 3
+        var config3 = {
+            type: 'radar',
+            data: {
+                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Mario", "Junho"],
+                datasets: [{
+                    label: "Quartos ocupados",
+                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true, text: 'Ocupação do Hotel'
+                },
+            }
+        };
+        $.each(config3.data.datasets, function (i, dataset) {
+            dataset.backgroundColor = randomColor(0.5);
+        });
+
+
+        //CHART 4
+        var config4 = {
+            type: 'line',
+            data: {
+                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Mario", "Junho"],
+                datasets: [{
+                    label: "Valores (R$)",
+                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true, text: 'Movimentação da Conta'
+                },
+            }
+        };
+        $.each(config4.data.datasets, function (i, dataset) {
+            dataset.backgroundColor = randomColor(0.5);
+        });
+
+
         window.onload = function () {
-            var ctx = document.getElementById("canvas").getContext("2d");
-            window.myHorizontalBar = new Chart(ctx, {
-                type: 'horizontalBar',
-                data: horizontalBarChartData,
-                options: {
-                    // Elements options apply to all of the options unless overridden in a dataset
-                    // In this case, we are setting the border of each horizontal bar to be 2px wide and green
-                    elements: {
-                        rectangle: {
-                            borderWidth: 2,
-                            borderColor: 'rgb(0, 255, 0)',
-                            borderSkipped: 'left'
-                        }
-                    },
-                    responsive: true,
-                    legend: {
-                        position: 'right',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Chart.js Horizontal Bar Chart'
-                    }
-                }
-            });
+            var ctx = document.getElementById("canvas1").getContext("2d");
+            window.myLine = new Chart(ctx, config1);
+
+            var ctx = document.getElementById("canvas2").getContext("2d");
+            window.myLine = new Chart(ctx, config2);
+
+            var ctx = document.getElementById("canvas3").getContext("2d");
+            window.myLine = new Chart(ctx, config3);
+
+            var ctx = document.getElementById("canvas4").getContext("2d");
+            window.myLine = new Chart(ctx, config4);
         };
-        $('#randomizeData').click(function () {
-            var zero = Math.random() < 0.2 ? true : false;
-            $.each(horizontalBarChartData.datasets, function (i, dataset) {
-                dataset.backgroundColor = randomColor();
-                dataset.data = dataset.data.map(function () {
-                    return zero ? 0.0 : randomScalingFactor();
-                });
-            });
-            window.myHorizontalBar.update();
-        });
-        $('#addDataset').click(function () {
-            var newDataset = {
-                label: 'Dataset ' + horizontalBarChartData.datasets.length,
-                backgroundColor: randomColor(),
-                data: []
-            };
-            for (var index = 0; index < horizontalBarChartData.labels.length; ++index) {
-                newDataset.data.push(randomScalingFactor());
-            }
-            horizontalBarChartData.datasets.push(newDataset);
-            window.myHorizontalBar.update();
-        });
-        $('#addData').click(function () {
-            if (horizontalBarChartData.datasets.length > 0) {
-                var month = MONTHS[horizontalBarChartData.labels.length % MONTHS.length];
-                horizontalBarChartData.labels.push(month);
-                for (var index = 0; index < horizontalBarChartData.datasets.length; ++index) {
-                    horizontalBarChartData.datasets[index].data.push(randomScalingFactor());
-                }
-                window.myHorizontalBar.update();
-            }
-        });
-        $('#removeDataset').click(function () {
-            horizontalBarChartData.datasets.splice(0, 1);
-            window.myHorizontalBar.update();
-        });
-        $('#removeData').click(function () {
-            horizontalBarChartData.labels.splice(-1, 1); // remove the label first
-            horizontalBarChartData.datasets.forEach(function (dataset, datasetIndex) {
-                dataset.data.pop();
-            });
-            window.myHorizontalBar.update();
-        });
+
+
+
     </script>
 
 
