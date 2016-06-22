@@ -39,4 +39,30 @@ public class Pessoa_DB
         return retorno;
     }
 
+
+    public static int Update(Pessoa pessoa, SqlConnection objConnection)
+    {
+        int retorno = 0;
+        try
+        {
+            Endereco_DB.Update(pessoa.Endereco, objConnection);
+            Foto_DB.Update(pessoa.Foto, objConnection);
+
+            SqlCommand objCommand = Mapped.Command("Update pessoas set nome = @nome, sexo = sexo, data_nasc = @data_nasc, " +
+                "telefone = @telefone, cpf = @cpf, email = @email where cod_pessoa = @cod_pessoa;", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@nome", pessoa.Nome));
+            objCommand.Parameters.Add(Mapped.Parameter("@sexo", pessoa.Sexo));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_nasc", pessoa.DataNascimento.ToString("yyyy-MM-dd HH:mm:ss")));
+            objCommand.Parameters.Add(Mapped.Parameter("@telefone", pessoa.Telefone));
+            objCommand.Parameters.Add(Mapped.Parameter("@cpf", pessoa.Cpf));
+            objCommand.Parameters.Add(Mapped.Parameter("@email", pessoa.Email));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_pessoa", pessoa.CodPessoa));
+            objCommand.ExecuteNonQuery();
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
 }

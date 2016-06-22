@@ -32,6 +32,32 @@ public class Hospede_DB
 
         return retorno;
     }
+    
+    public static int Update (Hospede hospede)
+    {
+        int retorno = 0;
+
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            Pessoa_DB.Update(hospede, objConnection);
+
+            SqlCommand objCommand = Mapped.Command("Update hospedes set placa_carro = @placa_carro, cidade_origem = @cidade_origem where cod_hospede = @cod_hospede;", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@placa_carro", hospede.PlacaCarro));
+            objCommand.Parameters.Add(Mapped.Parameter("@cidade_origem", hospede.CidadeOrigem));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_hospede", hospede.CodHospede));
+            objCommand.ExecuteNonQuery();
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+
+        return retorno;
+    }
 
 
     public static DataSet Select10Ultimos()
