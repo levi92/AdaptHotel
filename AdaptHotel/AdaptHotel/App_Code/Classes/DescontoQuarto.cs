@@ -7,11 +7,13 @@ using System.Web;
 public class DescontoQuarto
 {
     private double valor;
+    private int cod_desconto;
     private DateTime dataInicio, dataFim;
     private SubTipoQuarto subTipoQuarto;
 
-	public DescontoQuarto(double valor, DateTime dataInicio, DateTime dataFim, SubTipoQuarto subTipoQuarto)
+	public DescontoQuarto(int cod_desconto, double valor, DateTime dataInicio, DateTime dataFim, SubTipoQuarto subTipoQuarto)
 	{
+        this.cod_desconto = cod_desconto;
         this.valor = valor;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
@@ -42,9 +44,9 @@ public class DescontoQuarto
         set { valor = value; }
     }
 
-    public string ImprimirDescontoQuarto()
+    public int Cod_desconto
     {
-        return "VALOR: " + Valor + "DATA INICIAL: " + DataInicio + "DATA FINAL: " + DataFim + "SUB TIPO DE QUARTO: " + SubTipoQuarto;
+        get { return cod_desconto; }
+        set { cod_desconto = value; }
     }
-
 }

@@ -11,7 +11,6 @@ public class Reserva_DB
     public static int Insert(Reserva reserva)
     {
         int retorno = 0;
-
         try
         {
             SqlConnection objConnection = Mapped.Connection();
@@ -26,6 +25,73 @@ public class Reserva_DB
             objCommand.Parameters.Add(Mapped.Parameter("@cod_hospede", reserva.Hospede.CodHospede));
             retorno = Convert.ToInt32(objCommand.ExecuteScalar());
             ReservaQuarto_DB.Insert(reserva, objConnection);
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+    
+    public static int Realizar_Checkin (Reserva reserva)
+    {
+        int retorno = 0;
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            SqlCommand objCommand = Mapped.Command("update reserva set data_chek_in = @data_chek_in, status_reserva = @status_reserva where cod_reserva = @cod_reserva;", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@status_reserva", reserva.getStatusReserva()));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_chek_in", reserva.DataCheckin));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_reserva", reserva.CodReserva));
+            objCommand.ExecuteNonQuery();
+            NumeroQuarto_DB.UpdateStatusQuarto(reserva.ListaNumeroQuarto, objConnection);
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
+    public static int Realizar_Checkout(Reserva reserva)
+    {
+        int retorno = 0;
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            SqlCommand objCommand = Mapped.Command("update reserva set data_chek_out = @data_chek_out, status_reserva = @status_reserva where cod_reserva = @cod_reserva;", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@status_reserva", reserva.getStatusReserva()));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_chek_out", reserva.DataCheckout));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_reserva", reserva.CodReserva));
+            objCommand.ExecuteNonQuery();
+            NumeroQuarto_DB.UpdateStatusQuarto(reserva.ListaNumeroQuarto, objConnection);
+            objConnection.Close();
+            objCommand.Dispose();
+            objConnection.Dispose();
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
+    public static int UpdateStatusReserva(Reserva reserva)
+    {
+        int retorno = 0;
+        try
+        {
+            SqlConnection objConnection = Mapped.Connection();
+            SqlCommand objCommand = Mapped.Command("update reserva set status_reserva = @status_reserva where cod_reserva = @cod_reserva;", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@status_reserva", reserva.getStatusReserva()));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_reserva", reserva.CodReserva));
+            objCommand.ExecuteNonQuery();
             objConnection.Close();
             objCommand.Dispose();
             objConnection.Dispose();

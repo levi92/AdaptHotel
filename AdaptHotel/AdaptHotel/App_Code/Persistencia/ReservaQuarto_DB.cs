@@ -13,7 +13,7 @@ public class ReservaQuarto_DB
 
         foreach (NumeroQuarto numeroQuarto in reserva.ListaNumeroQuarto)
         {
-            SqlCommand objCommand = Mapped.Command("Insert into reservaSubTipoQuarto (cod_reserva, cod_numero_quarto) values (@cod_reserva, @cod_numero_quarto);", objConnection);
+            SqlCommand objCommand = Mapped.Command("Insert into reservaQuarto (cod_reserva, cod_numero_quarto) values (@cod_reserva, @cod_numero_quarto);", objConnection);
             objCommand.Parameters.Add(Mapped.Parameter("@cod_reserva", reserva.CodReserva));
             objCommand.Parameters.Add(Mapped.Parameter("@cod_numero_quarto", numeroQuarto.CodNumeroQuarto));
         }

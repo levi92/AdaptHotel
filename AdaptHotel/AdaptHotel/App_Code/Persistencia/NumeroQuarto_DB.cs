@@ -12,7 +12,6 @@ public class NumeroQuarto_DB
     public static int Insert(NumeroQuarto numero_quarto)
     {
         int retorno = 0;
-
         try
         {
             //numero_quarto.SubTipoQuarto.Cod_subtipo_quarto = subTipoQuartos_DB.Insert(numero_quarto.SubTipoQuarto);
@@ -30,9 +29,27 @@ public class NumeroQuarto_DB
         {
             retorno = -2;
         }
-
         return retorno;
+    }
 
+    public static int UpdateStatusQuarto(List<NumeroQuarto> lista_numero_quarto, SqlConnection objConnection)
+    {
+        int retorno = 0;
+        try
+        {
+            foreach(NumeroQuarto numero_quarto in lista_numero_quarto)
+            {
+                SqlCommand objCommand = Mapped.Command("update numero_quarto set status_quarto = @status_quarto where cod_numero_quarto = @cod_numero_quarto;", objConnection);
+                objCommand.Parameters.Add(Mapped.Parameter("@status_quarto", numero_quarto.getStatusQuarto()));
+                objCommand.Parameters.Add(Mapped.Parameter("@cod_numero_quarto", numero_quarto.CodNumeroQuarto));
+                objCommand.ExecuteNonQuery();
+            }
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
+        return retorno;
     }
 
     public static DataSet SelectAll()
