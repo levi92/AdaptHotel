@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Gerenciar_Quartos.aspx.cs" Inherits="AdaptHotel.views.Gerente.Gerenciar_Quartos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Gerente.Master" CodeBehind="Gerenciar_Quartos.aspx.cs" Inherits="AdaptHotel.views.Gerente.Gerenciar_Quartos" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
