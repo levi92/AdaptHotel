@@ -89,9 +89,7 @@
                             <div class="col s12 center-align top-spacing-form">
                                 <asp:Label ID="lblMsg" runat="server" Visible="false" ForeColor="Red"></asp:Label>
                             </div>
-                            <div class="col s6" style="margin:0 auto;float:none;text-align: center;">
-                                <button id="btnEntrar" style="margin: 0 auto;float: none;" class="btn orange waves-effect waves-light" runat="server" onserverclick="btnEntrar_Click"><i class="material-icons right">trending_flat</i>Entrar</button>
-                            </div>
+                            
                             <div class="col s12 center-align top-spacing-form">
                                 <asp:LinkButton ID="lkbEsquecerSenha" CssClass="link" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
                             </div>

@@ -7,10 +7,11 @@ using System.Web;
 public class Opcoes
 {
     private string corPrimaria, corSecundaria, logotipo;
-    private int? diasCancelamento, valorBaixaTemporada, valorAltaTemporada, multaAusencia, cod_Opcoes;
+    private int? diasCancelamento, valorBaixaTemporada, valorAltaTemporada, multaAusencia;
+    private int? cod_opcao;
     private DateTime? dataInicialAltaTemporada, dataFinalAltaTemporada, dataInicialBaixaTemporada, dataFinalBaixaTemporada;
 
-    public Opcoes (int? diasCancelamento = null, int? valorBaixaTemporada = null, int? valorAltaTemporada = null, int? multaAusencia = null, string corPrimaria = null, string corSecundaria = null, string logotipo = null, DateTime? dataInicialAltaTemporada = null, DateTime? dataFinalAltaTemporada = null, DateTime? dataInicialBaixaTemporada = null, DateTime? dataFinalBaixaTemporada = null)
+    public Opcoes (int? cod_opcao, int? diasCancelamento = null, int? valorBaixaTemporada = null, int? valorAltaTemporada = null, int? multaAusencia = null, string corPrimaria = null, string corSecundaria = null, string logotipo = null, DateTime? dataInicialAltaTemporada = null, DateTime? dataFinalAltaTemporada = null, DateTime? dataInicialBaixaTemporada = null, DateTime? dataFinalBaixaTemporada = null)
     {
         this.diasCancelamento = diasCancelamento;
         this.valorBaixaTemporada = valorBaixaTemporada;
@@ -23,6 +24,7 @@ public class Opcoes
         this.dataFinalAltaTemporada = dataFinalAltaTemporada;
         this.dataInicialBaixaTemporada = dataInicialBaixaTemporada;
         this.dataFinalBaixaTemporada = dataFinalBaixaTemporada;
+        this.cod_opcao = cod_opcao;
     }
 
     public DateTime? DataFinalBaixaTemporada
@@ -89,5 +91,11 @@ public class Opcoes
     {
         get { return corPrimaria; }
         set { corPrimaria = value; }
+    }
+
+    public int? Cod_opcao
+    {
+        get { return cod_opcao; }
+        set { cod_opcao = value; }
     }
 }

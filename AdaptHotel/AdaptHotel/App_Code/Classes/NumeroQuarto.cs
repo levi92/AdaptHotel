@@ -51,7 +51,7 @@ public class NumeroQuarto
         return status_quarto.ToString();
     }
 
-    public void setTipo(string status_quarto)
+    public void setStatusQuarto(string status_quarto)
     {
         this.status_quarto = (_status_quarto)Enum.Parse(typeof(_status_quarto), status_quarto);
     }    
