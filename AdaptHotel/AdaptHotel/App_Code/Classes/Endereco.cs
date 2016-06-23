@@ -7,14 +7,14 @@ using System.Web;
 public class Endereco
 {
     private string rua, numero, complemento, bairro, cep, cidade, estado;
-    private int codEnd;
+    private int? codEnd;
 
     public Endereco()
     {
 
     }
 
-    public Endereco(string rua, string numero, string complemento, string bairro, string cep, string cidade, string estado)
+    public Endereco(string rua, string numero, string complemento, string bairro, string cep, string cidade, string estado, int? codEnd = null)
     {
         this.rua = rua;
         this.numero = numero;
@@ -23,9 +23,10 @@ public class Endereco
         this.cep = cep;
         this.cidade = cidade;
         this.estado = estado;
+        this.codEnd = codEnd;
     }
 
-    public int CodEnd
+    public int? CodEnd
     {
         get { return codEnd; }
         set { codEnd = value; }
