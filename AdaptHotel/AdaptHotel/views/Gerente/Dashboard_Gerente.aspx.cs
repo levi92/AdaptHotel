@@ -33,7 +33,7 @@ namespace AdaptHotel.views.Gerente
                 endereco.Cidade = values[1].ToString();
                 endereco.Estado = values[2].ToString();
 
-                Funcionario funcionario = new Funcionario(values[0].ToString(), endereco);
+                Funcionario funcionario = new Funcionario(values[0].ToString(), endereco, Convert.ToInt32(values[3]));
                 lista_funcionarios.Add(funcionario);
             }
 
