@@ -71,10 +71,10 @@
             <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <div class="row">
-                        <div class="col s0 m2 l4" style="height: 1px"></div>
+                        <div class="col s0 m2 l3" style="height: 1px"></div>
                         <div class="card hoverable col s12 m8 l6" style="margin: 0 auto; margin-top: 80px; padding-bottom: 20px;">
-                            <div id="logo" class="col s8 top-spacing-form" style="text-align: center; margin: 0 auto; float: none;">
-                                <img src="../../images/login.jpg" style="width: inherit; height: inherit;" />
+                            <div id="logo" class="col s9 top-spacing-form" style="text-align: center; margin: 0 auto; float: none;">
+                                <img src="../../images/Hotel-Villa-Augusto.png" style="width: inherit; height: inherit;" />
                             </div>
                             <div class="top-spacing-form input-field col s12">
                                 <i class="material-icons prefix">email</i>
@@ -96,7 +96,7 @@
                                 <asp:LinkButton ID="lkbEsquecerSenha" CssClass="link" Text="Esqueceu a senha?" runat="server"></asp:LinkButton>
                             </div>
                         </div>
-                        <div class="col s0 m2 l4" style="height: 1px"></div>
+                        <div class="col s0 m2 l3" style="height: 1px"></div>
                     </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
