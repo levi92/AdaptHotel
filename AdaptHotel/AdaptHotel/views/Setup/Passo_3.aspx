@@ -49,22 +49,44 @@
                         </div>
                     </div>
 
-                <div class="input-field">
-                    <label>Cor Principal</label>
-                    <input id="txtNumero" runat="server" type="color" />
+                    <div class="input-field">
+                        <select>      
+                             <option value="" disabled selected>Cor Principal</option>
+                            <option>Amarelo</option>
+                            <option>Azul</option>
+                            <option>Laranja</option>
+                            <option>Verde</option>
+                            <option>Vermelho</option>
+                            <option>Violeta</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <select>     
+                             <option value="" disabled selected>Cor Secundária</option> 
+                            <option>Amarelo</option>
+                            <option>Azul</option>
+                            <option>Laranja</option>
+                            <option>Verde</option>
+                            <option>Vermelho</option>
+                            <option>Violeta</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div class="input-field">
-                    <label>Cor Secundária</label>
-                    <input id="Text1" runat="server" type="color" />
+                <div class="card-action">
+                    <a href="Passo_4.aspx">Cadastrar Administradores</a>
                 </div>
-
-            </div>
-            <div class="card-action">
-                <a href="Passo_4.aspx">Cadastrar Administradores</a>
             </div>
         </div>
     </div>
-    </div>
+
+
+    <script>
+         $(document).ready(function () {
+            $('select').material_select();
+        });
+
+    </script>
 
 </asp:Content>
