@@ -15,25 +15,26 @@
     </div>
 
     <div class="container">
-        <div class="col s12">
-            <div class="col s12 m6 z-depth-1" style="overflow-y: auto; height: 669px;">
-                <ul class="collection">
-                    <% foreach (var hospede in lista_hospedes)
-                        { %>
-                    <a class="collection-item avatar waves-effect waves" style="min-height: 60px;" onclick="showDiv('<%= hospede.CodHospede%>')">
-                        <img src="../../images/quarto-1.jpg" alt="" class="circle">
-                        <span class="title"><%= hospede.Nome %> </span>
-                        <p><%= hospede.Endereco.Cidade %> - <%= hospede.Endereco.Estado %></p>
-                    </a>
-                    <% } %>
-                </ul>
-            </div>
+        <asp:UpdatePanel ID="UpdatePanelHospedes" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="col s12">
+                    <div class="col s12 m6 z-depth-1" style="overflow-y: auto; height: 669px;">
+                        <ul class="collection">
+                            <% foreach (var hospede in lista_hospedes)
+                                { %>
+                            <a id='link' class="collection-item avatar waves-effect waves" style="min-height: 60px;" onclick="__doPostBack('link', '<%= hospede.CodHospede%>')">
+                                <img src="../../images/quarto-1.jpg" alt="" class="circle">
+                                <span class="title"><%= hospede.Nome %> </span>
+                                <p><%= hospede.Endereco.Cidade %> - <%= hospede.Endereco.Estado %></p>
+                            </a>
+                            <% } %>
+                        </ul>
+                    </div>
 
 
 
-            <div class="col s12 m6">
-                <asp:UpdatePanel ID="UpdatePanelHospede" runat="server" UpdateMode="Conditional">
-                    <ContentTemplate>
+                    <div class="col s12 m6">
+
                         <div id="details" style="display: none">
                             <div class="card-panel hoverable">
                                 <h5 class="card-title activator grey-text text-darken-4" style="margin-top: 0;">Dados Pessoais</h5>
@@ -109,10 +110,10 @@
                             </div>
 
                         </div>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-            </div>
-        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
 
     <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 30px; right: 24px;">
@@ -263,9 +264,9 @@
         </div>
     </div>
 
-                   <!-- Alterando Dados -->
+    <!-- Alterando Dados -->
 
-        <div id="edit" class="modal modal-fixed-footer">
+    <div id="edit" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Alterar Dados</h4>
 
@@ -384,13 +385,13 @@
                 <h5>Dados do Hospede</h5>
             </div>
             <div class="input-field col s12 m6">
-                    <label>Placa do Carro</label>
-                    <input id="Text1" runat="server" type="text" />
-                </div>
-                <div class="input-field col s12 m6">
-                    <label>Cidade de Origem</label>
-                    <input id="Text2" runat="server" type="text" />
-                </div>
+                <label>Placa do Carro</label>
+                <input id="Text1" runat="server" type="text" />
+            </div>
+            <div class="input-field col s12 m6">
+                <label>Cidade de Origem</label>
+                <input id="Text2" runat="server" type="text" />
+            </div>
 
         </div>
 
@@ -419,7 +420,11 @@
                 }
             });          
         }--%>
-        function showDiv(cod_hospede) {
+        function DoPostBack() {
+            __doPostBack('Button2', 'My Argument');
+        }
+
+        function showDiv() {
             $("#details").slideUp("slow");
             $("#details").slideDown("slow");
         }
