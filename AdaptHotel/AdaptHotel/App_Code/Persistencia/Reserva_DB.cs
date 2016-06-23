@@ -119,4 +119,34 @@ public class Reserva_DB
         objConnection.Dispose();
         return ds;
     }
+
+    public static DataSet SelectReservasByStatus(string status)
+    {
+        DataSet ds = new DataSet();
+        SqlConnection objConnection;
+        SqlCommand objCommand;
+        SqlDataAdapter objDataAdapter;
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command("SELECT " +
+        "r.cod_reserva, pes.nome, " +
+        "STUFF( " +
+            "(SELECT(';' + Cast(n.numero_quarto as varchar) + ',' + s.subtipo) " +
+            "FROM reserva_subtipo_quartos rs " +
+            "join numero_quartos n on n.cod_numero_quarto = rs.cod_numero_quarto " +
+            "inner join subtipo_quartos s on s.cod_subtipo_quarto = n.cod_subtipo_quarto " +
+            "WHERE rs.cod_reserva = r.cod_reserva " +
+            "FOR XML PATH('')) " +
+            ", 1, 1, '')  AS quartos " +
+            "FROM pessoas pes " +
+            "inner join hospedes h on pes.cod_pessoa = h.cod_pessoa " +
+            "inner join reservas r on r.cod_hospede = h.cod_hospede " +
+            "where status_reserva = @status GROUP BY r.cod_reserva, pes.nome order by r.cod_reserva desc;", objConnection);
+        objCommand.Parameters.Add(Mapped.Parameter("@status", status));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+        objConnection.Close();
+        objCommand.Dispose();
+        objConnection.Dispose();
+        return ds;
+    }
 }

@@ -22,6 +22,10 @@ public class SubTipoQuarto
         this.TipoQuarto = tipoQuarto;
 	}
 
+    public SubTipoQuarto()
+    {
+
+    }
 
     public decimal Valor
     {

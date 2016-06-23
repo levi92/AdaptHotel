@@ -22,6 +22,11 @@ public class NumeroQuarto
         this.cor = cor;
     }
 
+    public NumeroQuarto()
+    {
+
+    }
+
     public SubTipoQuarto SubTipoQuarto
     {
         get { return subTipoQuarto; }

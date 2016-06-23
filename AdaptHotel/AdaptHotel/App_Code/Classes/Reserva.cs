@@ -35,6 +35,13 @@ public class Reserva
         this.dataReservaSaida = dataReservaSaida.Date;
     }
 
+    public Reserva(int cod_reserva, Hospede hospede, List<NumeroQuarto> lista_numero_quarto)
+    {
+        this.codReserva = cod_reserva;
+        this.hospede = hospede;
+        this.listaNumeroQuarto = lista_numero_quarto;
+    }
+
     public bool Pago 
     {
         get { return pago; }

@@ -10,9 +10,8 @@ public class ReservaQuarto
     private NumeroQuarto codNumeroQuarto;
 
 
-    public ReservaQuarto(int codReservaQuarto, Reserva codReserva, NumeroQuarto codNumeroQuarto)
+    public ReservaQuarto(Reserva codReserva, NumeroQuarto codNumeroQuarto)
     {
-        this.codReservaQuarto = codReservaQuarto;
         this.codReserva = codReserva;
         this.codNumeroQuarto = codNumeroQuarto;
     }
