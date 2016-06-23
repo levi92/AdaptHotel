@@ -142,9 +142,6 @@
             </div>
 
 
-
-
-
             <div class="input-field col s12 m6">
                 <label>Nome</label>
                 <input id="txtNome" runat="server" type="text" class="validate" />
@@ -267,137 +264,109 @@
     <!-- Alterando Dados -->
 
     <div id="edit" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4>Alterar Dados</h4>
+        <asp:UpdatePanel ID="UpdatePanelEdit" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="modal-content">
+                    <h4>Alterar Dados</h4>
 
 
-            <div class="col s12">
-                <h5>Dados Pessoais</h5>
-            </div>
+                    <div class="col s12">
+                        <h5>Dados Pessoais</h5>
+                    </div>
 
 
+                    <div class="input-field col s12 m6">
+                        <label class="active">Nome</label>
+                        <input id="txtAlterarNome" runat="server" type="text" class="validate" />
+                    </div>
 
+                    <div class="input-field col s12 m6">
+                        <input id="txtAlterarDataNasc" runat="server" type="date" class="validate" />
 
+                    </div>
 
-            <div class="input-field col s12 m6">
-                <label>Nome</label>
-                <input id="txtAlterarNome" runat="server" type="text" class="validate" />
-            </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">Cpf</label>
+                        <input id="txtAlterarCpf" runat="server" type="text" class="validate" />
+                    </div>
 
-            <div class="input-field col s12 m6">
-                <input id="txtAlterarDataNasc" runat="server" type="date" class="validate" />
+                    <div class="input-field col s12 m6">
+                        <label class="active">Telefone</label>
+                        <input id="txtAlterarTelefone" runat="server" type="text" class="validate" />
+                    </div>
 
-            </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">E-mail</label>
+                        <input id="txtAlterarEmail" runat="server" type="email" class="validate" />
+                    </div>
 
-            <div class="input-field col s12 m6">
-                <label>Cpf</label>
-                <input id="txtAlterarCpf" runat="server" type="text" class="validate" />
-            </div>
+                    <div class="col s12 m6">
+                        <asp:RadioButtonList runat="server" ID="rblAlterarSexo">
+                            <asp:ListItem Value="M">Masculino</asp:ListItem>
+                            <asp:ListItem Value="F">Feminino</asp:ListItem>
+                        </asp:RadioButtonList>
+                    </div>
 
-            <div class="input-field col s12 m6">
-                <label>Telefone</label>
-                <input id="txtAlterarTelefone" runat="server" type="text" class="validate" />
-            </div>
+                    <div class="col s12">
+                        <h5>Endereço</h5>
+                    </div>
 
-            <div class="input-field col s12 m6">
-                <label>E-mail</label>
-                <input id="txtAlterarEmail" runat="server" type="email" class="validate" />
-            </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">CEP</label>
+                        <input id="txtAlterarCep" runat="server" type="text" />
+                    </div>
 
-            <div class="col s12 m6">
-                <asp:RadioButtonList runat="server" ID="rblAlterarSexo">
-                    <asp:ListItem Value="M">Masculino</asp:ListItem>
-                    <asp:ListItem Value="F">Feminino</asp:ListItem>
-                </asp:RadioButtonList>
-            </div>
-
-            <div class="col s12">
-                <h5>Endereço</h5>
-            </div>
-
-            <div class="input-field col s12 m6">
-                <label>CEP</label>
-                <input id="txtAlterarCep" runat="server" type="text" />
-            </div>
-
-            <div class="input-field col s12 m6">
-                <select id="ddlAlterarEstado" runat="server">
-                    <option value="" disabled selected>Selecione o estado</option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espirito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-                </select>
-                <label>Estado</label>
-            </div>
+                    <div class="input-field col s12 m6">
+                        <input id="txtAlterarEstado" runat="server" type="text" />
+                        <label class="active">Estado</label>
+                    </div>
 
 
 
-            <div class="input-field col s12 m6">
-                <label>Cidade</label>
-                <input id="txtAlterarCidade" runat="server" type="text" />
-            </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">Cidade</label>
+                        <input id="txtAlterarCidade" runat="server" type="text" />
+                    </div>
 
-            <div class="input-field col s12 m6">
-                <label>Bairro</label>
-                <input id="txtAlterarBairro" runat="server" type="text" />
-            </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">Bairro</label>
+                        <input id="txtAlterarBairro" runat="server" type="text" />
+                    </div>
 
-            <div class="input-field col s12 m6">
-                <label>Rua</label>
-                <input id="txtAlterarRua" runat="server" type="text" />
-            </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">Rua</label>
+                        <input id="txtAlterarRua" runat="server" type="text" />
+                    </div>
 
-            <div class="input-field col s12 m6">
-                <label>Numero</label>
-                <input id="txtAlterarNumero" runat="server" type="text" />
-            </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">Numero</label>
+                        <input id="txtAlterarNumero" runat="server" type="text" />
+                    </div>
 
-            <div class="input-field col s12 m6">
-                <label>Complemento</label>
-                <input id="txtAlterarComplemento" runat="server" type="text" />
-            </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">Complemento</label>
+                        <input id="txtAlterarComplemento" runat="server" type="text" />
+                    </div>
 
-            <div class="col s12">
-                <h5>Dados do Hospede</h5>
-            </div>
-            <div class="input-field col s12 m6">
-                <label>Placa do Carro</label>
-                <input id="Text1" runat="server" type="text" />
-            </div>
-            <div class="input-field col s12 m6">
-                <label>Cidade de Origem</label>
-                <input id="Text2" runat="server" type="text" />
-            </div>
+                    <div class="col s12">
+                        <h5>Dados do Hospede</h5>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">Placa do Carro</label>
+                        <input id="txtAlterarPlaca" runat="server" type="text" />
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <label class="active">Cidade de Origem</label>
+                        <input id="txtAlterarCidadeOrigem" runat="server" type="text" />
+                    </div>
 
-        </div>
+                </div>
 
-        <div class="modal-footer">
-            <button id="btnEditar" class="modal-action modal-close waves-effect waves-green btn-flat" runat="server" onserverclick="btnEditar_ServerClick">Alterar</button>
-        </div>
+                <div class="modal-footer">
+                    <button id="btnEditar" class="modal-action modal-close waves-effect waves-green btn-flat" runat="server" onserverclick="btnEditar_ServerClick">Alterar</button>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
 
     <script>

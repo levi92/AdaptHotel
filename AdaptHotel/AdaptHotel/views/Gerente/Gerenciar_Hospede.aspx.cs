@@ -27,6 +27,24 @@ namespace AdaptHotel.views.Gerente
                 if (parameter != "") {
                     hospede = CarregarDetalhes(Convert.ToInt32(parameter));
 
+                    txtAlterarNome.Value = hospede.Nome;
+                    txtAlterarDataNasc.Value = hospede.DataNascimento.ToString();
+                    txtAlterarCpf.Value = hospede.Cpf;
+                    txtAlterarTelefone.Value = hospede.Telefone;
+                    txtAlterarEmail.Value = hospede.Email;
+                    txtAlterarEstado.Value = hospede.Endereco.Estado;
+
+                    txtAlterarCep.Value = hospede.Endereco.Cep;
+                    txtAlterarCidade.Value = hospede.Endereco.Cidade;
+                    txtAlterarRua.Value = hospede.Endereco.Rua;
+                    txtAlterarBairro.Value = hospede.Endereco.Bairro;
+                    txtAlterarNumero.Value = hospede.Endereco.Numero;
+
+                    txtAlterarPlaca.Value = hospede.PlacaCarro;
+                    txtAlterarCidadeOrigem.Value = hospede.CidadeOrigem;
+
+
+
                     lblNome.InnerText = hospede.Nome;
                     lblSexo.InnerText = hospede.Sexo.ToString();
                     lblTelefone.InnerText = hospede.Telefone;
@@ -46,6 +64,7 @@ namespace AdaptHotel.views.Gerente
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv();", true);
                     UpdatePanelHospedes.Update();
+                    UpdatePanelEdit.Update();
                 }               
             }         
         }

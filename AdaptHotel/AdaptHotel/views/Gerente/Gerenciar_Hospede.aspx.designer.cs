@@ -292,6 +292,15 @@ namespace AdaptHotel.views.Gerente {
         protected global::System.Web.UI.HtmlControls.HtmlButton btnCadastrar;
         
         /// <summary>
+        /// UpdatePanelEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelEdit;
+        
+        /// <summary>
         /// txtAlterarNome control.
         /// </summary>
         /// <remarks>
@@ -355,13 +364,13 @@ namespace AdaptHotel.views.Gerente {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtAlterarCep;
         
         /// <summary>
-        /// ddlAlterarEstado control.
+        /// txtAlterarEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect ddlAlterarEstado;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAlterarEstado;
         
         /// <summary>
         /// txtAlterarCidade control.
@@ -409,22 +418,22 @@ namespace AdaptHotel.views.Gerente {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtAlterarComplemento;
         
         /// <summary>
-        /// Text1 control.
+        /// txtAlterarPlaca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAlterarPlaca;
         
         /// <summary>
-        /// Text2 control.
+        /// txtAlterarCidadeOrigem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAlterarCidadeOrigem;
         
         /// <summary>
         /// btnEditar control.
