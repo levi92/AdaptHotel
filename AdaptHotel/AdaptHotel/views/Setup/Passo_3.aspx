@@ -27,15 +27,44 @@
                     <h3 class="card-title">Configuração</h3>
                 </div>
                 <div class="card-content">
-                    <p>Olá, você adquiriu o sistema AdaptHotel.</p>
-                    <p>Nos próximos passos você será guiado para uma configuração inicial do sistema.</p>
-                    <p>Preencha todos os campos com atenção.</p>
+                    <p>Estas são as configurações principais do sistema, preencha-as com cuidado.</p>
+
+                    <div class="input-field">
+                        <label>Nome do Hotel</label>
+                        <input id="txtCidade" runat="server" type="text" />
+                    </div>
+
+                    <div class="input-field">
+                        <label>Endereço do Hotel</label>
+                        <input id="txtBairro" runat="server" type="text" />
+                    </div>
+
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Logo</span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+
+                <div class="input-field">
+                    <label>Cor Principal</label>
+                    <input id="txtNumero" runat="server" type="color" />
                 </div>
-                <div class="card-action">
-                    <a href="Passo_4.aspx">Cadastrar Administradores</a>
+
+                <div class="input-field">
+                    <label>Cor Secundária</label>
+                    <input id="Text1" runat="server" type="color" />
                 </div>
+
+            </div>
+            <div class="card-action">
+                <a href="Passo_4.aspx">Cadastrar Administradores</a>
             </div>
         </div>
+    </div>
     </div>
 
 </asp:Content>
