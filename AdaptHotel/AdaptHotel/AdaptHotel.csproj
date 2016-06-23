@@ -144,6 +144,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Gerente.Master" />
     <Content Include="images\login.jpg" />
+    <Content Include="images\user-profile-bg.jpg" />
     <Content Include="Recepcionista.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\materialize.css" />
@@ -195,6 +196,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="views\Error\403.aspx" />
     <Content Include="views\Error\Erro_404.aspx" />
     <Content Include="views\Error\Erro_500.aspx" />
     <Content Include="views\Gerente\Estatisticas.aspx" />
@@ -208,6 +210,13 @@
     <Content Include="views\Recepcionista\Gerenciar_Hospede.aspx" />
     <Content Include="views\Recepcionista\Gerenciar_Quartos.aspx" />
     <Content Include="views\Recepcionista\Gerenciar_Reservas.aspx" />
+    <Content Include="views\Setup\Passo_1.aspx" />
+    <Content Include="views\Setup\Passo_2.aspx" />
+    <Content Include="views\Setup\Passo_3.aspx" />
+    <Content Include="views\Setup\Passo_4.aspx" />
+    <Content Include="views\Setup\Passo_5.aspx" />
+    <Content Include="views\Setup\Passo_6.aspx" />
+    <Content Include="views\Setup\Passo_7.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -294,6 +303,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Error\403.aspx.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Error\403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Error\Erro_404.aspx.cs">
       <DependentUpon>Erro_404.aspx</DependentUpon>
@@ -385,6 +401,55 @@
     </Compile>
     <Compile Include="views\Recepcionista\Gerenciar_Reservas.aspx.designer.cs">
       <DependentUpon>Gerenciar_Reservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Setup\Passo_1.aspx.cs">
+      <DependentUpon>Passo_1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Setup\Passo_1.aspx.designer.cs">
+      <DependentUpon>Passo_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Setup\Passo_2.aspx.cs">
+      <DependentUpon>Passo_2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Setup\Passo_2.aspx.designer.cs">
+      <DependentUpon>Passo_2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Setup\Passo_3.aspx.cs">
+      <DependentUpon>Passo_3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Setup\Passo_3.aspx.designer.cs">
+      <DependentUpon>Passo_3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Setup\Passo_4.aspx.cs">
+      <DependentUpon>Passo_4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Setup\Passo_4.aspx.designer.cs">
+      <DependentUpon>Passo_4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Setup\Passo_5.aspx.cs">
+      <DependentUpon>Passo_5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Setup\Passo_5.aspx.designer.cs">
+      <DependentUpon>Passo_5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Setup\Passo_6.aspx.cs">
+      <DependentUpon>Passo_6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Setup\Passo_6.aspx.designer.cs">
+      <DependentUpon>Passo_6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Setup\Passo_7.aspx.cs">
+      <DependentUpon>Passo_7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Setup\Passo_7.aspx.designer.cs">
+      <DependentUpon>Passo_7.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

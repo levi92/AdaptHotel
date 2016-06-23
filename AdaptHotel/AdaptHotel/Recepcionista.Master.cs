@@ -11,7 +11,10 @@ namespace AdaptHotel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("~/views/Error/403.aspx");
+            }
         }
     }
 }

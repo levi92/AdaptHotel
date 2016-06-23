@@ -22,7 +22,12 @@ public class Funcionario : Pessoa
 
 	}
 
-    public Funcionario(string nome, Endereco end): base (nome, end)
+    public Funcionario(string nome, Endereco end, int cod_funcionario) : base (nome, end)
+    {
+        this.codFuncionario = cod_funcionario;
+    }
+
+    public Funcionario()
     {
 
     }

@@ -43,12 +43,13 @@
         <nav class="blue darken-4 z-depth-0" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="#" class="right brand-logo">
-                    <img src="../../images/logo.png" style="transform: rotate(90deg);width: 38px;">
+                    <img src="../../images/logo.png" style="transform: rotate(90deg); width: 38px;">
                 </a>
 
 
                 <ul id="nav-mobile" class="side-nav fixed">
-                    <li class="logo" style="text-align: center;height: 158px;"><img src="../../images/Hotel-Villa-Augusto.png" style="width: 197px;" /></li>
+                    <li class="logo" style="text-align: center; height: 158px;">
+                        <img src="../../images/Hotel-Villa-Augusto.png" style="width: 197px;" /></li>
 
                     <li class="bold" id="Dashboard_Gerente"><a class="waves-effect" href="../../views/Gerente/Dashboard_Gerente.aspx">Dashboard</a></li>
                     <li class="bold" id="Gerenciar_Reservas"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Reservas.aspx">Reservas</a></li>
@@ -63,24 +64,34 @@
 
         <script>
             $(document).ready(function () {
-                var loc = "0"+window.location.pathname;
+                var loc = "0" + window.location.pathname;
                 loc = loc.split("/");
-                $("#"+loc[3]).addClass("active");
+                $("#" + loc[3]).addClass("active");
             });
         </script>
         <style>
-        .bold>a {
-            font-weight: bold;
-        }
+            .bold > a {
+                font-weight: bold;
+            }
         </style>
         <!-- /top navigation -->
 
 
         <!-- page content -->
-        <div class="section row no-padding">
+        <div class="section row no-padding" style="margin-bottom: 0;">
             <div class="col s12 central no-padding" role="main">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
+
+                <footer class="page-footer" style="margin-top: 30px; float: right; width: 100%;">
+                    <div class="footer-copyright">
+                        <div class="container" style="color: white">
+                            © Adapt Hotel | 2016 - All Rights Reserved
+          
+                        </div>
+                    </div>
+                </footer>
+
             </div>
         </div>
         <!-- /page content -->
@@ -94,6 +105,8 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../../js/materialize.min.js"></script>
+
+
 
 </body>
 </html>

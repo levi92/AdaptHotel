@@ -364,13 +364,13 @@ namespace AdaptHotel.views.Gerente {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtAlterarCep;
         
         /// <summary>
-        /// txtAlterarEstado control.
+        /// ddlAlterarEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAlterarEstado;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddlAlterarEstado;
         
         /// <summary>
         /// txtAlterarCidade control.

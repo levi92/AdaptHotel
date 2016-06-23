@@ -11,7 +11,6 @@ public class Hospede_DB
     public static int Insert(Hospede hospede)
     {
         int retorno = 0;
-
         try
         {
             SqlConnection objConnection = Mapped.Connection();
@@ -29,14 +28,12 @@ public class Hospede_DB
         {
             retorno = -2;
         }
-
         return retorno;
     }
-    
-    public static int Update (Hospede hospede)
+
+    public static int Update(Hospede hospede)
     {
         int retorno = 0;
-
         try
         {
             SqlConnection objConnection = Mapped.Connection();
@@ -97,9 +94,9 @@ public class Hospede_DB
     }
 
     public static Hospede SelectByID(int cod_hospede)
-    {        
+    {
         SqlConnection objconexao = Mapped.Connection();
-        SqlCommand objCommand = Mapped.Command("select * from hospedes h " +
+        SqlCommand objCommand = Mapped.Command("select *, h.cod_pessoa as codigo from hospedes h " +
             "left join pessoas pes on pes.cod_pessoa = h.cod_pessoa " +
             "left join fotos f on f.cod_foto = pes.cod_foto " +
             "left join enderecos e on e.cod_endereco = pes.cod_endereco where h.cod_hospede = @cod_hospede; ", objconexao);
@@ -116,9 +113,9 @@ public class Hospede_DB
             Foto foto = new Foto(objDataReader["endereco_foto"].ToString(), int.TryParse(objDataReader["endereco_foto"].ToString(), out nulo) ? (int?)nulo : null);
             Endereco endereco = new Endereco(objDataReader["rua"].ToString(), objDataReader["numero"].ToString(),
                 objDataReader["complemento"].ToString(), objDataReader["bairro"].ToString(), objDataReader["cep"].ToString(),
-                objDataReader["cidade"].ToString(), objDataReader["estado"].ToString());
-
-           hospede = new Hospede(objDataReader["nome"].ToString(), objDataReader["telefone"].ToString(),
+                objDataReader["cidade"].ToString(), objDataReader["estado"].ToString(), Convert.ToInt32(objDataReader["cod_endereco"]));
+            string codigo = objDataReader["cod_pessoa"].ToString();
+            hospede = new Hospede(objDataReader["nome"].ToString(), objDataReader["telefone"].ToString(),
                 objDataReader["email"].ToString(), objDataReader["cpf"].ToString(), Convert.ToChar(objDataReader["sexo"]),
                 Convert.ToDateTime(objDataReader["data_nasc"]), perfil, endereco, objDataReader["placa_carro"].ToString(),
                 objDataReader["cidade_origem"].ToString(), Convert.ToInt32(objDataReader["cod_pessoa"]), foto, null);
