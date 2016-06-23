@@ -13,30 +13,32 @@ namespace AdaptHotel.views.Gerente
     {
         public List<Hospede> lista_hospedes = new List<Hospede>();
         public Hospede hospede = new Hospede();
-        
+
 
         protected void Page_Load(object sender, EventArgs e)
-        {   
+        {
             if (!IsPostBack)
             {
-                CarregarHospedes();              
+                CarregarHospedes();
             }
             else
             {
                 CarregarHospedes();
                 string parameter = Request["__EVENTARGUMENT"];
 
-                if (parameter != "") {
+                if (parameter != "")
+                {
                     hospede = CarregarDetalhes(Convert.ToInt32(parameter));
                     Session["cod_pessoa"] = hospede.CodPessoa;
                     Session["cod_endereco"] = hospede.Endereco.CodEnd;
+                    Session["cod_hospede"] = hospede.CodHospede;
 
                     txtAlterarNome.Value = hospede.Nome;
                     txtAlterarDataNasc.Value = hospede.DataNascimento.ToString();
                     txtAlterarCpf.Value = hospede.Cpf;
                     txtAlterarTelefone.Value = hospede.Telefone;
                     txtAlterarEmail.Value = hospede.Email;
-                    ddlAlterarEstado.Value = hospede.Endereco.Estado;
+                    txtAlterarEstado.Value = hospede.Endereco.Estado;
                     rblAlterarSexo.SelectedValue = hospede.Sexo.ToString();
 
                     txtAlterarCep.Value = hospede.Endereco.Cep;
@@ -47,18 +49,20 @@ namespace AdaptHotel.views.Gerente
 
                     txtAlterarPlaca.Value = hospede.PlacaCarro;
                     txtAlterarCidadeOrigem.Value = hospede.CidadeOrigem;
+                    
 
                     if (hospede.Sexo.ToString() == "M")
-                    {                       
+                    {
                         lblSexo.InnerText = "Masculino";
-                    } else
+                    }
+                    else
                     {
                         lblSexo.InnerText = "Feminino";
                     }
 
 
                     lblNome.InnerText = hospede.Nome;
-                    
+
                     lblTelefone.InnerText = hospede.Telefone;
                     lblDataNasc.InnerText = hospede.DataNascimento.ToString();
                     lblCpf.InnerText = hospede.Cpf;
@@ -74,11 +78,13 @@ namespace AdaptHotel.views.Gerente
                     lblPlaca.InnerText = hospede.PlacaCarro;
                     lblCidadeOrigem.InnerText = hospede.CidadeOrigem;
 
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv();", true);
+                    
                     UpdatePanelHospedes.Update();
                     UpdatePanelEdit.Update();
-                }               
-            }         
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv();", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "AtualizarSelect();", true);
+                }
+            }
         }
 
         public void CarregarHospedes()
@@ -108,7 +114,7 @@ namespace AdaptHotel.views.Gerente
             Foto foto = new Foto(null);
             Endereco endereco = new Endereco(txtRua.Value, txtNumero.Value, txtComplemento.Value, txtBairro.Value, txtCep.Value, txtCidade.Value, ddlEstado.Value);
             Perfil perfil = new Perfil(4);
-                    
+
 
             Hospede hospede = new Hospede(txtNome.Value, txtTelefone.Value, txtEmail.Value, txtCpf.Value, Convert.ToChar(rblSexo.SelectedValue), Convert.ToDateTime(txtData.Value), perfil, endereco, txtPlacaCarro.Value, txtCidadeOrigem.Value, null, foto, null);
             Hospede_DB.Insert(hospede);
@@ -117,13 +123,13 @@ namespace AdaptHotel.views.Gerente
         protected void btnEditar_ServerClick(object sender, EventArgs e)
         {
             Foto foto = new Foto(null);
-            Endereco endereco = new Endereco(txtAlterarRua.Value, txtAlterarNumero.Value, txtAlterarComplemento.Value, txtAlterarBairro.Value, txtAlterarCep.Value, txtAlterarCidade.Value, ddlAlterarEstado.Value, Convert.ToInt32(Session["cod_endereco"]));
-            Perfil perfil= new Perfil(4);
+            Endereco endereco = new Endereco(txtAlterarRua.Value, txtAlterarNumero.Value, txtAlterarComplemento.Value, txtAlterarBairro.Value, txtAlterarCep.Value, txtAlterarCidade.Value, txtAlterarEstado.Value, Convert.ToInt32(Session["cod_endereco"]));
+            Perfil perfil = new Perfil(4);
 
             System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("pt-BR");
-
             DateTime date = Convert.ToDateTime(txtAlterarDataNasc.Value, culture);
-            Hospede Alterarhospede = new Hospede(txtAlterarNome.Value, txtAlterarTelefone.Value, txtAlterarEmail.Value, txtAlterarCpf.Value, Convert.ToChar(rblAlterarSexo.SelectedValue), date, perfil, endereco, txtAlterarPlaca.Value, txtAlterarCidadeOrigem.Value, Convert.ToInt32(Session["cod_pessoa"]), foto, null);
+
+            Hospede Alterarhospede = new Hospede(txtAlterarNome.Value, txtAlterarTelefone.Value, txtAlterarEmail.Value, txtAlterarCpf.Value, Convert.ToChar(rblAlterarSexo.SelectedValue), date, perfil, endereco, txtAlterarPlaca.Value, txtAlterarCidadeOrigem.Value, Convert.ToInt32(Session["cod_pessoa"]), foto, null, Convert.ToInt32(Session["cod_hospede"]));
             Hospede_DB.Update(Alterarhospede);
 
         }

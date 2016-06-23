@@ -42,8 +42,8 @@ public class Funcionario_DB
             SqlConnection objConnection = Mapped.Connection();
             Pessoa_DB.Update(funcionario, objConnection);
 
-            SqlCommand objCommand = Mapped.Command("Insert into funcionarios cargo = @cargo, salario = @salario, " +
-                "data_admissao = @data_admissao, numero_cnt = @numero_cnt" +
+            SqlCommand objCommand = Mapped.Command("Update funcionarios set cargo = @cargo, salario = @salario, " +
+                "data_admissao = @data_admissao, numero_cnt = @numero_cnt " +
                 "where cod_funcionario = @cod_funcionario;", objConnection);
             objCommand.Parameters.Add(Mapped.Parameter("@cargo", funcionario.Cargo));
             objCommand.Parameters.Add(Mapped.Parameter("@salario", funcionario.Salario));
@@ -101,14 +101,14 @@ public class Funcionario_DB
     public static Funcionario SelectByID(int cod_funcionario)
     {
         SqlConnection objconexao = Mapped.Connection();
-        SqlCommand objCommand = Mapped.Command("select * from funcionarios fu " +
-            "left join pessoas pes on pes.cod_pessoa = fu.cod_pessoa " +
+        SqlCommand objCommand = Mapped.Command("select * from funcionarios fun " +
+            "left join pessoas pes on pes.cod_pessoa = fun.cod_pessoa " +
             "left join fotos f on f.cod_foto = pes.cod_foto " +
-            "left join enderecos e on e.cod_endereco = pes.cod_endereco where fu.cod_funcionario = @cod_funcionario; ", objconexao);
+            "left join enderecos e on e.cod_endereco = pes.cod_endereco where fun.cod_funcionario = @cod_funcionario; ", objconexao);
         objCommand.Parameters.Add(Mapped.Parameter("@cod_funcionario", cod_funcionario));
         SqlDataReader objDataReader = objCommand.ExecuteReader();
 
-        Funcionario funcioario = null;
+        Funcionario funcionario = null;
 
         while (objDataReader.Read())
         {
@@ -118,13 +118,13 @@ public class Funcionario_DB
             Foto foto = new Foto(objDataReader["endereco_foto"].ToString(), int.TryParse(objDataReader["endereco_foto"].ToString(), out nulo) ? (int?)nulo : null);
             Endereco endereco = new Endereco(objDataReader["rua"].ToString(), objDataReader["numero"].ToString(),
                 objDataReader["complemento"].ToString(), objDataReader["bairro"].ToString(), objDataReader["cep"].ToString(),
-                objDataReader["cidade"].ToString(), objDataReader["estado"].ToString());
+                objDataReader["cidade"].ToString(), objDataReader["estado"].ToString(), Convert.ToInt32(objDataReader["cod_endereco"]));
 
-            funcioario = new Funcionario(objDataReader["nome"].ToString(), objDataReader["telefone"].ToString(),
-                 objDataReader["email"].ToString(), objDataReader["cpf"].ToString(), Convert.ToChar(objDataReader["sexo"]),
-                 Convert.ToDateTime(objDataReader["data_nasc"]), perfil, endereco, objDataReader["cargo"].ToString(),
-                 objDataReader["numero_cnt"].ToString(), Convert.ToDouble(objDataReader["salario"]), Convert.ToDateTime(objDataReader["data_admissao"]),
-                 Convert.ToInt32(objDataReader["cod_pessoa"]), Convert.ToInt32(objDataReader["cod_funcionario"]), foto, null);
+            string codigo = objDataReader["cod_pessoa"].ToString();
+            funcionario = new Funcionario(objDataReader["nome"].ToString(), objDataReader["telefone"].ToString(),
+                objDataReader["email"].ToString(), objDataReader["cpf"].ToString(), Convert.ToChar(objDataReader["sexo"]),
+                Convert.ToDateTime(objDataReader["data_nasc"]), perfil, endereco, objDataReader["cargo"].ToString(), 
+                objDataReader["numero_cnt"].ToString(), Convert.ToDouble(objDataReader["salario"]),Convert.ToDateTime(objDataReader["data_admissao"]), Convert.ToInt32(objDataReader["cod_funcionario"]), Convert.ToInt32(objDataReader["cod_pessoa"]), foto, null);
 
             objDataReader.Close();
             objconexao.Close();
@@ -132,7 +132,7 @@ public class Funcionario_DB
             objCommand.Dispose();
             objDataReader.Dispose();
 
-            return funcioario;
+            return funcionario;
         }
 
         objDataReader.Close();
@@ -141,6 +141,6 @@ public class Funcionario_DB
         objCommand.Dispose();
         objDataReader.Dispose();
 
-        return funcioario;
+        return funcionario;
     }
 }
