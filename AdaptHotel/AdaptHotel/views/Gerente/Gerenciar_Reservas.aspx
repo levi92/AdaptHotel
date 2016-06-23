@@ -54,7 +54,7 @@
                             </div>
 
                             <div class="card-action" style="text-align: center;">
-                                <a id="check-in" onclick="__doPostBack('check-in', '<%= reserva_agendada.CodReserva%>')"><i class="material-icons">done</i></a>
+                                <a id="check-in" onclick="__doPostBack('check-in', '<%= reserva_agendada.CodReserva%>')" style="cursor: pointer">Check-in</a>
                             </div>
 
                             <div class="card-reveal">
@@ -91,7 +91,7 @@
                             </div>
 
                             <div class="card-action" style="text-align: center;">
-                                <a id="check-out" onclick="__doPostBack('check-out', '<%= reserva_andamento.CodReserva%>')"><i class="material-icons">done</i></a>
+                                <a id="check-out" onclick="__doPostBack('check-out', '<%= reserva_andamento.CodReserva%>')" style="cursor: pointer">Check-out</a>
                             </div>
 
                             <div class="card-reveal">
@@ -129,9 +129,7 @@
                                     <span class="span-collaps"><%= reserva_finalizada.Hospede.Nome%></span><i class="material-icons right">more_vert</i></span>
                             </div>
 
-                            <div class="card-action" style="text-align: center;">
-                                <a onclick="Materialize.toast('Check-in realizado com sucesso !', 3000)"><i class="material-icons">done</i></a>
-                            </div>
+                            <div class="card-action" style="text-align: center;"></div>
 
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
@@ -166,9 +164,7 @@
                                 <span class="card-title activator grey-text text-darken-4"><span class="span-collaps"><%= reserva_cancelada.Hospede.Nome%></span><i class="material-icons right">more_vert</i></span>
                             </div>
 
-                            <div class="card-action" style="text-align: center;">
-                                <a onclick="Materialize.toast('Check-in realizado com sucesso !', 3000)"><i class="material-icons">done</i></a>
-                            </div>
+                            <div class="card-action" style="text-align: center;"></div>
 
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
@@ -203,9 +199,7 @@
                                 <span class="card-title activator grey-text text-darken-4"><span class="span-collaps"><%= reserva_noshow.Hospede.Nome%></span><i class="material-icons right">more_vert</i></span>
                             </div>
 
-                            <div class="card-action" style="text-align: center;">
-                                <a onclick="Materialize.toast('Check-in realizado com sucesso !', 4000)"><i class="material-icons">done</i></a>
-                            </div>
+                            <div class="card-action" style="text-align: center;"></div>
 
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
@@ -291,10 +285,11 @@
 
         function tostado(texto, id) {
             Materialize.toast(texto, 5000);
+            $("#agendada").hide();
             $("#" + id).show();
         }
 
-  
+
         $(document).ready(function () {
 
             $('.datepicker').pickadate({

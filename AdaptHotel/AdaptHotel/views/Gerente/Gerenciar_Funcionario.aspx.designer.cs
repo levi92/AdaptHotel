@@ -397,7 +397,7 @@ namespace AdaptHotel.views.Gerente {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAlterarEstado;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect txtAlterarEstado;
         
         /// <summary>
         /// txtAlterarCidade control.

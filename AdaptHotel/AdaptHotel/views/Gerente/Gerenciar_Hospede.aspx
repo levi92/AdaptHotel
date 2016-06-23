@@ -20,7 +20,7 @@
                         <ul class="collection">
                             <% foreach (var hospede in lista_hospedes)
                                 { %>
-                            <a id='link' class="collection-item avatar waves-effect waves" style="min-height: 60px;" onclick="__doPostBack('link', '<%= hospede.CodHospede%>')">
+                            <a id='<%= hospede.CodHospede%>' class="collection-item avatar waves-effect waves" style="min-height: 60px;" onclick="__doPostBack('<%= hospede.CodHospede%>', '<%= hospede.CodHospede%>')">
                                 <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                 <span class="title"><%= hospede.Nome %> </span>
                                 <p><%= hospede.Endereco.Cidade %> - <%= hospede.Endereco.Estado %></p>
@@ -280,7 +280,7 @@
                     </div>
 
                     <div class="input-field col s12 m6">
-                        <label>Data de nascimento</label>
+                        <label class="active">Data de nascimento</label>
                         <input id="txtAlterarDataNasc" runat="server" type="date" class="datepicker validate" />
 
                     </div>
@@ -317,8 +317,8 @@
                     </div>
 
                     
-                    <%--<div class="input-field col s12 m6">
-                        <select id="ddlAlterarEstado" runat="server">
+                    <div class="input-field col s12 m6">
+                        <select id="txtAlterarEstado" runat="server">
                             <option value="" disabled selected>Selecione o estado</option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
@@ -349,12 +349,12 @@
                             <option value="TO">Tocantins</option>
                         </select>
                         <label>Estado</label>
-                    </div>--%>
+                    </div>
 
-                    <div class="input-field col s12 m6">
+                    <%--<div class="input-field col s12 m6">
                         <label class="active">Estado</label>
                         <input id="txtAlterarEstado" runat="server" type="text" />
-                    </div>
+                    </div>--%>
 
                     <div class="input-field col s12 m6">
                         <label class="active">Cidade</label>
@@ -429,7 +429,9 @@
             __doPostBack('Button2', 'My Argument');
         }
 
-        function showDiv() {
+        function showDiv(id) {
+            $("#" + id).addClass("active");
+            $('select').material_select();
             $("#details").slideUp("slow");
             $("#details").slideDown("slow");
         }
@@ -448,12 +450,7 @@
         $(document).ready(function () {
             $('select').material_select();
         });
-        function AtualizarSelect()
-        {
-            $(document).ready(function () {
-                $('select').material_select();
-            });
-        }
+     
 
     </script>
 

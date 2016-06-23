@@ -19,7 +19,7 @@
                         <ul class="collection">
                             <%foreach (var funcionario in lista_funcionarios)
                                 { %>
-                            <a id='link' class="collection-item avatar waves-effect waves" style="min-height: 60px;" onclick="__doPostBack('link', '<%= funcionario.CodFuncionario%>')">                           
+                            <a id='<%= funcionario.CodFuncionario%>' class="collection-item avatar waves-effect waves" style="min-height: 60px;" onclick="__doPostBack('<%= funcionario.CodFuncionario%>', '<%= funcionario.CodFuncionario%>')">                           
                                 <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                 <span class="title"><%= funcionario.Nome %> </span>
                                 <p><%= funcionario.Endereco.Cidade %> - <%= funcionario.Endereco.Estado %></p>
@@ -284,6 +284,7 @@
                     </div>
 
                     <div class="input-field col s12 m6">
+                        <label class="active">Data de nascimento</label>
                         <input id="txtAlterarDataNasc" runat="server" type="date" class="validate" />
 
                     </div>
@@ -316,8 +317,37 @@
                     </div>
 
                     <div class="input-field col s12 m6">
-                        <input id="txtAlterarEstado" runat="server" type="text" />
-                        <label class="active">Estado</label>
+                        <select id="txtAlterarEstado" runat="server">
+                            <option value="" disabled selected>Selecione o estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espirito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                        <label>Estado</label>
                     </div>
 
                     <div class="input-field col s12 m6">
@@ -377,11 +407,14 @@
     <script>
         
 
+
         function DoPostBack() {
             __doPostBack('Button2', 'My Argument');
         }
 
-        function showDiv() {
+        function showDiv(id) {
+            $("#" + id).addClass("active");
+            $('select').material_select();
             $("#details").slideUp("slow");
             $("#details").slideDown("slow");
         }
@@ -396,11 +429,7 @@
             $('.modal-trigger').leanModal();
         });
 
-        function AtualizarSelectFuncionario() {
-            $(document).ready(function () {
-                $('select').material_select();
-            });
-        }
+      
     </script>
 
 </asp:Content>

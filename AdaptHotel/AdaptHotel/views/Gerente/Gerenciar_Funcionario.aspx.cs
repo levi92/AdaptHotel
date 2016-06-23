@@ -78,8 +78,7 @@ namespace AdaptHotel.views.Gerente
                     
                     UpdatePanelHospedes.Update();
                     UpdatePanelEdit.Update();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv();", true);
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "AtualizarSelectFuncionario();", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv("+funcionario.CodFuncionario+");", true);
                 }
             }
         }
