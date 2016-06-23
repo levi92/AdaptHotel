@@ -32,23 +32,22 @@ public class NumeroQuarto_DB
         return retorno;
     }
 
-    public static int UpdateStatusQuarto(List<NumeroQuarto> lista_numero_quarto, SqlConnection objConnection)
+    public static int UpdateStatusQuarto(int cod_reserva, string status, SqlConnection objConnection)
     {
         int retorno = 0;
-        try
-        {
-            foreach(NumeroQuarto numero_quarto in lista_numero_quarto)
-            {
-                SqlCommand objCommand = Mapped.Command("update numero_quarto set status_quarto = @status_quarto where cod_numero_quarto = @cod_numero_quarto;", objConnection);
-                objCommand.Parameters.Add(Mapped.Parameter("@status_quarto", numero_quarto.getStatusQuarto()));
-                objCommand.Parameters.Add(Mapped.Parameter("@cod_numero_quarto", numero_quarto.CodNumeroQuarto));
-                objCommand.ExecuteNonQuery();
-            }
-        }
-        catch (Exception)
-        {
-            retorno = -2;
-        }
+        //try
+        //{
+            SqlCommand objCommand = Mapped.Command("update numero_quartos set status_quarto = @status_quarto " +
+                "from numero_quartos n inner join reserva_subtipo_quartos rs on rs.cod_numero_quarto = n.cod_numero_quarto " +
+                "where rs.cod_reserva = @cod_reserva;", objConnection);
+            objCommand.Parameters.Add(Mapped.Parameter("@status_quarto", status));
+            objCommand.Parameters.Add(Mapped.Parameter("@cod_reserva", cod_reserva));
+            objCommand.ExecuteNonQuery();
+        //}
+        //catch (Exception)
+        //{
+        //    retorno = -2;
+        //}
         return retorno;
     }
 
@@ -62,6 +61,26 @@ public class NumeroQuarto_DB
         objCommand = Mapped.Command("select t.tipo, s.subtipo, s.descricao, s.qtd_adultos, s.qtd_criancas, s.valor, n.cod_numero_quarto, n.numero_quarto, n.status_quarto " +
         "from tipo_quartos t inner join subtipo_quartos s on t.cod_tipo_quarto = s.cod_tipo_quarto " +
         "inner join numero_quartos n on n.cod_subtipo_quarto = s.cod_subtipo_quarto; ", objConnection);
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+        objConnection.Close();
+        objCommand.Dispose();
+        objConnection.Dispose();
+        return ds;
+    }
+
+    public static DataSet SelectQuartosByStatus(string status)
+    {
+        DataSet ds = new DataSet();
+        SqlConnection objConnection;
+        SqlCommand objCommand;
+        SqlDataAdapter objDataAdapter;
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command("select n.numero_quarto, t.tipo, s.subtipo, s.descricao, s.qtd_adultos, s.qtd_criancas, s.valor from numero_quartos n " +
+        "inner join subtipo_quartos s on s.cod_subtipo_quarto = n.cod_subtipo_quarto " +
+        "inner join tipo_quartos t on t.cod_tipo_quarto = s.cod_tipo_quarto " +
+        "where n.status_quarto = @status;", objConnection);
+        objCommand.Parameters.Add(Mapped.Parameter("@status", status));
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
         objConnection.Close();

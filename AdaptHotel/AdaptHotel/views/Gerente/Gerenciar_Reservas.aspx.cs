@@ -18,6 +18,49 @@ namespace AdaptHotel.views.Gerente
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                
+            }
+            else
+            {
+                string acao = Request["__EVENTTARGET"];
+
+                if (acao == "check-in")
+                {
+                    string parameter = Request["__EVENTARGUMENT"];
+                    if (parameter != "")
+                    {
+                        int retorno = Reserva_DB.Realizar_Checkin(Convert.ToInt32(parameter), "ocupado");
+                        if (retorno == -2)
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Materialize.toast('Check-in realizado com sucesso !', 3000);", true);
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Materialize.toast('Erro ao realizar Check-out !', 3000);", true);
+                        }                         
+                    }
+                }
+                else if (acao == "check-out")
+                {
+                    string parameter = Request["__EVENTARGUMENT"];
+                    if (parameter != "")
+                    {
+                        int retorno = Reserva_DB.Realizar_Checkout(Convert.ToInt32(parameter), "manutencao");
+
+                        if (retorno == -2)
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Materialize.toast('Check-out realizado com sucesso !', 3000);", true);
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Materialize.toast('Erro ao realizar Check-out !', 3000);", true);
+                        }
+                    }
+                }
+            }
+
             reservasAgendada();
             reservasAndamento();
             reservasFinalizada();

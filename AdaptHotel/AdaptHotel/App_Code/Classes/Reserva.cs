@@ -42,6 +42,11 @@ public class Reserva
         this.listaNumeroQuarto = lista_numero_quarto;
     }
 
+    public Reserva()
+    {
+
+    }
+
     public bool Pago 
     {
         get { return pago; }
