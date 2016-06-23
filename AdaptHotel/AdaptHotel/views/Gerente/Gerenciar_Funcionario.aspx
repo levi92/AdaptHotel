@@ -116,7 +116,6 @@
         <ul>
             <li><a class="btn-floating green modal-trigger" href="#add"><i class="material-icons">add</i></a></li>
             <li><a class="btn-floating blue  modal-trigger" href="#edit"><i class="material-icons">mode_edit</i></a></li>
-            <li><a class="btn-floating red  modal-trigger" href="#edit"><i class="material-icons">delete</i></a></li>
         </ul>
     </div>
 
@@ -290,7 +289,7 @@
                     </div>
 
                     <div class="input-field col s12 m6">
-                        <label class="active">>Cpf</label>
+                        <label class="active">Cpf</label>
                         <input id="txtAlterarCpf" runat="server" type="text" class="validate" />
                     </div>
 
@@ -311,10 +310,6 @@
                         </asp:RadioButtonList>
                     </div>
 
-                    <div class="col s12">
-                        <h5>Endereço</h5>
-                    </div>
-
                     <div class="input-field col s12 m6">
                         <label class="active">CEP</label>
                         <input id="txtAlterarCep" runat="server" type="text" />
@@ -324,8 +319,6 @@
                         <input id="txtAlterarEstado" runat="server" type="text" />
                         <label class="active">Estado</label>
                     </div>
-
-
 
                     <div class="input-field col s12 m6">
                         <label class="active">Cidade</label>
@@ -375,7 +368,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Alterar</a>
+                    <button id="btnEditar" class="modal-action modal-close waves-effect waves-green btn-flat" runat="server" onserverclick="btnEditar_ServerClick">Alterar</button>
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
@@ -396,6 +389,12 @@
             $('select').material_select();
             $('.modal-trigger').leanModal();
         });
+
+        function AtualizarSelectFuncionario() {
+            $(document).ready(function () {
+                $('select').material_select();
+            });
+        }
     </script>
 
 </asp:Content>

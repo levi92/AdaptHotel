@@ -16,7 +16,8 @@ public class Pessoa_DB
             if (pessoa.Foto.Endereco_foto != null)
             {
                 pessoa.Foto.Cod_fotos = Foto_DB.Insert(pessoa.Foto, objConnection);
-            } else
+            }
+            else
             {
                 pessoa.Foto.Cod_fotos = null;
             }
@@ -58,7 +59,7 @@ public class Pessoa_DB
             objCommand.Parameters.Add(Mapped.Parameter("@email", pessoa.Email));
             objCommand.Parameters.Add(Mapped.Parameter("@cod_pessoa", pessoa.CodPessoa));
             objCommand.ExecuteNonQuery();
-    }
+        }
         catch (Exception)
         {
             retorno = -2;

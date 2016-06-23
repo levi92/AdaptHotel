@@ -19,6 +19,7 @@ public class Funcionario : Pessoa
         this.numeroCnt = numeroCnt;
         this.salario = salario;
         this.dataAdmissao = dataAdmissao;
+        this.codFuncionario = codFuncionario;
 
 	}
 

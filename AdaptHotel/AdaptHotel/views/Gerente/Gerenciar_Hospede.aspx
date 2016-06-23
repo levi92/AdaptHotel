@@ -9,8 +9,6 @@
             </div>
 
 
-
-
         </div>
     </div>
 
@@ -123,7 +121,7 @@
         <ul>
             <li><a class="btn-floating green modal-trigger" href="#add"><i class="material-icons">add</i></a></li>
             <li><a class="btn-floating blue  modal-trigger" href="#edit"><i class="material-icons">mode_edit</i></a></li>
-            <li><a class="btn-floating red  modal-trigger" href="#edit"><i class="material-icons">delete</i></a></li>
+            <%--<li><a class="btn-floating red  modal-trigger" href="#edit"><i class="material-icons">delete</i></a></li>--%>
         </ul>
     </div>
 
@@ -316,7 +314,8 @@
                         <input id="txtAlterarCep" runat="server" type="text" />
                     </div>
 
-                    <div class="input-field col s12 m6">
+                    
+                    <%--<div class="input-field col s12 m6">
                         <select id="ddlAlterarEstado" runat="server">
                             <option value="" disabled selected>Selecione o estado</option>
                             <option value="AC">Acre</option>
@@ -348,9 +347,12 @@
                             <option value="TO">Tocantins</option>
                         </select>
                         <label>Estado</label>
+                    </div>--%>
+
+                    <div class="input-field col s12 m6">
+                        <label class="active">Estado</label>
+                        <input id="txtAlterarEstado" runat="server" type="text" />
                     </div>
-
-
 
                     <div class="input-field col s12 m6">
                         <label class="active">Cidade</label>
@@ -437,6 +439,12 @@
         $(document).ready(function () {
             $('select').material_select();
         });
+        function AtualizarSelect()
+        {
+            $(document).ready(function () {
+                $('select').material_select();
+            });
+        }
 
     </script>
 

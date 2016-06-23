@@ -96,7 +96,7 @@ public class Hospede_DB
     public static Hospede SelectByID(int cod_hospede)
     {
         SqlConnection objconexao = Mapped.Connection();
-        SqlCommand objCommand = Mapped.Command("select *, h.cod_pessoa as codigo from hospedes h " +
+        SqlCommand objCommand = Mapped.Command("select * from hospedes h " +
             "left join pessoas pes on pes.cod_pessoa = h.cod_pessoa " +
             "left join fotos f on f.cod_foto = pes.cod_foto " +
             "left join enderecos e on e.cod_endereco = pes.cod_endereco where h.cod_hospede = @cod_hospede; ", objconexao);
@@ -118,7 +118,7 @@ public class Hospede_DB
             hospede = new Hospede(objDataReader["nome"].ToString(), objDataReader["telefone"].ToString(),
                 objDataReader["email"].ToString(), objDataReader["cpf"].ToString(), Convert.ToChar(objDataReader["sexo"]),
                 Convert.ToDateTime(objDataReader["data_nasc"]), perfil, endereco, objDataReader["placa_carro"].ToString(),
-                objDataReader["cidade_origem"].ToString(), Convert.ToInt32(objDataReader["cod_pessoa"]), foto, null);
+                objDataReader["cidade_origem"].ToString(), Convert.ToInt32(objDataReader["cod_pessoa"]), foto, null, Convert.ToInt32(objDataReader["cod_hospede"]));
 
             objDataReader.Close();
             objconexao.Close();

@@ -11,7 +11,7 @@ namespace AdaptHotel.views.Gerente
     public partial class Gerenciar_Funcionario : System.Web.UI.Page
     {
         public List<Funcionario> lista_funcionarios = new List<Funcionario>();
-        public static Funcionario funcionario = new Funcionario();
+        public Funcionario funcionario = new Funcionario();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,6 +25,9 @@ namespace AdaptHotel.views.Gerente
                 if (parameter != "")
                 {
                     funcionario = CarregarDetalhes(Convert.ToInt32(parameter));
+                    Session["cod_pessoa"] = funcionario.CodPessoa;
+                    Session["cod_endereco"] = funcionario.Endereco.CodEnd;
+                    Session["cod_funcionario"] = funcionario.CodFuncionario;
 
                     txtAlterarNome.Value = funcionario.Nome;
                     txtAlterarDataNasc.Value = funcionario.DataNascimento.ToString();
@@ -32,6 +35,8 @@ namespace AdaptHotel.views.Gerente
                     txtAlterarTelefone.Value = funcionario.Telefone;
                     txtAlterarEmail.Value = funcionario.Email;
                     txtAlterarEstado.Value = funcionario.Endereco.Estado;
+                    rblAlterarSexo.SelectedValue = funcionario.Sexo.ToString();
+                    
 
                     txtAlterarCep.Value = funcionario.Endereco.Cep;
                     txtAlterarCidade.Value = funcionario.Endereco.Cidade;
@@ -70,11 +75,11 @@ namespace AdaptHotel.views.Gerente
                     lblCargo.InnerHtml = funcionario.Cargo;
                     lblDataAdmissao.InnerHtml = funcionario.DataAdmissao.ToString();
                     lblNConta.InnerHtml = funcionario.NumeroCnt;
-
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv();", true);
+                    
                     UpdatePanelHospedes.Update();
                     UpdatePanelEdit.Update();
-
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv();", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "AtualizarSelectFuncionario();", true);
                 }
             }
         }
@@ -112,9 +117,16 @@ namespace AdaptHotel.views.Gerente
             Funcionario_DB.Insert(funcionario);
         }
 
-        protected void btnAlterarDados_ServerClick(object sender, EventArgs e)
+        protected void btnEditar_ServerClick(object sender, EventArgs e)
         {
+            Endereco endereco = new Endereco(txtAlterarRua.Value, txtAlterarNumero.Value, txtComplemento.Value,txtAlterarBairro.Value,txtAlterarCep.Value, txtAlterarCidade.Value, txtAlterarEstado.Value, Convert.ToInt32(Session["cod_endereco"]));
+            Perfil perfil = new Perfil(3);
 
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("pt-BR");
+            DateTime date = Convert.ToDateTime(txtAlterarDataNasc.Value, culture);
+
+            Funcionario AlterarFuncionario = new Funcionario(txtAlterarNome.Value, txtAlterarTelefone.Value, txtAlterarEmail.Value, txtAlterarCep.Value, Convert.ToChar(rblAlterarSexo.SelectedValue), Convert.ToDateTime(txtAlterarDataNasc.Value), perfil, endereco, txtAlterarCargo.Value, txtAlterarNumConta.Value, Convert.ToDouble(txtAlterarSalario.Value), Convert.ToDateTime(txtdataAdm.Value), Convert.ToInt32(Session["cod_funcionario"]), Convert.ToInt32(Session["cod_pessoa"]), null, null);
+            Funcionario_DB.Update(AlterarFuncionario);
         }
     }
 }
