@@ -105,16 +105,29 @@ textarea {
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-     color: orange;
+    color: orange;
 }
 
 
 .central {
-        padding-left: 228px !important;
-    }   
+    padding-left: 228px !important;
+}
 
 @media (max-width: 991px) {
     .central {
         padding-left: 0px !important;
-    }    
+    }
+}
+
+.card-fixed {
+    height: 70px;
+}
+
+.span-collaps {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 81%;
+    float: left;
 }

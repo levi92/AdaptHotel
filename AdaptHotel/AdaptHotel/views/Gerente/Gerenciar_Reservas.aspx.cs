@@ -32,13 +32,13 @@ namespace AdaptHotel.views.Gerente
                     if (parameter != "")
                     {
                         int retorno = Reserva_DB.Realizar_Checkin(Convert.ToInt32(parameter), "ocupado");
-                        if (retorno == -2)
+                        if (retorno != -2)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Materialize.toast('Check-in realizado com sucesso !', 3000);", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado('Check-in realizado com sucesso !','agendado');", true);
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Materialize.toast('Erro ao realizar Check-out !', 3000);", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado('Erro ao realizar Check-out !','agendado');", true);
                         }                         
                     }
                 }
@@ -49,23 +49,28 @@ namespace AdaptHotel.views.Gerente
                     {
                         int retorno = Reserva_DB.Realizar_Checkout(Convert.ToInt32(parameter), "manutencao");
 
-                        if (retorno == -2)
+                        if (retorno != -2)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Materialize.toast('Check-out realizado com sucesso !', 3000);", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado('Check-out realizado com sucesso !','andamento');", true);
+                            
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Materialize.toast('Erro ao realizar Check-out !', 3000);", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado('Erro ao realizar Check-out !','andamento');", true);
                         }
                     }
                 }
             }
+
 
             reservasAgendada();
             reservasAndamento();
             reservasFinalizada();
             reservasCancelada();
             reservasNoShow();
+
+            UpdatePanelReservas.Update();
         }
 
         public void reservasAgendada()

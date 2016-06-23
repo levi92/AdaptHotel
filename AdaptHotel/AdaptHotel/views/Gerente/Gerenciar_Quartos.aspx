@@ -49,8 +49,9 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%><i class="material-icons right">more_vert</i></span><br />
+                    <div class="card-content card-fixed">
+                        <span class="card-title activator grey-text text-darken-4">
+                            <span class="span-collaps"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%></span><i class="material-icons right">more_vert</i></span><br />
                     </div>
 
                     <div class="card-action" style="text-align: center;">
@@ -79,8 +80,9 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%><i class="material-icons right">more_vert</i></span><br />
+                    <div class="card-content card-fixed">
+                        <span class="card-title activator grey-text text-darken-4">
+                            <span class="span-collaps"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%></span><i class="material-icons right">more_vert</i></span><br />
                     </div>
 
                     <div class="card-action" style="text-align: center;">
@@ -109,8 +111,9 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%><i class="material-icons right">more_vert</i></span><br />
+                    <div class="card-content card-fixed">
+                        <span class="card-title activator grey-text text-darken-4">
+                            <span class="span-collaps"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%></span><i class="material-icons right">more_vert</i></span><br />
                     </div>
 
                     <div class="card-action" style="text-align: center;">
@@ -139,8 +142,9 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%><i class="material-icons right">more_vert</i></span><br />
+                    <div class="card-content card-fixed">
+                        <span class="card-title activator grey-text text-darken-4">
+                            <span class="span-collaps"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%></span><i class="material-icons right">more_vert</i></span><br />
                     </div>
 
                     <div class="card-action" style="text-align: center;">

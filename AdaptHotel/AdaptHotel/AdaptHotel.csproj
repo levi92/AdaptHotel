@@ -196,6 +196,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="views\Error\401.aspx" />
     <Content Include="views\Error\403.aspx" />
     <Content Include="views\Error\Erro_404.aspx" />
     <Content Include="views\Error\Erro_500.aspx" />
@@ -303,6 +304,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Error\401.aspx.cs">
+      <DependentUpon>401.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Error\401.aspx.designer.cs">
+      <DependentUpon>401.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Error\403.aspx.cs">
       <DependentUpon>403.aspx</DependentUpon>

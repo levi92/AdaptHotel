@@ -50,7 +50,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Nicolas Santos<i class="material-icons right">more_vert</i></span>
                     </div>
 
@@ -73,7 +73,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-2.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Levi Monteiro<i class="material-icons right">more_vert</i></span>
                     </div>
 
@@ -98,7 +98,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-2.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Gabrielle de Paula<i class="material-icons right">more_vert</i></span>
                     </div>
                     <div class="card-reveal">
@@ -116,7 +116,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Thais Rodrigues<i class="material-icons right">more_vert</i></span>
                     </div>
                     <div class="card-reveal">
@@ -136,7 +136,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Pablo Mauricio<i class="material-icons right">more_vert</i></span>
                     </div>
 
@@ -159,7 +159,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-2.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Sandra Bolterine<i class="material-icons right">more_vert</i></span>
                     </div>
 

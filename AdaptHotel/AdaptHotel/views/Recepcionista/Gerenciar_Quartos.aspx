@@ -49,7 +49,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Twin Room<i class="material-icons right">more_vert</i></span>
                     </div>
 
@@ -73,7 +73,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-2.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Imperial<i class="material-icons right">more_vert</i></span>
                     </div>
 
@@ -100,7 +100,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-2.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Casal Simples<i class="material-icons right">more_vert</i></span>
                     </div>
 
@@ -124,7 +124,7 @@
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content card-fixed">
                         <span class="card-title activator grey-text text-darken-4">Solteiro<i class="material-icons right">more_vert</i></span>
                     </div>
 

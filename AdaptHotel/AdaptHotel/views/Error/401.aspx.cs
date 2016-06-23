@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace AdaptHotel.views.Error
 {
-    public partial class _4031 : System.Web.UI.Page
+    public partial class _403 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

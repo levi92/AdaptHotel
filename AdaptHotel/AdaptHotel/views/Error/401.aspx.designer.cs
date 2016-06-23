@@ -11,7 +11,7 @@ namespace AdaptHotel.views.Error
 {
 
 
-    public partial class _4031
+    public partial class _403
     {
     }
 }
