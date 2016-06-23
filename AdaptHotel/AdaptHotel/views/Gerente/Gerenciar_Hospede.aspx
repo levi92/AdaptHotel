@@ -146,7 +146,7 @@
             </div>
 
             <div class="input-field col s12 m6">
-                <label>Data de nascimento</label>
+                
                 <input id="txtData" runat="server" type="date" class="datepicker validate" />
 
             </div>
@@ -280,7 +280,6 @@
                     </div>
 
                     <div class="input-field col s12 m6">
-                        <label>Data de nascimento</label>
                         <input id="txtAlterarDataNasc" runat="server" type="date" class="datepicker validate" />
 
                     </div>
