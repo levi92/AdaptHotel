@@ -27,9 +27,33 @@
                     <h3 class="card-title">Instalação</h3>
                 </div>
                 <div class="card-content">
-                    <p>Olá, você adquiriu o sistema AdaptHotel.</p>
-                    <p>Nos próximos passos você será guiado para uma configuração inicial do sistema.</p>
-                    <p>Preencha todos os campos com atenção.</p>
+                    <p>Abaixo você deverá preencher o dados de conexão. Se não possui conhecimento para isso, contacte seu host.</p>                    
+            
+                    <div class="input-field">
+                        <label>Nome do Banco</label>
+                        <input id="txtCidade" runat="server" type="text" />
+                    </div>
+
+                    <div class="input-field">
+                        <label>Nome do Usuário</label>
+                        <input id="txtBairro" runat="server" type="text" />
+                    </div>
+
+                    <div class="input-field">
+                        <label>Senha</label>
+                        <input id="txtRua" runat="server" type="text" />
+                    </div>
+
+                    <div class="input-field">
+                        <label>Host</label>
+                        <input id="txtNumero" runat="server" type="text" />
+                    </div>
+
+                    <div class="input-field">
+                        <label>Prefixo da Tabela</label>
+                        <input id="Text1" runat="server" type="text" />
+                    </div>
+
                 </div>
                 <div class="card-action">
                     <a href="Passo_3.aspx">Configurar</a>

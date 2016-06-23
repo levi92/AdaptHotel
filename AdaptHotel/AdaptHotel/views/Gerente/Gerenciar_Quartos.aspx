@@ -7,10 +7,10 @@
     <div class="row blue darken-4 z-depth-1">
         <div class="container">
             <div class="col s6">
-                <input type="text" style="color: white; border-color: white;" placeholder="BUSCAR">
+                <input type="text" class="datepicker" style="color: white; border-color: white;" placeholder="BUSCAR">
             </div>
             <div class="col s3">
-                <input type="date" style="color: white; border-color: white;">
+                <input type="date" class="datepicker" style="color: white; border-color: white;">
             </div>
             <div class="input-field col s3" style="margin-top: 0; color: white;">
                 <select style="border-color: white">
@@ -199,7 +199,15 @@
     </div>
 
     <script>
+
+
         $(document).ready(function () {
+            $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15 // Creates a dropdown of 15 years to control year
+            });
+
+
             $('select').material_select();
             $('.modal-trigger').leanModal();
             $('ul.tabs').tabs();

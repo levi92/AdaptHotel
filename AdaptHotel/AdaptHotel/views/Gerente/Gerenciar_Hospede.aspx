@@ -148,7 +148,7 @@
             </div>
 
             <div class="input-field col s12 m6">
-                <input id="txtData" runat="server" type="date" class="validate" />
+                <input id="txtData" runat="server" type="date" class="datepicker validate" />
 
             </div>
 
@@ -281,7 +281,7 @@
                     </div>
 
                     <div class="input-field col s12 m6">
-                        <input id="txtAlterarDataNasc" runat="server" type="date" class="validate" />
+                        <input id="txtAlterarDataNasc" runat="server" type="date" class="datepicker validate" />
 
                     </div>
 
@@ -418,6 +418,9 @@
                 }
             });          
         }--%>
+
+        
+
         function DoPostBack() {
             __doPostBack('Button2', 'My Argument');
         }
@@ -429,6 +432,10 @@
 
         $(document).ready(function () {
 
+            $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15 // Creates a dropdown of 15 years to control year
+            });
 
             $('select').material_select();
             $('.modal-trigger').leanModal();
