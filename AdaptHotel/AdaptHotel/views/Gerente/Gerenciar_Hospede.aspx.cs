@@ -43,10 +43,17 @@ namespace AdaptHotel.views.Gerente
                     txtAlterarPlaca.Value = hospede.PlacaCarro;
                     txtAlterarCidadeOrigem.Value = hospede.CidadeOrigem;
 
+                    if (hospede.Sexo.ToString() == "M")
+                    {                       
+                        lblSexo.InnerText = "Masculino";
+                    } else
+                    {
+                        lblSexo.InnerText = "Feminino";
+                    }
 
 
                     lblNome.InnerText = hospede.Nome;
-                    lblSexo.InnerText = hospede.Sexo.ToString();
+                    
                     lblTelefone.InnerText = hospede.Telefone;
                     lblDataNasc.InnerText = hospede.DataNascimento.ToString();
                     lblCpf.InnerText = hospede.Cpf;
