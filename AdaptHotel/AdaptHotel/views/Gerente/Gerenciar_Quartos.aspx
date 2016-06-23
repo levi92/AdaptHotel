@@ -7,10 +7,10 @@
     <div class="row blue darken-4 z-depth-1">
         <div class="container">
             <div class="col s6">
-                <input type="text" style="color: white; border-color: white;" placeholder="BUSCAR">
+                <input type="text" class="datepicker" style="color: white; border-color: white;" placeholder="BUSCAR">
             </div>
             <div class="col s3">
-                <input type="date" style="color: white; border-color: white;">
+                <input type="date" class="datepicker" style="color: white; border-color: white;">
             </div>
             <div class="input-field col s3" style="margin-top: 0; color: white;">
                 <select style="border-color: white">
@@ -41,15 +41,16 @@
     </div>
 
     <div class="row">
-
         <div id="disponivel" class="container">
+            <% foreach (var quarto in quartos_disponiveis)
+                               { %>
             <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Twin Room<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%><i class="material-icons right">more_vert</i></span><br />
                     </div>
 
                     <div class="card-action" style="text-align: center;">
@@ -59,72 +60,27 @@
 
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 052235</p>
-                        <p>Cliente : Nicolas Santos</p>
-                        <p>Quarto  : Deluxe Imperial Plus</p>
-                        <p>Status  : Em Andamento</p>
+                        <p>Subtipo : <%= quarto.SubTipoQuarto.SubTipo%></p>
+                        <p>Descricao : <%= quarto.SubTipoQuarto.Descricao%></p>
+                        <p>Qtd_adultos  : <%= quarto.SubTipoQuarto.QtdAdultos%></p>
+                        <p>Qtd_criancas  : <%= quarto.SubTipoQuarto.QtdCriancas%></p>
+                        <p>Valor  : <%= quarto.SubTipoQuarto.Valor%></p>
                     </div>
                 </div>
             </div>
-
-            <div class="col s12 m6 l3">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="../../images/quarto-2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Imperial<i class="material-icons right">more_vert</i></span>
-                    </div>
-
-                    <div class="card-action" style="text-align: center;">
-                        <a href="#"><i class="material-icons">mode_edit</i></a>
-                        <a href="#"><i class="material-icons">delete</i></a>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 068224</p>
-                        <p>Cliente : Levi Monteiro</p>
-                        <p>Quarto  : Quarto Simples</p>
-                        <p>Status  : Em Andamento</p>
-                    </div>
-                </div>
-            </div>
-
+           <% } %>
         </div>
 
         <div id="ocupado" class="container" style="display: none">
-            <div class="col s12 m6 l3">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="../../images/quarto-2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Casal Simples<i class="material-icons right">more_vert</i></span>
-                    </div>
-
-                    <div class="card-action" style="text-align: center;">
-                        <a href="#"><i class="material-icons">mode_edit</i></a>
-                        <a href="#"><i class="material-icons">delete</i></a>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 052235</p>
-                        <p>Cliente : Nicolas Santos</p>
-                        <p>Quarto  : Deluxe Imperial Plus</p>
-                        <p>Status  : Em Andamento</p>
-                    </div>
-                </div>
-            </div>
-
+            <% foreach (var quarto in quartos_ocupados)
+                               { %>
             <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Solteiro<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%><i class="material-icons right">more_vert</i></span><br />
                     </div>
 
                     <div class="card-action" style="text-align: center;">
@@ -134,13 +90,75 @@
 
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 068224</p>
-                        <p>Cliente : Levi Monteiro</p>
-                        <p>Quarto  : Quarto Simples</p>
-                        <p>Status  : Em Andamento</p>
+                        <p>Subtipo : <%= quarto.SubTipoQuarto.SubTipo%></p>
+                        <p>Descricao : <%= quarto.SubTipoQuarto.Descricao%></p>
+                        <p>Qtd_adultos  : <%= quarto.SubTipoQuarto.QtdAdultos%></p>
+                        <p>Qtd_criancas  : <%= quarto.SubTipoQuarto.QtdCriancas%></p>
+                        <p>Valor  : <%= quarto.SubTipoQuarto.Valor%></p>
                     </div>
                 </div>
             </div>
+           <% } %>
+        </div>
+
+        <div id="manutencao" class="container" style="display: none">
+            <% foreach (var quarto in quartos_manutencao)
+                               { %>
+            <div class="col s12 m6 l3">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="../../images/quarto-1.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%><i class="material-icons right">more_vert</i></span><br />
+                    </div>
+
+                    <div class="card-action" style="text-align: center;">
+                        <a href="#"><i class="material-icons">mode_edit</i></a>
+                        <a href="#"><i class="material-icons">delete</i></a>
+                    </div>
+
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
+                        <p>Subtipo : <%= quarto.SubTipoQuarto.SubTipo%></p>
+                        <p>Descricao : <%= quarto.SubTipoQuarto.Descricao%></p>
+                        <p>Qtd_adultos  : <%= quarto.SubTipoQuarto.QtdAdultos%></p>
+                        <p>Qtd_criancas  : <%= quarto.SubTipoQuarto.QtdCriancas%></p>
+                        <p>Valor  : <%= quarto.SubTipoQuarto.Valor%></p>
+                    </div>
+                </div>
+            </div>
+           <% } %>
+        </div>
+
+        <div id="desabilitado" class="container" style="display: none">
+            <% foreach (var quarto in quartos_desabilitados)
+                               { %>
+            <div class="col s12 m6 l3">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="../../images/quarto-1.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><%= quarto.SubTipoQuarto.TipoQuarto.Tipo%> - <%= quarto.Numero_Quarto%><i class="material-icons right">more_vert</i></span><br />
+                    </div>
+
+                    <div class="card-action" style="text-align: center;">
+                        <a href="#"><i class="material-icons">mode_edit</i></a>
+                        <a href="#"><i class="material-icons">delete</i></a>
+                    </div>
+
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
+                        <p>Subtipo : <%= quarto.SubTipoQuarto.SubTipo%></p>
+                        <p>Descricao : <%= quarto.SubTipoQuarto.Descricao%></p>
+                        <p>Qtd_adultos  : <%= quarto.SubTipoQuarto.QtdAdultos%></p>
+                        <p>Qtd_criancas  : <%= quarto.SubTipoQuarto.QtdCriancas%></p>
+                        <p>Valor  : <%= quarto.SubTipoQuarto.Valor%></p>
+                    </div>
+                </div>
+            </div>
+           <% } %>
         </div>
     </div>
 
@@ -181,7 +199,15 @@
     </div>
 
     <script>
+
+
         $(document).ready(function () {
+            $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15 // Creates a dropdown of 15 years to control year
+            });
+
+
             $('select').material_select();
             $('.modal-trigger').leanModal();
             $('ul.tabs').tabs();

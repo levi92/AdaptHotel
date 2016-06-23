@@ -2,8 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-
-
     <div class="row blue darken-4 z-depth-1">
         <div class="container">
             <div class="col s6">
@@ -27,11 +25,10 @@
                 <div class="row">
                     <div class="col s12" style="width: 100%;">
                         <ul class="tabs">
-
-                            <li class="tab"><a class="active" href="#andamento">Em Andamento</a></li>
+                            <li class="tab"><a class="active" href="#agendada">Agendada</a></li>
+                            <li class="tab"><a href="#andamento">Em Andamento</a></li>
                             <li class="tab"><a href="#finalizada">Finalizada</a></li>
-                            <li class="tab"><a href="#cancelado">Cancelado</a></li>
-                            <li class="tab"><a href="#agendada">Agendada</a></li>
+                            <li class="tab"><a href="#cancelada">Cancelado</a></li>
                             <li class="tab"><a href="#noshow">No Show</a></li>
 
                         </ul>
@@ -42,101 +39,164 @@
     </div>
 
     <div class="row">
-
-        <div id="andamento" class="container">
+        <div id="agendada" class="container">
+            <% foreach (var reserva_agendada in reservas_agendadas)
+                { %>
             <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Nicolas Santos<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4"><%= reserva_agendada.Hospede.Nome%><i class="material-icons right">more_vert</i></span>
                     </div>
 
                     <div class="card-action" style="text-align: center;">
-                        <a onclick="Materialize.toast('Check-out realizado com sucesso !', 4000)"><i class="material-icons">input</i></a>
+                        <a id="check-in" onclick="__doPostBack('check-in', '<%= reserva_agendada.CodReserva%>')"><i class="material-icons">done</i></a>
                     </div>
 
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 052235</p>
-                        <p>Cliente : Nicolas Santos</p>
-                        <p>Quarto  : Deluxe Imperial Plus</p>
-                        <p>Status  : Em Andamento</p>
+                        <p>Reserva : <%= reserva_agendada.CodReserva%></p>
+                        <p>Hóspede : <%= reserva_agendada.Hospede.Nome%></p>
+                        <p>
+                            Quartos  : <% var index = 0;
+                                           foreach (var quarto in reserva_agendada.ListaNumeroQuarto)
+                                           {
+                                               index++; %>
+                                <%= quarto.Numero_Quarto%> - <%= quarto.SubTipoQuarto.SubTipo%>
+                                <%if (index < reserva_agendada.ListaNumeroQuarto.Count)
+                                    { %>, 
+                                     <% } %>
+                            <% } %>
+                        </p>
                     </div>
                 </div>
             </div>
+            <% } %>
+        </div>
 
+        <div id="andamento" class="container" style="display: none">
+            <% foreach (var reserva_andamento in reservas_andamentos)
+                { %>
             <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="../../images/quarto-2.jpg">
+                        <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Levi Monteiro<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4"><%= reserva_andamento.Hospede.Nome%><i class="material-icons right">more_vert</i></span>
                     </div>
 
                     <div class="card-action" style="text-align: center;">
-                        <a onclick="Materialize.toast('Check-out realizado com sucesso !', 4000)"><i class="material-icons">input</i></a>
+                        <a id="check-out" onclick="__doPostBack('check-out', '<%= reserva_andamento.CodReserva%>')"><i class="material-icons">done</i></a>
                     </div>
 
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 068224</p>
-                        <p>Cliente : Levi Monteiro</p>
-                        <p>Quarto  : Quarto Simples</p>
-                        <p>Status  : Em Andamento</p>
+                        <p>Reserva : <%= reserva_andamento.CodReserva%></p>
+                        <p>Hóspede : <%= reserva_andamento.Hospede.Nome%></p>
+                        <p>
+                            Quartos  : <% var index = 0;
+                                           foreach (var quarto in reserva_andamento.ListaNumeroQuarto)
+                                           {
+                                               index++; %>
+                                <%= quarto.Numero_Quarto%> - <%= quarto.SubTipoQuarto.SubTipo%>
+                                <%if (index < reserva_andamento.ListaNumeroQuarto.Count)
+                                    { %>, 
+                                     <% } %>
+                            <% } %>
+                        </p>
                     </div>
                 </div>
             </div>
+            <% } %>
         </div>
 
         <div id="finalizada" class="container" style="display: none">
-            <div class="col s12 m6 l3">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="../../images/quarto-2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Gabrielle de Paula<i class="material-icons right">more_vert</i></span>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 052235</p>
-                        <p>Cliente : Nicolas Santos</p>
-                        <p>Quarto  : Deluxe Imperial Plus</p>
-                        <p>Status  : Em Andamento</p>
-                    </div>
-                </div>
-            </div>
-
+            <% foreach (var reserva_finalizada in reservas_finalizadas)
+                { %>
             <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Thais Rodrigues<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4"><%= reserva_finalizada.Hospede.Nome%><i class="material-icons right">more_vert</i></span>
                     </div>
+
+                    <div class="card-action" style="text-align: center;">
+                        <a onclick="Materialize.toast('Check-in realizado com sucesso !', 3000)"><i class="material-icons">done</i></a>
+                    </div>
+
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 068224</p>
-                        <p>Cliente : Levi Monteiro</p>
-                        <p>Quarto  : Quarto Simples</p>
-                        <p>Status  : Em Andamento</p>
+                        <p>Reserva : <%= reserva_finalizada.CodReserva%></p>
+                        <p>Hóspede : <%= reserva_finalizada.Hospede.Nome%></p>
+                        <p>
+                            Quartos  : <% var index = 0;
+                                           foreach (var quarto in reserva_finalizada.ListaNumeroQuarto)
+                                           {
+                                               index++; %>
+                                <%= quarto.Numero_Quarto%> - <%= quarto.SubTipoQuarto.SubTipo%>
+                                <%if (index < reserva_finalizada.ListaNumeroQuarto.Count)
+                                    { %>, 
+                                     <% } %>
+                            <% } %>
+                        </p>
                     </div>
                 </div>
             </div>
+            <% } %>
         </div>
 
-        <div id="agendada" class="container"  style="display: none">
+        <div id="cancelada" class="container" style="display: none">
+            <% foreach (var reserva_cancelada in reservas_canceladas)
+                { %>
             <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="../../images/quarto-1.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Pablo Mauricio<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4"><%= reserva_cancelada.Hospede.Nome%><i class="material-icons right">more_vert</i></span>
+                    </div>
+
+                    <div class="card-action" style="text-align: center;">
+                        <a onclick="Materialize.toast('Check-in realizado com sucesso !', 3000)"><i class="material-icons">done</i></a>
+                    </div>
+
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
+                        <p>Reserva : <%= reserva_cancelada.CodReserva%></p>
+                        <p>Hóspede : <%= reserva_cancelada.Hospede.Nome%></p>
+                        <p>
+                            Quartos  : <% var index = 0;
+                                           foreach (var quarto in reserva_cancelada.ListaNumeroQuarto)
+                                           {
+                                               index++; %>
+                                <%= quarto.Numero_Quarto%> - <%= quarto.SubTipoQuarto.SubTipo%>
+                                <%if (index < reserva_cancelada.ListaNumeroQuarto.Count)
+                                    { %>, 
+                                     <% } %>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+
+        <div id="noshow" class="container" style="display: none">
+            <% foreach (var reserva_noshow in reservas_noshows)
+                { %>
+            <div class="col s12 m6 l3">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="../../images/quarto-1.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><%= reserva_noshow.Hospede.Nome%><i class="material-icons right">more_vert</i></span>
                     </div>
 
                     <div class="card-action" style="text-align: center;">
@@ -145,39 +205,24 @@
 
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 052235</p>
-                        <p>Cliente : Nicolas Santos</p>
-                        <p>Quarto  : Deluxe Imperial Plus</p>
-                        <p>Status  : Em Andamento</p>
+                        <p>Reserva : <%= reserva_noshow.CodReserva%></p>
+                        <p>Hóspede : <%= reserva_noshow.Hospede.Nome%></p>
+                        <p>
+                            Quartos  : <% var index = 0;
+                                           foreach (var quarto in reserva_noshow.ListaNumeroQuarto)
+                                           {
+                                               index++; %>
+                                <%= quarto.Numero_Quarto%> - <%= quarto.SubTipoQuarto.SubTipo%>
+                                <%if (index < reserva_noshow.ListaNumeroQuarto.Count)
+                                    { %>, 
+                                     <% } %>
+                            <% } %>
+                        </p>
                     </div>
                 </div>
             </div>
-
-            <div class="col s12 m6 l3">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="../../images/quarto-2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Sandra Bolterine<i class="material-icons right">more_vert</i></span>
-                    </div>
-
-                    <div class="card-action" style="text-align: center;">
-                        <a onclick="Materialize.toast('Check-in realizado com sucesso !', 4000)"><i class="material-icons">done</i></a>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
-                        <p>Reserva : 068224</p>
-                        <p>Cliente : Levi Monteiro</p>
-                        <p>Quarto  : Quarto Simples</p>
-                        <p>Status  : Em Andamento</p>
-                    </div>
-                </div>
-            </div>
+            <% } %>
         </div>
-
-
     </div>
 
     <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 30px; right: 24px;">
@@ -198,12 +243,12 @@
 
             <div class="col s12 m6">
                 <label>Data de Entrada</label>
-                <input id="txtDataEntrada" runat="server" type="date" class="validate" />
+                <input id="txtDataEntrada" runat="server" type="date" class="datepicker validate" />
             </div>
 
             <div class="col s12 m6">
                 <label>Data de Saída</label>
-                <input id="txtDataSaída" runat="server" type="date" class="validate" />
+                <input id="txtDataSaída" runat="server" type="date" class="datepicker validate" />
             </div>
 
             <div class="input-field col s12 m6">
@@ -219,7 +264,7 @@
                     <option value=""></option>
                 </select>
             </div>
-           
+
             <select class="input-field col s12 m6" name="selecionarQuarto" runat="server" multiple>
                 <option value="" disabled selected>Selecione o quarto</option>
                 <option value="quarto1">Quarto 1</option>
@@ -236,7 +281,15 @@
 
 
     <script>
+
+        
+
         $(document).ready(function () {
+            $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15 // Creates a dropdown of 15 years to control year
+            });
+
             $('select').material_select();
             $('ul.tabs').tabs();
         });

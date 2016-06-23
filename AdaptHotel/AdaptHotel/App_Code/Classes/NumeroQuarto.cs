@@ -22,6 +22,17 @@ public class NumeroQuarto
         this.cor = cor;
     }
 
+    public NumeroQuarto(string numero_quarto, SubTipoQuarto subtipo_quarto)
+    {
+        this.numero_quarto = numero_quarto;
+        this.subTipoQuarto = subtipo_quarto;
+    }
+
+    public NumeroQuarto()
+    {
+
+    }
+
     public SubTipoQuarto SubTipoQuarto
     {
         get { return subTipoQuarto; }
