@@ -11,23 +11,5 @@ namespace AdaptHotel.views.Setup {
     
     
     public partial class Passo_3 {
-        
-        /// <summary>
-        /// txtCidade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCidade;
-        
-        /// <summary>
-        /// txtBairro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtBairro;
     }
 }

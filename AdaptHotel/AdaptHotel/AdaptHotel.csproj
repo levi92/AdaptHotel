@@ -216,8 +216,6 @@
     <Content Include="views\Setup\Passo_3.aspx" />
     <Content Include="views\Setup\Passo_4.aspx" />
     <Content Include="views\Setup\Passo_5.aspx" />
-    <Content Include="views\Setup\Passo_6.aspx" />
-    <Content Include="views\Setup\Passo_7.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -444,20 +442,6 @@
     </Compile>
     <Compile Include="views\Setup\Passo_5.aspx.designer.cs">
       <DependentUpon>Passo_5.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="views\Setup\Passo_6.aspx.cs">
-      <DependentUpon>Passo_6.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="views\Setup\Passo_6.aspx.designer.cs">
-      <DependentUpon>Passo_6.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="views\Setup\Passo_7.aspx.cs">
-      <DependentUpon>Passo_7.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="views\Setup\Passo_7.aspx.designer.cs">
-      <DependentUpon>Passo_7.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

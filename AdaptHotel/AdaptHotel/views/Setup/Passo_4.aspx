@@ -8,11 +8,9 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="#!" class="breadcrumb">Bem-Vindo</a>
-                        <a href="#!" class="breadcrumb">Instalação</a>
                         <a href="#!" class="breadcrumb">Configuração</a>
-                        <a href="#!" class="breadcrumb" style="font-weight: bold; color: white">Administradores</a>
                         <a href="#!" class="breadcrumb">Quartos</a>
-                        <a href="#!" class="breadcrumb">Funcionarios</a>
+                        <a href="#!" class="breadcrumb" style="font-weight: bold; color: white">Funcionarios</a>
                         <a href="#!" class="breadcrumb">Finalizar</a>
                     </div>
                 </div>
@@ -24,7 +22,7 @@
             <div class="card hoverable">
                 <div class="card-image">
                     <img src="../../images/user-profile-bg.jpg" />
-                    <h3 class="card-title">Administradores</h3>
+                    <h3 class="card-title">Funcionários</h3>
                 </div>
                 <div class="card-content">
                     <p>Olá, você adquiriu o sistema AdaptHotel.</p>
@@ -32,7 +30,7 @@
                     <p>Preencha todos os campos com atenção.</p>
                 </div>
                 <div class="card-action">
-                    <a href="Passo_5.aspx">Cadastrar Quartos</a>
+                    <a href="Passo_3.aspx">Voltar</a> <a href="Passo_5.aspx">Finalizar</a>
                 </div>
             </div>
         </div>
