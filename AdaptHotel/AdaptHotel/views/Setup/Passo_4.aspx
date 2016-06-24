@@ -25,9 +25,32 @@
                     <h3 class="card-title">Funcionários</h3>
                 </div>
                 <div class="card-content">
-                    <p>Olá, você adquiriu o sistema AdaptHotel.</p>
-                    <p>Nos próximos passos você será guiado para uma configuração inicial do sistema.</p>
-                    <p>Preencha todos os campos com atenção.</p>
+                    <p>Cadastro dos funcionários. (OPCIONAL)</p>
+
+                     <div class="input-field">
+                        <label>Nome</label>
+                        <input id="txtCidade" runat="server" type="text" />
+                    </div>
+
+                    <div class="input-field">
+                        <label>Cargo</label>
+                        <input id="txtBairro" runat="server" type="text" />
+                    </div>
+
+                    <div class="input-field">
+                        <label>Data de Admissão</label>
+                        <input id="Text1" runat="server" type="text" />
+                    </div>
+
+                    <div class="input-field">
+                        <label>Numero Cnt</label>
+                        <input id="Text2" runat="server" type="text" />
+                    </div>
+
+                    <div class="input-field">
+                        <a href="../Login.aspx" style="margin: 0 auto; float: none;" class="btn orange waves-effect waves-light"><i class="material-icons right">add</i>Adicionar Outro</a>
+                    </div>
+
                 </div>
                 <div class="card-action">
                     <a href="Passo_3.aspx">Voltar</a> <a href="Passo_5.aspx">Finalizar</a>
