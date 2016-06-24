@@ -8,12 +8,10 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="#!" class="breadcrumb">Bem-Vindo</a>
-                        <a href="#!" class="breadcrumb">Instalação</a>
                         <a href="#!" class="breadcrumb">Configuração</a>
-                        <a href="#!" class="breadcrumb">Administradores</a>
-                        <a href="#!" class="breadcrumb" style="font-weight: bold; color: white">Quartos</a>
+                        <a href="#!" class="breadcrumb">Quartos</a>
                         <a href="#!" class="breadcrumb">Funcionarios</a>
-                        <a href="#!" class="breadcrumb">Finalizar</a>
+                        <a href="#!" class="breadcrumb" style="font-weight: bold; color: white">Finalizar</a>
                     </div>
                 </div>
 
@@ -24,15 +22,13 @@
             <div class="card hoverable">
                 <div class="card-image">
                     <img src="../../images/user-profile-bg.jpg" />
-                    <h3 class="card-title">Quartos</h3>
+                    <h3 class="card-title">Finalizar</h3>
                 </div>
                 <div class="card-content">
-                    <p>Olá, você adquiriu o sistema AdaptHotel.</p>
-                    <p>Nos próximos passos você será guiado para uma configuração inicial do sistema.</p>
-                    <p>Preencha todos os campos com atenção.</p>
+                    <p>Parabéns, você finalizou a configuração.</p>
                 </div>
                 <div class="card-action">
-                    <a href="Passo_6.aspx">Cadastrar Funcionários</a>
+                    <a href="Passo_4.aspx">Voltar</a> <a href="../Login.aspx">Acessar Sistema</a>
                 </div>
             </div>
         </div>

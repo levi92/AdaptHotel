@@ -8,9 +8,7 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="#!" class="breadcrumb" style="font-weight: bold; color: white">Bem-Vindo</a>
-                        <a href="#!" class="breadcrumb">Instalação</a>
                         <a href="#!" class="breadcrumb">Configuração</a>
-                        <a href="#!" class="breadcrumb">Administradores</a>
                         <a href="#!" class="breadcrumb">Quartos</a>
                         <a href="#!" class="breadcrumb">Funcionarios</a>
                         <a href="#!" class="breadcrumb">Finalizar</a>
@@ -32,7 +30,7 @@
                     <p>Preencha todos os campos com atenção.</p>
                 </div>
                 <div class="card-action">
-                    <a href="Passo_2.aspx">Instalar</a>
+                    <a href="Passo_2.aspx">Configuração</a>
                 </div>
             </div>
         </div>
