@@ -13,7 +13,7 @@
                         <ul class="collection" style="margin-top: -1px;">
                             <% foreach (var funcionario in lista_funcionarios)
                                 { %>
-                            <a class="collection-item avatar waves-effect waves" href="../Gerente/Gerenciar_Funcionario.aspx?id=<%= funcionario.Nome%>">
+                            <a class="collection-item avatar waves-effect waves" href="../Gerente/Gerenciar_Funcionario.aspx?id=<%= funcionario.CodFuncionario%>">
                                 <div style="padding-top:5%;">
                                     <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                     <span class="title"> <%= funcionario.Nome %> </span>
@@ -36,7 +36,7 @@
                         <ul class="collection" style="margin-top: -1px;">
                             <% foreach (var hospede in lista_hospedes)
                                 { %>
-                            <a class="collection-item avatar waves-effect waves" href="../Gerente/Gerenciar_Hospede.aspx?id=<%= hospede.Nome%>">
+                            <a class="collection-item avatar waves-effect waves" href="../Gerente/Gerenciar_Hospede.aspx?id=<%= hospede.CodHospede%>">
                                 <div style="padding-top:5%;">
                                     <img src="../../images/quarto-1.jpg" alt="" class="circle">
                                     <span class="title"><%= hospede.Nome %></span>

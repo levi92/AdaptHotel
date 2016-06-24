@@ -15,7 +15,7 @@ namespace AdaptHotel.views.Gerente
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarregarFuncionario();
+            
 
             if (IsPostBack)
             {
@@ -24,7 +24,8 @@ namespace AdaptHotel.views.Gerente
 
                 if (parameter != "")
                 {
-                    funcionario = CarregarDetalhes(Convert.ToInt32(parameter));
+                    CarregarDetalhes(Convert.ToInt32(parameter));
+
                     Session["cod_pessoa"] = funcionario.CodPessoa;
                     Session["cod_endereco"] = funcionario.Endereco.CodEnd;
                     Session["cod_funcionario"] = funcionario.CodFuncionario;
@@ -36,7 +37,7 @@ namespace AdaptHotel.views.Gerente
                     txtAlterarEmail.Value = funcionario.Email;
                     txtAlterarEstado.Value = funcionario.Endereco.Estado;
                     rblAlterarSexo.SelectedValue = funcionario.Sexo.ToString();
-                    
+
 
                     txtAlterarCep.Value = funcionario.Endereco.Cep;
                     txtAlterarCidade.Value = funcionario.Endereco.Cidade;
@@ -49,6 +50,10 @@ namespace AdaptHotel.views.Gerente
                     txtdataAdm.Value = funcionario.DataAdmissao.ToString();
                     txtAlterarNumConta.Value = funcionario.NumeroCnt;
 
+<<<<<<< HEAD
+                    
+                  
+=======
                     if (funcionario.Sexo.ToString() == "M")
                     {
                         lblSexo.InnerText = "Masculino";
@@ -75,12 +80,16 @@ namespace AdaptHotel.views.Gerente
                     lblCargo.InnerHtml = funcionario.Cargo;
                     lblDataAdmissao.InnerHtml = funcionario.DataAdmissao.ToString();
                     lblNConta.InnerHtml = funcionario.NumeroCnt;
-                    
+
+>>>>>>> 2dc22269e7f298a315865a895f51a9e1dfc75a44
                     UpdatePanelHospedes.Update();
                     UpdatePanelEdit.Update();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv("+funcionario.CodFuncionario+");", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv(" + funcionario.CodFuncionario + ");", true);
                 }
             }
+            CarregarFuncionario();
+            UpdatePanelHospedes.Update();
+            UpdatePanelEdit.Update();
         }
 
         public void CarregarFuncionario()
@@ -99,11 +108,35 @@ namespace AdaptHotel.views.Gerente
             }
         }
 
-        public Funcionario CarregarDetalhes(int id)
+        public void CarregarDetalhes(int id)
         {
-            Funcionario funcionario = Funcionario_DB.SelectByID(id);
+            funcionario = Funcionario_DB.SelectByID(id);
 
-            return funcionario;
+            if (funcionario.Sexo.ToString() == "M")
+            {
+                lblSexo.InnerText = "Masculino";
+            }
+            else
+            {
+                lblSexo.InnerText = "Feminino";
+            }
+
+            lblNome.InnerText = funcionario.Nome;
+            lblTelefone.InnerText = funcionario.Telefone;
+            lblDataNasc.InnerText = funcionario.DataNascimento.ToString();
+            lblCpf.InnerText = funcionario.Cpf;
+            lblEmail.InnerText = funcionario.Email;
+
+            lblRua.InnerText = funcionario.Endereco.Rua;
+            lblBairro.InnerText = funcionario.Endereco.Bairro;
+            lblCep.InnerText = funcionario.Endereco.Cep;
+            lblCidade.InnerText = funcionario.Endereco.Cidade;
+            lblEstado.InnerText = funcionario.Endereco.Estado;
+            lblNumero.InnerText = funcionario.Endereco.Numero;
+
+            lblCargo.InnerHtml = funcionario.Cargo;
+            lblDataAdmissao.InnerHtml = funcionario.DataAdmissao.ToString();
+            lblNConta.InnerHtml = funcionario.NumeroCnt;
         }
 
         protected void btnCadastrar_ServerClick(object sender, EventArgs e)
@@ -118,7 +151,7 @@ namespace AdaptHotel.views.Gerente
 
         protected void btnEditar_ServerClick(object sender, EventArgs e)
         {
-            Endereco endereco = new Endereco(txtAlterarRua.Value, txtAlterarNumero.Value, txtComplemento.Value,txtAlterarBairro.Value,txtAlterarCep.Value, txtAlterarCidade.Value, txtAlterarEstado.Value, Convert.ToInt32(Session["cod_endereco"]));
+            Endereco endereco = new Endereco(txtAlterarRua.Value, txtAlterarNumero.Value, txtComplemento.Value, txtAlterarBairro.Value, txtAlterarCep.Value, txtAlterarCidade.Value, txtAlterarEstado.Value, Convert.ToInt32(Session["cod_endereco"]));
             Perfil perfil = new Perfil(3);
 
             System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("pt-BR");
@@ -126,6 +159,39 @@ namespace AdaptHotel.views.Gerente
 
             Funcionario AlterarFuncionario = new Funcionario(txtAlterarNome.Value, txtAlterarTelefone.Value, txtAlterarEmail.Value, txtAlterarCep.Value, Convert.ToChar(rblAlterarSexo.SelectedValue), Convert.ToDateTime(txtAlterarDataNasc.Value), perfil, endereco, txtAlterarCargo.Value, txtAlterarNumConta.Value, Convert.ToDouble(txtAlterarSalario.Value), Convert.ToDateTime(txtdataAdm.Value), Convert.ToInt32(Session["cod_funcionario"]), Convert.ToInt32(Session["cod_pessoa"]), null, null);
             Funcionario_DB.Update(AlterarFuncionario);
+
+            funcionario = CarregarDetalhes(Convert.ToInt32(Session["cod_funcionario"]));
+
+
+            if (funcionario.Sexo.ToString() == "M")
+            {
+                lblSexo.InnerText = "Masculino";
+            }
+            else
+            {
+                lblSexo.InnerText = "Feminino";
+            }
+
+            lblNome.InnerText = funcionario.Nome;
+            lblTelefone.InnerText = funcionario.Telefone;
+            lblDataNasc.InnerText = funcionario.DataNascimento.ToString();
+            lblCpf.InnerText = funcionario.Cpf;
+            lblEmail.InnerText = funcionario.Email;
+
+            lblRua.InnerText = funcionario.Endereco.Rua;
+            lblBairro.InnerText = funcionario.Endereco.Bairro;
+            lblCep.InnerText = funcionario.Endereco.Cep;
+            lblCidade.InnerText = funcionario.Endereco.Cidade;
+            lblEstado.InnerText = funcionario.Endereco.Estado;
+            lblNumero.InnerText = funcionario.Endereco.Numero;
+
+            lblCargo.InnerHtml = funcionario.Cargo;
+            lblDataAdmissao.InnerHtml = funcionario.DataAdmissao.ToString();
+            lblNConta.InnerHtml = funcionario.NumeroCnt;
+
+            UpdatePanelHospedes.Update();
+            UpdatePanelEdit.Update();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv(" + Session["cod_funcionario"] + ");", true);
         }
     }
 }
