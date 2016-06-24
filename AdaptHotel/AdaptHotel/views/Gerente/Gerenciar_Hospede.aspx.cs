@@ -19,6 +19,7 @@ namespace AdaptHotel.views.Gerente
         {
             if (!IsPostBack)
             {
+<<<<<<< HEAD
                 CarregarHospedes();
 
                 int codigo_detalhes = Convert.ToInt32(Request.QueryString["id"]);
@@ -29,10 +30,13 @@ namespace AdaptHotel.views.Gerente
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv(" + codigo_detalhes + ");", true);
                 } 
+=======
+                
+>>>>>>> 2dc22269e7f298a315865a895f51a9e1dfc75a44
             }
             else
             {
-                CarregarHospedes();
+                
                 string parameter = Request["__EVENTARGUMENT"];
 
                 if (parameter != "")
@@ -58,12 +62,48 @@ namespace AdaptHotel.views.Gerente
 
                     txtAlterarPlaca.Value = hospede.PlacaCarro;
                     txtAlterarCidadeOrigem.Value = hospede.CidadeOrigem;
+<<<<<<< HEAD
     
+=======
+                    
+
+                    if (hospede.Sexo.ToString() == "M")
+                    {
+                        lblSexo.InnerText = "Masculino";
+                    }
+                    else
+                    {
+                        lblSexo.InnerText = "Feminino";
+                    }
+
+
+                    lblNome.InnerText = hospede.Nome;
+
+                    lblTelefone.InnerText = hospede.Telefone;
+                    lblDataNasc.InnerText = hospede.DataNascimento.ToString();
+                    lblCpf.InnerText = hospede.Cpf;
+                    lblEmail.InnerText = hospede.Email;
+
+                    lblRua.InnerText = hospede.Endereco.Rua;
+                    lblBairro.InnerText = hospede.Endereco.Bairro;
+                    lblCep.InnerText = hospede.Endereco.Cep;
+                    lblCidade.InnerText = hospede.Endereco.Cidade;
+                    lblEstado.InnerText = hospede.Endereco.Estado;
+                    lblNumero.InnerText = hospede.Endereco.Numero;
+
+                    lblPlaca.InnerText = hospede.PlacaCarro;
+                    lblCidadeOrigem.InnerText = hospede.CidadeOrigem;
+
+
+>>>>>>> 2dc22269e7f298a315865a895f51a9e1dfc75a44
                     UpdatePanelHospedes.Update();
                     UpdatePanelEdit.Update();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv("+hospede.CodHospede+");", true);
                 }
             }
+            CarregarHospedes();
+            UpdatePanelHospedes.Update();
+            UpdatePanelEdit.Update();
         }
 
         public void CarregarHospedes()
@@ -134,6 +174,38 @@ namespace AdaptHotel.views.Gerente
             Hospede Alterarhospede = new Hospede(txtAlterarNome.Value, txtAlterarTelefone.Value, txtAlterarEmail.Value, txtAlterarCpf.Value, Convert.ToChar(rblAlterarSexo.SelectedValue), date, perfil, endereco, txtAlterarPlaca.Value, txtAlterarCidadeOrigem.Value, Convert.ToInt32(Session["cod_pessoa"]), foto, null, Convert.ToInt32(Session["cod_hospede"]));
             Hospede_DB.Update(Alterarhospede);
 
+            hospede = CarregarDetalhes(Convert.ToInt32(Session["cod_hospede"]));
+
+            if (hospede.Sexo.ToString() == "M")
+            {
+                lblSexo.InnerText = "Masculino";
+            }
+            else
+            {
+                lblSexo.InnerText = "Feminino";
+            }
+
+
+            lblNome.InnerText = hospede.Nome;
+
+            lblTelefone.InnerText = hospede.Telefone;
+            lblDataNasc.InnerText = hospede.DataNascimento.ToString();
+            lblCpf.InnerText = hospede.Cpf;
+            lblEmail.InnerText = hospede.Email;
+
+            lblRua.InnerText = hospede.Endereco.Rua;
+            lblBairro.InnerText = hospede.Endereco.Bairro;
+            lblCep.InnerText = hospede.Endereco.Cep;
+            lblCidade.InnerText = hospede.Endereco.Cidade;
+            lblEstado.InnerText = hospede.Endereco.Estado;
+            lblNumero.InnerText = hospede.Endereco.Numero;
+
+            lblPlaca.InnerText = hospede.PlacaCarro;
+            lblCidadeOrigem.InnerText = hospede.CidadeOrigem;
+
+            UpdatePanelHospedes.Update();
+            UpdatePanelEdit.Update();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv(" + Session["cod_hospede"] + ");", true);
         }
     }
 }
