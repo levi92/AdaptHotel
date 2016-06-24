@@ -25,7 +25,7 @@ public class Pessoa_DB
             SqlCommand objCommand = Mapped.Command("Insert into pessoas (nome, sexo, data_nasc, telefone, cpf, email, cod_endereco, cod_perfil) output Inserted.cod_pessoa values (@nome, @sexo, @data_nasc, @telefone, @cpf, @email, @cod_endereco, @cod_perfil);", objConnection);
             objCommand.Parameters.Add(Mapped.Parameter("@nome", pessoa.Nome));
             objCommand.Parameters.Add(Mapped.Parameter("@sexo", pessoa.Sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("@data_nasc", pessoa.DataNascimento.ToString("yyyy-MM-dd HH:mm:ss")));
+            objCommand.Parameters.Add(Mapped.Parameter("@data_nasc", (pessoa.DataNascimento).ToString("yyyy-MM-dd")));
             objCommand.Parameters.Add(Mapped.Parameter("@telefone", pessoa.Telefone));
             objCommand.Parameters.Add(Mapped.Parameter("@cpf", pessoa.Cpf));
             objCommand.Parameters.Add(Mapped.Parameter("@email", pessoa.Email));

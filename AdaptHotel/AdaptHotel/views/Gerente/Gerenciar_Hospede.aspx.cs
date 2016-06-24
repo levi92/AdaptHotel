@@ -48,6 +48,7 @@ namespace AdaptHotel.views.Gerente
                 }
             }
 
+            lista_hospedes.Clear();
             CarregarHospedes();
             UpdatePanelHospedes.Update();
             UpdatePanelEdit.Update();
@@ -121,9 +122,18 @@ namespace AdaptHotel.views.Gerente
             Endereco endereco = new Endereco(txtRua.Value, txtNumero.Value, txtComplemento.Value, txtBairro.Value, txtCep.Value, txtCidade.Value, ddlEstado.Value);
             Perfil perfil = new Perfil(4);
 
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            DateTime date = Convert.ToDateTime(txtData.Value, culture);
 
-            Hospede hospede = new Hospede(txtNome.Value, txtTelefone.Value, txtEmail.Value, txtCpf.Value, Convert.ToChar(rblSexo.SelectedValue), Convert.ToDateTime(txtData.Value), perfil, endereco, txtPlacaCarro.Value, txtCidadeOrigem.Value, null, foto, null);
+            Hospede hospede = new Hospede(txtNome.Value, txtTelefone.Value, txtEmail.Value, txtCpf.Value, Convert.ToChar(rblSexo.SelectedValue), date, perfil, endereco, txtPlacaCarro.Value, txtCidadeOrigem.Value, null, foto, null);
             Hospede_DB.Insert(hospede);
+
+            lista_hospedes.Clear();
+
+            CarregarHospedes();
+
+            UpdatePanelHospedes.Update();
+            UpdatePanelEdit.Update();
         }
 
         protected void btnEditar_ServerClick(object sender, EventArgs e)
@@ -132,7 +142,7 @@ namespace AdaptHotel.views.Gerente
             Endereco endereco = new Endereco(txtAlterarRua.Value, txtAlterarNumero.Value, txtAlterarComplemento.Value, txtAlterarBairro.Value, txtAlterarCep.Value, txtAlterarCidade.Value, txtAlterarEstado.Value, Convert.ToInt32(Session["cod_endereco"]));
             Perfil perfil = new Perfil(4);
 
-            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("pt-BR");
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
             DateTime date = Convert.ToDateTime(txtAlterarDataNasc.Value, culture);
 
             Hospede Alterarhospede = new Hospede(txtAlterarNome.Value, txtAlterarTelefone.Value, txtAlterarEmail.Value, txtAlterarCpf.Value, Convert.ToChar(rblAlterarSexo.SelectedValue), date, perfil, endereco, txtAlterarPlaca.Value, txtAlterarCidadeOrigem.Value, Convert.ToInt32(Session["cod_pessoa"]), foto, null, Convert.ToInt32(Session["cod_hospede"]));

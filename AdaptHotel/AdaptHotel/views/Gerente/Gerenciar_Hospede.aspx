@@ -146,7 +146,6 @@
             </div>
 
             <div class="input-field col s12 m6">
-                <label>Data de nascimento</label>
                 <input id="txtData" runat="server" type="date" class="validate" />
 
             </div>
