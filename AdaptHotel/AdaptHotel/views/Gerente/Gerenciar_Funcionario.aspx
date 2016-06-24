@@ -12,7 +12,7 @@
     </div>
 
     <div class="container">
-        <asp:UpdatePanel ID="UpdatePanelHospedes" runat="server" UpdateMode="Conditional">
+        <asp:UpdatePanel ID="UpdatePanelFuncionarios" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="col s12">
                     <div class="col s12 m6 z-depth-1" style="overflow-y: auto; height: 669px;">
@@ -139,7 +139,7 @@
             </div>
 
             <div class="input-field col s12 m6">
-                <input id="txtData" runat="server" type="date" class="datepicker validate" />
+                <input id="txtData" runat="server" type="date" class="validate" />
 
             </div>
 
@@ -405,18 +405,11 @@
     </div>
 
     <script>
-        
-
-
-        function DoPostBack() {
-            __doPostBack('Button2', 'My Argument');
-        }
-
         function showDiv(id) {
-            $("#" + id).addClass("active");
-            $('select').material_select();
+            $("#" + id).addClass("active");          
             $("#details").slideUp("slow");
             $("#details").slideDown("slow");
+            $('select').material_select();
         }
 
         $(document).ready(function () {
@@ -427,9 +420,7 @@
 
             $('select').material_select();
             $('.modal-trigger').leanModal();
-        });
-
-      
+        });   
     </script>
 
 </asp:Content>

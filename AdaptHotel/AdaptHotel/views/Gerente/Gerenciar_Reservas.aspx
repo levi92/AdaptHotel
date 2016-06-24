@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Gerente.Master" CodeBehind="Gerenciar_Reservas.aspx.cs" Inherits="AdaptHotel.views.Gerente.Gerenciar_Reservas" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="row blue darken-4 z-depth-1">
         <div class="container">
             <div class="col s6">
@@ -282,13 +281,11 @@
 
 
     <script>
-
         function tostado(texto, id) {
             Materialize.toast(texto, 5000);
             $("#agendada").hide();
             $("#" + id).show();
         }
-
 
         $(document).ready(function () {
 
@@ -304,8 +301,5 @@
         $(document).ready(function () {
             $('.modal-trigger').leanModal();
         });
-
     </script>
-
-
 </asp:Content>

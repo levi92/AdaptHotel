@@ -58,7 +58,7 @@
                     <li class="bold" id="Gerenciar_Funcionario"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Funcionario.aspx">Funcionarios</a></li>
                     <li class="bold" id="Estatisticas"><a class="waves-effect" href="../../views/Gerente/Estatisticas.aspx">Estatisticas</a></li>
                  
-                    <li class="bold" id="Logout" style="text-align:center;bottom: 60px;position: absolute;width: 100%;background-color: #efefef;"><a class="waves-effect" href="../../views/Logout.aspx">Logout</a></li>
+                    <li class="bold" id="Logout" style="text-align:center;bottom: 60px;position: absolute;width: 100%;background-color: #efefef;"><a id="logout" class="waves-effect" onclick="__doPostBack('logout', 'logout')">Logout</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>

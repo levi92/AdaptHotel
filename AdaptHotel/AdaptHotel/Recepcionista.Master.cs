@@ -19,18 +19,25 @@ namespace AdaptHotel
             {
                 dynamic usuario = Session["usuario"];
 
-                if (usuario.Perfil.getTipo() != "hospede")
+                if (usuario.Perfil.getTipo() == "hospede")
                 {
                     Response.Redirect("~/views/Error/403.aspx");
                 }
-
             }
-
-
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                string parameter = Request["__EVENTARGUMENT"];
+
+                if (parameter == "logout")
+                {
+                    Session.Remove("usuario");
+                    Response.Redirect("~/views/Login.aspx");
+                }
+            }           
         }
     }
 }

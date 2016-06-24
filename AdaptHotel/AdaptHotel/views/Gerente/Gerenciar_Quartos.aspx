@@ -203,8 +203,6 @@
     </div>
 
     <script>
-
-
         $(document).ready(function () {
             $('.datepicker').pickadate({
                 selectMonths: true, // Creates a dropdown to control month
@@ -217,6 +215,4 @@
             $('ul.tabs').tabs();
         });
     </script>
-
-
 </asp:Content>

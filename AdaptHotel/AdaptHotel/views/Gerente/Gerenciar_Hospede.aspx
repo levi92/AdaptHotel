@@ -147,7 +147,7 @@
 
             <div class="input-field col s12 m6">
                 <label>Data de nascimento</label>
-                <input id="txtData" runat="server" type="date" class="datepicker validate" />
+                <input id="txtData" runat="server" type="date" class="validate" />
 
             </div>
 
@@ -281,7 +281,7 @@
 
                     <div class="input-field col s12 m6">
                         <label class="active">Data de nascimento</label>
-                        <input id="txtAlterarDataNasc" runat="server" type="date" class="datepicker validate" />
+                        <input id="txtAlterarDataNasc" runat="server" type="date" class="validate" />
 
                     </div>
 
@@ -403,32 +403,6 @@
     </div>
 
     <script>
-        <%--function showDiv(cod_hospede) {
-            var data = JSON.stringify({id: cod_hospede})
-            console.log(cod_hospede, data)
-            $.ajax({
-                type: "POST",
-                url: '<%= ResolveUrl("Gerenciar_Hospede.aspx/CarregarDetalhes") %>',
-                data: data,
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
-                },
-                success: function (result) {
-                    $("#details").slideUp("slow");
-                    $("#details").slideDown("slow");
-                    console.log(result);
-                }
-            });          
-        }--%>
-
-        
-
-        function DoPostBack() {
-            __doPostBack('Button2', 'My Argument');
-        }
-
         function showDiv(id) {
             $("#" + id).addClass("active");
             $("#details").slideUp("slow");
@@ -450,9 +424,5 @@
         $(document).ready(function () {
             $('select').material_select();
         });
-     
-
     </script>
-
 </asp:Content>
-
