@@ -35,19 +35,19 @@ public class NumeroQuarto_DB
     public static int UpdateStatusQuarto(int cod_reserva, string status, SqlConnection objConnection)
     {
         int retorno = 0;
-        //try
-        //{
+        try
+        {
             SqlCommand objCommand = Mapped.Command("update numero_quartos set status_quarto = @status_quarto " +
                 "from numero_quartos n inner join reserva_subtipo_quartos rs on rs.cod_numero_quarto = n.cod_numero_quarto " +
                 "where rs.cod_reserva = @cod_reserva;", objConnection);
             objCommand.Parameters.Add(Mapped.Parameter("@status_quarto", status));
             objCommand.Parameters.Add(Mapped.Parameter("@cod_reserva", cod_reserva));
             objCommand.ExecuteNonQuery();
-        //}
-        //catch (Exception)
-        //{
-        //    retorno = -2;
-        //}
+        }
+        catch (Exception)
+        {
+            retorno = -2;
+        }
         return retorno;
     }
 
