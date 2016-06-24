@@ -243,12 +243,12 @@
 
             <div class="col s12 m6">
                 <label>Data de Entrada</label>
-                <input id="txtDataEntrada" runat="server" type="date" class="datepicker validate" />
+                <input id="txtDataEntrada" runat="server" type="date" class="validate" />
             </div>
 
             <div class="col s12 m6">
                 <label>Data de Saída</label>
-                <input id="txtDataSaída" runat="server" type="date" class="datepicker validate" />
+                <input id="txtDataSaída" runat="server" type="date" class="validate" />
             </div>
 
             <div class="input-field col s12 m6">

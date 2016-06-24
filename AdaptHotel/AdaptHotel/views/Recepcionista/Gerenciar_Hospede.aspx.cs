@@ -83,7 +83,7 @@ namespace AdaptHotel.views.Recepcionista
 
             lblNome.InnerText = hospede.Nome;
             lblTelefone.InnerText = hospede.Telefone;
-            lblDataNasc.InnerText = hospede.DataNascimento.ToString();
+            lblDataNasc.InnerText = (hospede.DataNascimento).ToString("dd/MM/yyyy");
             lblCpf.InnerText = hospede.Cpf;
             lblEmail.InnerText = hospede.Email;
 
@@ -98,7 +98,7 @@ namespace AdaptHotel.views.Recepcionista
             lblCidadeOrigem.InnerText = hospede.CidadeOrigem;
 
             txtAlterarNome.Value = hospede.Nome;
-            txtAlterarDataNasc.Value = hospede.DataNascimento.ToString();
+            txtAlterarDataNasc.Value = (hospede.DataNascimento).ToString("yyyy-MM-dd");
             txtAlterarCpf.Value = hospede.Cpf;
             txtAlterarTelefone.Value = hospede.Telefone;
             txtAlterarEmail.Value = hospede.Email;
@@ -124,6 +124,8 @@ namespace AdaptHotel.views.Recepcionista
 
             Hospede hospede = new Hospede(txtNome.Value, txtTelefone.Value, txtEmail.Value, txtCpf.Value, Convert.ToChar(rblSexo.SelectedValue), Convert.ToDateTime(txtData.Value), perfil, endereco, txtPlacaCarro.Value, txtCidadeOrigem.Value, null, foto, null);
             Hospede_DB.Insert(hospede);
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado( 'Cadastrado com Sucesso !', " + Session["cod_hospede"] + ");", true);
         }
 
         protected void btnEditar_ServerClick(object sender, EventArgs e)
@@ -132,17 +134,14 @@ namespace AdaptHotel.views.Recepcionista
             Endereco endereco = new Endereco(txtAlterarRua.Value, txtAlterarNumero.Value, txtAlterarComplemento.Value, txtAlterarBairro.Value, txtAlterarCep.Value, txtAlterarCidade.Value, txtAlterarEstado.Value, Convert.ToInt32(Session["cod_endereco"]));
             Perfil perfil = new Perfil(4);
 
-            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("pt-BR");
-            DateTime date = Convert.ToDateTime(txtAlterarDataNasc.Value, culture);
-
-            Hospede Alterarhospede = new Hospede(txtAlterarNome.Value, txtAlterarTelefone.Value, txtAlterarEmail.Value, txtAlterarCpf.Value, Convert.ToChar(rblAlterarSexo.SelectedValue), date, perfil, endereco, txtAlterarPlaca.Value, txtAlterarCidadeOrigem.Value, Convert.ToInt32(Session["cod_pessoa"]), foto, null, Convert.ToInt32(Session["cod_hospede"]));
+            Hospede Alterarhospede = new Hospede(txtAlterarNome.Value, txtAlterarTelefone.Value, txtAlterarEmail.Value, txtAlterarCpf.Value, Convert.ToChar(rblAlterarSexo.SelectedValue), Convert.ToDateTime(txtAlterarDataNasc.Value), perfil, endereco, txtAlterarPlaca.Value, txtAlterarCidadeOrigem.Value, Convert.ToInt32(Session["cod_pessoa"]), foto, null, Convert.ToInt32(Session["cod_hospede"]));
             Hospede_DB.Update(Alterarhospede);
 
             CarregarDetalhes(Convert.ToInt32(Session["cod_hospede"]));
 
             UpdatePanelHospedes.Update();
             UpdatePanelEdit.Update();
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv(" + Session["cod_hospede"] + ");", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado( 'Alterado com Sucesso !', " + Session["cod_hospede"] + ");", true);
         }
     }
 }

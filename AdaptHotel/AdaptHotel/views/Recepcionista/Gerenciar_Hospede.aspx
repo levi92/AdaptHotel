@@ -424,5 +424,13 @@
         $(document).ready(function () {
             $('select').material_select();
         });
+
+        function tostado(texto, id) {
+            Materialize.toast(texto, 5000);
+            $("#" + id).addClass("active");
+            $("#details").slideUp("slow");
+            $("#details").slideDown("slow");
+            $('select').material_select();
+        }
     </script>
 </asp:Content>

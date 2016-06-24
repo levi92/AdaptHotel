@@ -43,7 +43,7 @@
         <nav class="blue darken-4 z-depth-0" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="#" class="right brand-logo">
-                    <img src="../../images/logo.png" style="transform: rotate(90deg); width: 38px;">
+                    <img src="../../images/logo.png" style="width: 30px; margin-top: 6px;">
                 </a>
 
 
@@ -51,12 +51,12 @@
                     <li class="logo" style="text-align: center; height: 158px;">
                         <img src="../../images/Hotel-Villa-Augusto.png" style="width: 197px;" /></li>
 
-                    <li class="bold" id="Dashboard_Gerente"><a class="waves-effect" href="../../views/Gerente/Dashboard_Gerente.aspx">Dashboard</a></li>
-                    <li class="bold" id="Gerenciar_Reservas"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Reservas.aspx">Reservas</a></li>
-                    <li class="bold" id="Gerenciar_Quartos"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Quartos.aspx">Quartos</a></li>
-                    <li class="bold" id="Gerenciar_Hospede"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Hospede">Hóspedes</a></li>
-                    <li class="bold" id="Gerenciar_Funcionario"><a class="waves-effect" href="../../views/Gerente/Gerenciar_Funcionario.aspx">Funcionarios</a></li>
-                    <li class="bold" id="Estatisticas"><a class="waves-effect" href="../../views/Gerente/Estatisticas.aspx">Estatisticas</a></li>
+                    <li class="bold" id="Dashboard_Gerente"><a class="waves-effect waves-orange" href="../../views/Gerente/Dashboard_Gerente.aspx">Dashboard</a></li>
+                    <li class="bold" id="Gerenciar_Reservas"><a class="waves-effect waves-orange" href="../../views/Gerente/Gerenciar_Reservas.aspx">Reservas</a></li>
+                    <li class="bold" id="Gerenciar_Quartos"><a class="waves-effect waves-orange" href="../../views/Gerente/Gerenciar_Quartos.aspx">Quartos</a></li>
+                    <li class="bold" id="Gerenciar_Hospede"><a class="waves-effect waves-orange" href="../../views/Gerente/Gerenciar_Hospede">Hóspedes</a></li>
+                    <li class="bold" id="Gerenciar_Funcionario"><a class="waves-effect waves-orange" href="../../views/Gerente/Gerenciar_Funcionario.aspx">Funcionarios</a></li>
+                    <li class="bold" id="Estatisticas"><a class="waves-effect waves-orange" href="../../views/Gerente/Estatisticas.aspx">Estatisticas</a></li>
                  
                     <li class="bold" id="Logout" style="text-align:center;bottom: 60px;position: absolute;width: 100%;background-color: #efefef;"><a id="logout" class="waves-effect" onclick="__doPostBack('logout', 'logout')">Logout</a></li>
                 </ul>

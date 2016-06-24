@@ -47,6 +47,7 @@ namespace AdaptHotel.views.Gerente
                 }
             }
 
+            lista_funcionarios.Clear();
             CarregarFuncionarios();
             UpdatePanelFuncionarios.Update();
             UpdatePanelEdit.Update();
@@ -83,7 +84,7 @@ namespace AdaptHotel.views.Gerente
 
             lblNome.InnerText = funcionario.Nome;
             lblTelefone.InnerText = funcionario.Telefone;
-            lblDataNasc.InnerText = funcionario.DataNascimento.ToString();
+            lblDataNasc.InnerText = (funcionario.DataNascimento).ToString("dd/MM/yyyy");
             lblCpf.InnerText = funcionario.Cpf;
             lblEmail.InnerText = funcionario.Email;
 
@@ -94,12 +95,13 @@ namespace AdaptHotel.views.Gerente
             lblEstado.InnerText = funcionario.Endereco.Estado;
             lblNumero.InnerText = funcionario.Endereco.Numero;
 
-            lblCargo.InnerHtml = funcionario.Cargo;
-            lblDataAdmissao.InnerHtml = funcionario.DataAdmissao.ToString();
-            lblNConta.InnerHtml = funcionario.NumeroCnt;
+            lblCargo.InnerText = funcionario.Cargo;
+            lblSalario.InnerText = funcionario.Salario.ToString();
+            lblDataAdmissao.InnerText = (funcionario.DataAdmissao).ToString("dd/MM/yyyy");
+            lblNConta.InnerText = funcionario.NumeroCnt;
 
             txtAlterarNome.Value = funcionario.Nome;
-            txtAlterarDataNasc.Value = funcionario.DataNascimento.ToString();
+            txtAlterarDataNasc.Value = funcionario.DataNascimento.ToString("yyyy-MM-dd");
             txtAlterarCpf.Value = funcionario.Cpf;
             txtAlterarTelefone.Value = funcionario.Telefone;
             txtAlterarEmail.Value = funcionario.Email;
@@ -115,7 +117,7 @@ namespace AdaptHotel.views.Gerente
 
             txtAlterarCargo.Value = funcionario.Cargo;
             txtAlterarSalario.Value = funcionario.Salario.ToString();
-            txtdataAdm.Value = funcionario.DataAdmissao.ToString();
+            txtdataAdm.Value = (funcionario.DataAdmissao).ToString("yyyy-MM-dd");
             txtAlterarNumConta.Value = funcionario.NumeroCnt;
         }
 
@@ -127,15 +129,16 @@ namespace AdaptHotel.views.Gerente
 
             Funcionario funcionario = new Funcionario(txtNome.Value, txtTelefone.Value, txtEmail.Value, txtCpf.Value, Convert.ToChar(rblSexo.SelectedValue), Convert.ToDateTime(txtData.Value), perfil, endereco, txtCargo.Value, txtNumeroConta.Value, Convert.ToDouble(txtSalário.Value), Convert.ToDateTime(txtDataAdmissao.Value), null, null, foto, null);
             Funcionario_DB.Insert(funcionario);
+
+            UpdatePanelFuncionarios.Update();
+            UpdatePanelEdit.Update();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado( 'Cadastrado com Sucesso !', " + Session["cod_funcionario"] + ");", true);
         }
 
         protected void btnEditar_ServerClick(object sender, EventArgs e)
         {
             Endereco endereco = new Endereco(txtAlterarRua.Value, txtAlterarNumero.Value, txtComplemento.Value, txtAlterarBairro.Value, txtAlterarCep.Value, txtAlterarCidade.Value, txtAlterarEstado.Value, Convert.ToInt32(Session["cod_endereco"]));
             Perfil perfil = new Perfil(3);
-
-            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("pt-BR");
-            DateTime date = Convert.ToDateTime(txtAlterarDataNasc.Value, culture);
 
             Funcionario AlterarFuncionario = new Funcionario(txtAlterarNome.Value, txtAlterarTelefone.Value, txtAlterarEmail.Value, txtAlterarCep.Value, Convert.ToChar(rblAlterarSexo.SelectedValue), Convert.ToDateTime(txtAlterarDataNasc.Value), perfil, endereco, txtAlterarCargo.Value, txtAlterarNumConta.Value, Convert.ToDouble(txtAlterarSalario.Value), Convert.ToDateTime(txtdataAdm.Value), Convert.ToInt32(Session["cod_funcionario"]), Convert.ToInt32(Session["cod_pessoa"]), null, null);
             Funcionario_DB.Update(AlterarFuncionario);
@@ -144,7 +147,7 @@ namespace AdaptHotel.views.Gerente
 
             UpdatePanelFuncionarios.Update();
             UpdatePanelEdit.Update();
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv(" + Session["cod_funcionario"] + ");", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado( 'Alterado com Sucesso !', "+ Session["cod_funcionario"] + ");", true);
         }
     }
 }

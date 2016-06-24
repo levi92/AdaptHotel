@@ -90,6 +90,9 @@
                                     Cargo:
                                     <label id="lblCargo" runat="server"></label>
                                     <br />
+                                    Salário
+                                    <label id="lblSalario" runat="server"></label>
+                                    <br />
                                     Data de Admissão:
                                     <label id="lblDataAdmissao" runat="server"></label>
                                     <br />
@@ -247,7 +250,7 @@
                 <input id="txtSalário" runat="server" type="text" />
             </div>
             <div class="input-field col s12 m6">
-                <input id="txtDataAdmissao" runat="server" type="date" class="datepicker validate" />
+                <input id="txtDataAdmissao" runat="server" type="date" class="validate" />
             </div>
             <div class="input-field col s12 m6">
                 <label>Numero Conta</label>
@@ -420,7 +423,15 @@
 
             $('select').material_select();
             $('.modal-trigger').leanModal();
-        });   
+        });
+
+        function tostado(texto, id) {
+            Materialize.toast(texto, 5000);
+            $("#" + id).addClass("active");
+            $("#details").slideUp("slow");
+            $("#details").slideDown("slow");
+            $('select').material_select();
+        }
     </script>
 
 </asp:Content>

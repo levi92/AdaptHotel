@@ -28,6 +28,7 @@ public class Pessoa
         this.Perfil = perfil;
         this.foto = foto;
         this.codPessoa = codPessoa;
+        this.dataNascimento = dataNascimento;
 	}
 
     public Pessoa(string nome, Endereco endereco)

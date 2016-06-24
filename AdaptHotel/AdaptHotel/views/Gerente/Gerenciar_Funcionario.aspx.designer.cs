@@ -139,6 +139,15 @@ namespace AdaptHotel.views.Gerente {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblCargo;
         
         /// <summary>
+        /// lblSalario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSalario;
+        
+        /// <summary>
         /// lblDataAdmissao control.
         /// </summary>
         /// <remarks>

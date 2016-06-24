@@ -42,7 +42,7 @@
         <nav class="blue darken-4 z-depth-0" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="#" class="right brand-logo">
-                    <img src="../../images/logo.png" style="transform: rotate(90deg);width: 38px;">
+                    <img src="../../images/logo.png" style="width: 30px; margin-top: 6px;">
                 </a>
 
 
