@@ -20,6 +20,15 @@ namespace AdaptHotel.views.Gerente
             if (!IsPostBack)
             {
                 CarregarHospedes();
+
+                int codigo_detalhes = Convert.ToInt32(Request.QueryString["id"]);
+
+                if(codigo_detalhes != 0)
+                {
+                    CarregarDetalhes(codigo_detalhes);
+
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv(" + codigo_detalhes + ");", true);
+                } 
             }
             else
             {
@@ -28,7 +37,7 @@ namespace AdaptHotel.views.Gerente
 
                 if (parameter != "")
                 {
-                    hospede = CarregarDetalhes(Convert.ToInt32(parameter));
+                    CarregarDetalhes(Convert.ToInt32(parameter));
                     Session["cod_pessoa"] = hospede.CodPessoa;
                     Session["cod_endereco"] = hospede.Endereco.CodEnd;
                     Session["cod_hospede"] = hospede.CodHospede;
@@ -49,36 +58,7 @@ namespace AdaptHotel.views.Gerente
 
                     txtAlterarPlaca.Value = hospede.PlacaCarro;
                     txtAlterarCidadeOrigem.Value = hospede.CidadeOrigem;
-                    
-
-                    if (hospede.Sexo.ToString() == "M")
-                    {
-                        lblSexo.InnerText = "Masculino";
-                    }
-                    else
-                    {
-                        lblSexo.InnerText = "Feminino";
-                    }
-
-
-                    lblNome.InnerText = hospede.Nome;
-
-                    lblTelefone.InnerText = hospede.Telefone;
-                    lblDataNasc.InnerText = hospede.DataNascimento.ToString();
-                    lblCpf.InnerText = hospede.Cpf;
-                    lblEmail.InnerText = hospede.Email;
-
-                    lblRua.InnerText = hospede.Endereco.Rua;
-                    lblBairro.InnerText = hospede.Endereco.Bairro;
-                    lblCep.InnerText = hospede.Endereco.Cep;
-                    lblCidade.InnerText = hospede.Endereco.Cidade;
-                    lblEstado.InnerText = hospede.Endereco.Estado;
-                    lblNumero.InnerText = hospede.Endereco.Numero;
-
-                    lblPlaca.InnerText = hospede.PlacaCarro;
-                    lblCidadeOrigem.InnerText = hospede.CidadeOrigem;
-
-                    
+    
                     UpdatePanelHospedes.Update();
                     UpdatePanelEdit.Update();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showDiv("+hospede.CodHospede+");", true);
@@ -101,11 +81,34 @@ namespace AdaptHotel.views.Gerente
             }
         }
 
-        public Hospede CarregarDetalhes(int id)
+        public void CarregarDetalhes(int id)
         {
-            Hospede hospede = Hospede_DB.SelectByID(id);
+            hospede = Hospede_DB.SelectByID(id);
 
-            return hospede;
+            if (hospede.Sexo.ToString() == "M")
+            {
+                lblSexo.InnerText = "Masculino";
+            }
+            else
+            {
+                lblSexo.InnerText = "Feminino";
+            }
+
+            lblNome.InnerText = hospede.Nome;
+            lblTelefone.InnerText = hospede.Telefone;
+            lblDataNasc.InnerText = hospede.DataNascimento.ToString();
+            lblCpf.InnerText = hospede.Cpf;
+            lblEmail.InnerText = hospede.Email;
+
+            lblRua.InnerText = hospede.Endereco.Rua;
+            lblBairro.InnerText = hospede.Endereco.Bairro;
+            lblCep.InnerText = hospede.Endereco.Cep;
+            lblCidade.InnerText = hospede.Endereco.Cidade;
+            lblEstado.InnerText = hospede.Endereco.Estado;
+            lblNumero.InnerText = hospede.Endereco.Numero;
+
+            lblPlaca.InnerText = hospede.PlacaCarro;
+            lblCidadeOrigem.InnerText = hospede.CidadeOrigem;
         }
 
         protected void btnCadastrar_ServerClick(object sender, EventArgs e)

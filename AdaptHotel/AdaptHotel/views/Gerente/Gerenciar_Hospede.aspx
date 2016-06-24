@@ -431,9 +431,9 @@
 
         function showDiv(id) {
             $("#" + id).addClass("active");
-            $('select').material_select();
             $("#details").slideUp("slow");
             $("#details").slideDown("slow");
+            $('select').material_select();
         }
 
         $(document).ready(function () {
