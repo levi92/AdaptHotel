@@ -283,8 +283,7 @@
     <script>
         function tostado(texto, id) {
             Materialize.toast(texto, 5000);
-            $("#agendada").hide();
-            $("#" + id).show();
+            $('ul.tabs').tabs('select_tab', id);
         }
 
         $(document).ready(function () {

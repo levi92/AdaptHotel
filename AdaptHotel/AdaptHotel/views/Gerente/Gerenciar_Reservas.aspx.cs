@@ -34,11 +34,11 @@ namespace AdaptHotel.views.Gerente
                         int retorno = Reserva_DB.Realizar_Checkin(Convert.ToInt32(parameter), "ocupado");
                         if (retorno != -2)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado('Check-in realizado com sucesso !','agendado');", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado('Check-in realizado com sucesso !','agendada');", true);
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado('Erro ao realizar Check-out !','agendado');", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "tostado('Erro ao realizar Check-out !','agendada');", true);
                         }                         
                     }
                 }
